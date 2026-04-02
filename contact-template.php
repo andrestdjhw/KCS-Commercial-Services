@@ -2,623 +2,435 @@
 /**
  * Template Name: Contact Template
  *
- * Contact page for Real Painting Corp
- * Navbar y footer vienen de header.php / footer.php.
+ * Contact Us — KCS Commercial Services LLC
+ * kcscommercial.com/contact-us/
  */
 
 get_header(); ?>
 
-<main class="rpc-contact-page bg-[#f6f5f0] text-[#192F44] overflow-hidden">
+<main class="kcs-contact-page bg-[#F5F4EF] text-[#1B2B6B] overflow-hidden">
 
-  <?php
-    $service_options = [
-      'Interior Painting',
-      'Exterior Painting',
-      'Kitchen Remodeling',
-      'Bathroom Remodeling',
-      'Cabinet Refinishing',
-      'Surface Repair & Prep',
-      'Pressure Washing',
-      'Commercial Painting',
-      'Other',
-    ];
+<?php
+  $form_services = [
+    'Commercial Cleaning (Recurring)',
+    'Post-Construction Cleaning',
+    'Landscaping & Grounds',
+    'Drywall & Interior',
+    'Roofing & Siding',
+    'Multiple Services',
+    'Other / Not Sure',
+  ];
 
-    $faqs = [
-      [
-        'q' => 'What areas do you serve?',
-        'a' => 'We serve homeowners across Orange County, Los Angeles County, Riverside County, and San Bernardino County — including Rancho Santa Margarita, Irvine, Mission Viejo, Coto de Caza, Ladera Ranch, Corona, Murrieta, Temecula, Menifee, Rancho Cucamonga, Pasadena, Glendale, Arcadia, and surrounding communities.',
-      ],
-      [
-        'q' => 'Are you licensed and insured?',
-        'a' => 'Yes. Real Painting Corp holds a C-33 Painting and Decorating license (CSLB #1111920), General Liability insurance, Workers’ Compensation coverage, and a surety bond. We are fully compliant with OSHA and California regulations.',
-      ],
-      [
-        'q' => 'Do you offer free estimates?',
-        'a' => 'Yes. We provide free, no-obligation property assessments and detailed written estimates. Contact us to schedule yours.',
-      ],
-      [
-        'q' => 'How quickly can you start?',
-        'a' => 'We respond within 24–48 hours. Project start dates depend on scope and schedule — you’ll receive a clear timeline as part of your proposal.',
-      ],
-      [
-        'q' => 'Do you do remodeling or just painting?',
-        'a' => 'Both. We offer complete kitchen and bathroom remodeling in addition to painting, cabinet refinishing, surface repair, and pressure washing. Many of our remodeling clients started with a paint job.',
-      ],
-    ];
-  ?>
+  $service_area = [
+    'Overland Park, KS',
+    'Olathe, KS',
+    'Lenexa, KS',
+    'Shawnee, KS',
+    'Kansas City, KS',
+    'Paola, KS',
+    'Springfield, MO',
+  ];
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden border-b border-[#192F44]/10 bg-[linear-gradient(180deg,#ffffff_0%,#f6f5f0_100%)] py-16 lg:py-24">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(207,224,218,0.50),transparent_28%)]"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(35,100,118,0.08),transparent_30%)]"></div>
+  $next_steps = [
+    [
+      'num'   => '01',
+      'title' => 'Within 24 Hours',
+      'copy'  => 'A member of our team reviews your request and reaches out by phone or email to confirm your details and schedule a site visit if needed.',
+      'tone'  => '#1B2B6B',
+    ],
+    [
+      'num'   => '02',
+      'title' => 'Within 48 Hours of Site Visit',
+      'copy'  => 'We deliver a structured proposal — clear pricing, clear deliverables, no ambiguity. You will know exactly what you are getting and what it costs.',
+      'tone'  => '#243580',
+    ],
+    [
+      'num'   => '03',
+      'title' => 'Contract & Onboarding',
+      'copy'  => 'Once you are ready to move forward we handle the paperwork and onboarding so service starts on your timeline.',
+      'tone'  => '#C9A84C',
+    ],
+    [
+      'num'   => '04',
+      'title' => 'Ongoing Communication',
+      'copy'  => 'After launch you have a direct point of contact. No call centers. No runaround. One person who knows your account and responds when you reach out.',
+      'tone'  => '#A8882E',
+    ],
+  ];
+?>
 
-    <div class="relative mx-auto max-w-5xl px-4 text-center">
-      <p class="ajs-reveal-up text-xs font-black uppercase tracking-[0.24em] text-[#236476]">
-        Contact Us
-      </p>
+<!-- ════════════════════════════════════════════════════════════════════
+     1. HERO
+═════════════════════════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden bg-[#13204F] py-16 text-white lg:py-24">
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.12),transparent_36%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(36,53,128,0.55),transparent_45%)]"></div>
 
-      <h1 class="ajs-reveal-up mt-5 text-4xl font-extrabold leading-[0.98] tracking-[-0.05em] text-[#192F44] md:text-6xl">
-        Let’s Talk About Your Home.
-      </h1>
+  <div class="relative mx-auto max-w-4xl px-4 text-center">
+    <p class="ajs-reveal-up text-xs font-black uppercase tracking-[0.28em] text-[#C9A84C]">
+      Contact Us &nbsp;·&nbsp; kcscommercial.com
+    </p>
 
-      <div class="mx-auto mt-6 h-[3px] w-24 bg-[linear-gradient(90deg,#192F44_0%,#236476_55%,#7DAD3F_100%)]"></div>
+    <h1 class="ajs-reveal-up mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl lg:text-7xl">
+      Let's Talk About Your Building
+    </h1>
 
-      <p class="ajs-reveal-up mx-auto mt-8 max-w-3xl text-base leading-8 text-[#192F44]/80 md:text-lg">
-        Whether you have a project in mind or just want to explore your options, we’re here. Reach out and someone from our team will get back to you within 24–48 hours.
-      </p>
-    </div>
-  </section>
+    <div class="mx-auto mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
-  <!-- CONTACT + FORM -->
-  <section class="relative overflow-hidden py-20 lg:py-24">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(207,224,218,0.28),transparent_24%)]"></div>
+    <p class="ajs-reveal-up mx-auto mt-7 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
+      Whether you need a recurring cleaning contract, a landscaping proposal, or a roofing estimate after a storm — the process starts here. Fill out the form, tell us what you are working with, and we will get back to you within 24 hours with a clear next step.
+    </p>
+  </div>
+</section>
 
-    <div class="relative mx-auto max-w-7xl px-4">
-      <div class="grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:gap-10">
+<!-- ════════════════════════════════════════════════════════════════════
+     2. FORM + CONTACT INFO
+═════════════════════════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden py-20 lg:py-28">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.06),transparent_28%)]"></div>
 
-        <!-- CONTACT INFORMATION -->
-        <div class="ajs-reveal-left">
-          <div class="h-full overflow-hidden border border-[#192F44]/10 bg-white shadow-[0_20px_44px_rgba(25,47,68,0.08)]">
-            <div class="h-2 w-full bg-[linear-gradient(90deg,#192F44_0%,#236476_50%,#7DAD3F_100%)]"></div>
+  <div class="relative mx-auto max-w-7xl px-4">
+    <div class="grid gap-10 xl:grid-cols-[1.1fr_0.9fr] xl:gap-12">
 
-            <div class="p-7 md:p-9">
-              <p class="text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-                Contact Information
-              </p>
+      <!-- ── LEFT: Primary Form ── -->
+      <div class="ajs-reveal-left">
+        <div class="relative overflow-hidden border border-[#1B2B6B]/12 bg-[#13204F] shadow-[0_24px_60px_rgba(27,43,107,0.20)]">
+          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
 
-              <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.04em] text-[#192F44] md:text-4xl">
-                Reach the team directly.
-              </h2>
+          <div class="p-7 md:p-10">
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">
+              Get in Touch
+            </p>
+            <h2 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em] text-white md:text-3xl">
+              Request a Quote or Ask a Question
+            </h2>
 
-              <div class="mt-8 space-y-5">
-                <div class="border border-[#192F44]/10 bg-[#fdfcf8] px-5 py-5">
-                  <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#236476]">
-                    Phone
-                  </p>
-                  <a href="tel:+19092326602" class="mt-2 block text-lg font-black text-[#192F44] transition hover:text-[#236476]">
-                    (909) 232-6602
-                  </a>
-                </div>
-
-                <div class="border border-[#192F44]/10 bg-[#fdfcf8] px-5 py-5">
-                  <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#4A6C2F]">
-                    Email
-                  </p>
-                  <p class="mt-2 text-lg font-black text-[#192F44]">
-                    [client to confirm]
-                  </p>
-                </div>
-
-                <div class="border border-[#192F44]/10 bg-[#CFE0DA]/42 px-5 py-5">
-                  <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                    Service Area
-                  </p>
-                  <p class="mt-2 text-base font-bold leading-7 text-[#192F44]">
-                    Orange County · Los Angeles · Riverside · San Bernardino
-                  </p>
-                </div>
-              </div>
-
-              <div class="mt-8 border-t border-[#192F44]/10 pt-8">
-                <p class="text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-                  Social
-                </p>
-
-<div class="mt-4 flex flex-wrap gap-3">
-
-  <!-- GOOGLE -->
-  <a href="#" aria-label="Google" class="rpc-contact-social flex items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 48 48">
-      <path fill="#EA4335" d="M24 9.5c3.6 0 6.8 1.3 9.3 3.4l6.9-6.9C35.7 2.5 30.2 0 24 0 14.6 0 6.6 5.4 2.6 13.3l8.1 6.3C12.7 13.6 17.9 9.5 24 9.5z"/>
-      <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-2.7-.4-4H24v7.6h12.9c-.3 1.9-2 4.8-5.7 6.7l8.7 6.8c5.1-4.7 8.1-11.6 8.1-17.1z"/>
-      <path fill="#FBBC05" d="M10.7 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6l-8.1-6.3C1 16.2 0 19.9 0 24s1 7.8 2.6 10.9l8.1-6.3z"/>
-      <path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.4l-8.7-6.8c-2.3 1.6-5.3 2.7-8.5 2.7-6.1 0-11.3-4.1-13.2-9.9l-8.1 6.3C6.6 42.6 14.6 48 24 48z"/>
-    </svg>
-    <span>Google</span>
-  </a>
-
-  <!-- FACEBOOK -->
-  <a href="#" aria-label="Facebook" class="rpc-contact-social flex items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.6v-2.9h2.6V9.4c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h2.9l-.5 2.9h-2.4v7A10 10 0 0022 12z"/>
-    </svg>
-    <span>Facebook</span>
-  </a>
-
-  <!-- INSTAGRAM -->
-  <a href="#" aria-label="Instagram" class="rpc-contact-social flex items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1017.5 13 5.5 5.5 0 0012 7.5zm0 2A3.5 3.5 0 1115.5 13 3.5 3.5 0 0112 9.5zm4.8-3.3a1.2 1.2 0 11-1.2 1.2 1.2 1.2 0 011.2-1.2z"/>
-    </svg>
-    <span>Instagram</span>
-  </a>
-
-</div>
-              </div>
+            <!-- Success / Error -->
+            <div id="kcsContactSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-5 py-4 text-sm leading-6 text-green-200">
+              Thank you. We have received your request and will respond within 24 hours. If your need is urgent, call us directly at <strong>[phone number]</strong>.
             </div>
-          </div>
-        </div>
+            <div id="kcsContactError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-5 py-4 text-sm text-red-200">
+              Something went wrong. Please try again.
+            </div>
 
-        <!-- FORM -->
-        <div class="ajs-reveal-right">
-          <div class="relative overflow-hidden border border-[#192F44]/10 bg-[#fcfbf8] shadow-[0_20px_44px_rgba(25,47,68,0.08)]">
-            <div class="absolute right-0 top-0 h-24 w-24 translate-x-[20%] -translate-y-[20%] rotate-12 bg-[#CFE0DA]/55"></div>
-            <div class="h-2 w-full bg-[linear-gradient(90deg,#7DAD3F_0%,#236476_50%,#192F44_100%)]"></div>
+            <form id="kcsContactForm" class="mt-8 space-y-5" novalidate>
 
-            <div class="relative p-7 md:p-9">
-              <p class="text-xs font-black uppercase tracking-[0.22em] text-[#4A6C2F]">
-                Request a Free Estimate
-              </p>
-
-              <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.04em] text-[#192F44] md:text-4xl">
-                Tell us about your project.
-              </h2>
-
-              <div id="rpcContactFormSuccess" class="hidden mt-5 rounded-2xl border border-green-200 bg-green-50 px-4 py-4 text-sm text-green-700">
-                Thanks for reaching out. Your request was sent successfully.
+              <!-- Row 1: Name + Company -->
+              <div class="grid gap-5 md:grid-cols-2">
+                <div>
+                  <label for="ct_name" class="kcs-label">Full Name *</label>
+                  <input id="ct_name" name="name" type="text" class="kcs-input" required>
+                </div>
+                <div>
+                  <label for="ct_company" class="kcs-label">Company / Organization</label>
+                  <input id="ct_company" name="company" type="text" class="kcs-input">
+                </div>
               </div>
 
-              <div id="rpcContactFormError" class="hidden mt-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-700">
-                Something went wrong. Please try again.
+              <!-- Row 2: Phone + Email -->
+              <div class="grid gap-5 md:grid-cols-2">
+                <div>
+                  <label for="ct_phone" class="kcs-label">Phone Number *</label>
+                  <input id="ct_phone" name="phone" type="tel" class="kcs-input" required>
+                </div>
+                <div>
+                  <label for="ct_email" class="kcs-label">Email Address *</label>
+                  <input id="ct_email" name="email" type="email" class="kcs-input" required>
+                </div>
               </div>
 
-              <form id="rpcContactForm" class="mt-8 space-y-5">
-                <div class="grid gap-5 md:grid-cols-2">
-                  <div>
-                    <label for="full_name" class="mb-2 block text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                      Full Name *
-                    </label>
-                    <input
-                      id="full_name"
-                      name="name"
-                      type="text"
-                      class="rpc-contact-input"
-                      required
-                    >
-                  </div>
-
-                  <div>
-                    <label for="phone_number" class="mb-2 block text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                      Phone Number *
-                    </label>
-                    <input
-                      id="phone_number"
-                      name="phone"
-                      type="tel"
-                      class="rpc-contact-input"
-                      required
-                    >
-                  </div>
-                </div>
-
+              <!-- Row 3: Service + City -->
+              <div class="grid gap-5 md:grid-cols-2">
                 <div>
-                  <label for="email_address" class="mb-2 block text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                    Email Address *
-                  </label>
-                  <input
-                    id="email_address"
-                    name="email"
-                    type="email"
-                    class="rpc-contact-input"
-                    required
-                  >
-                </div>
-
-                <div>
-                  <label for="service_needed" class="mb-2 block text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                    Service Needed *
-                  </label>
-                  <select
-                    id="service_needed"
-                    name="service"
-                    class="rpc-contact-input"
-                    required
-                  >
+                  <label for="ct_service" class="kcs-label">Service Needed *</label>
+                  <select id="ct_service" name="service" class="kcs-input" required>
                     <option value="">Select a service</option>
-                    <?php foreach ($service_options as $option) : ?>
-                      <option value="<?php echo esc_attr($option); ?>">
-                        <?php echo esc_html($option); ?>
-                      </option>
+                    <?php foreach ($form_services as $opt) : ?>
+                      <option value="<?php echo esc_attr($opt); ?>"><?php echo esc_html($opt); ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
-
                 <div>
-                  <label for="property_address" class="mb-2 block text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                    Property Address or City *
-                  </label>
-                  <input
-                    id="property_address"
-                    name="property"
-                    type="text"
-                    class="rpc-contact-input"
-                    required
-                  >
+                  <label for="ct_city" class="kcs-label">City / Location *</label>
+                  <input id="ct_city" name="city" type="text" class="kcs-input" required>
                 </div>
+              </div>
 
-                <div>
-                  <label for="project_details" class="mb-2 block text-[11px] font-black uppercase tracking-[0.18em] text-[#192F44]/72">
-                    Tell us about your project
-                  </label>
-                  <textarea
-                    id="project_details"
-                    name="message"
-                    rows="6"
-                    class="rpc-contact-input rpc-contact-textarea"
-                    required
-                  ></textarea>
-                </div>
+              <!-- Textarea -->
+              <div>
+                <label for="ct_details" class="kcs-label">Tell Us About Your Facility *</label>
+                <textarea id="ct_details" name="message" rows="5" class="kcs-input kcs-textarea" required></textarea>
+              </div>
 
-                <label class="flex items-start gap-3 border border-[#192F44]/10 bg-white px-4 py-4">
-                  <input
-                    type="checkbox"
-                    name="policy_agreement"
-                    class="mt-1 h-4 w-4 accent-[#236476]"
-                    required
-                  >
-                  <span class="text-sm leading-6 text-[#192F44]/78">
-                    I agree to the Privacy Policy and Terms &amp; Conditions.
-                  </span>
-                </label>
+              <div class="pt-1">
+                <button id="kcsContactSubmitBtn" type="submit"
+                  class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
+                  Send My Request →
+                </button>
+              </div>
 
-                <div class="pt-2">
-                  <button
-                    id="rpcContactSubmitBtn"
-                    type="submit"
-                    class="rpc-contact-btn rpc-contact-btn-green inline-flex items-center justify-center px-8 py-4 text-sm font-black uppercase tracking-[0.14em] text-white"
-                  >
-                    Submit Request
-                  </button>
-                </div>
-              </form>
-            </div>
+              <p class="text-center text-[0.7rem] text-white/45">
+                🔒 Your information is private and will never be shared.
+              </p>
+            </form>
           </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Contact Info + Map ── -->
+      <div class="ajs-reveal-right flex flex-col gap-6">
+
+        <!-- Phone -->
+        <div class="border border-[#1B2B6B]/10 bg-white px-6 py-5 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
+          <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#C9A84C]">Phone</p>
+          <a href="#" class="mt-2 block text-xl font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
+            [Phone Number]
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div class="border border-[#1B2B6B]/10 bg-white px-6 py-5 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
+          <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#1B2B6B]/50">Email</p>
+          <a href="#" class="mt-2 block text-xl font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
+            [Email Address]
+          </a>
+        </div>
+
+        <!-- Service Area -->
+        <div class="border border-[#1B2B6B]/10 bg-white px-6 py-6 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
+          <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#1B2B6B]/50">Service Area</p>
+          <ul class="mt-3 space-y-2">
+            <?php foreach ($service_area as $city) : ?>
+              <li class="flex items-center gap-2.5 text-sm font-bold text-[#1B2B6B]">
+                <span class="h-2 w-2 shrink-0 rotate-45 bg-[#C9A84C]"></span>
+                <?php echo esc_html($city); ?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+
+        <!-- Response time -->
+        <div class="border border-[#C9A84C]/30 bg-[#C9A84C]/08 px-6 py-5">
+          <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#A8882E]">Response Time</p>
+          <p class="mt-2 text-sm leading-7 text-[#1B2B6B]/80">
+            We respond to all inquiries within <strong class="font-black text-[#1B2B6B]">24 hours</strong>. Proposals are delivered within <strong class="font-black text-[#1B2B6B]">48 hours</strong> of a site visit.
+          </p>
+        </div>
+
+        <!-- Map embed — centered on Overland Park, KS -->
+        <div class="overflow-hidden border border-[#1B2B6B]/10 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
+          <iframe
+            title="KCS Commercial Services — Service Area Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198304.2!2d-94.8!3d38.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0916aba29c561%3A0x60e1aba2ef9cca67!2sOverland%20Park%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000000"
+            width="100%"
+            height="260"
+            style="border:0;display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
 
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="border-y border-[#192F44]/10 bg-white py-20 lg:py-24">
-    <div class="mx-auto max-w-5xl px-4">
-      <div class="ajs-reveal-up mx-auto max-w-3xl text-center">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-          Frequently Asked Questions
-        </p>
+<!-- ════════════════════════════════════════════════════════════════════
+     3. WHAT HAPPENS NEXT
+═════════════════════════════════════════════════════════════════════ -->
+<section class="border-t border-[#1B2B6B]/10 bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4">
 
-        <h2 class="mt-5 text-3xl font-black leading-tight tracking-[-0.05em] text-[#192F44] md:text-5xl">
-          Helpful answers before we get started.
-        </h2>
-
-        <div class="mx-auto mt-6 h-[3px] w-24 bg-[linear-gradient(90deg,#192F44_0%,#236476_55%,#7DAD3F_100%)]"></div>
-      </div>
-
-      <div class="mt-12 grid gap-4">
-        <?php foreach ($faqs as $index => $faq) : ?>
-          <details class="ajs-reveal-stagger rpc-contact-faq group border border-[#192F44]/10 bg-[#fcfbf8]">
-            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
-              <span class="text-lg font-black leading-7 tracking-[-0.02em] text-[#192F44]">
-                <?php echo esc_html($faq['q']); ?>
-              </span>
-              <span class="rpc-contact-faq-icon shrink-0 text-2xl font-light text-[#236476]">+</span>
-            </summary>
-
-            <div class="border-t border-[#192F44]/10 px-6 py-5">
-              <p class="text-base leading-8 text-[#192F44]/80">
-                <?php echo esc_html($faq['a']); ?>
-              </p>
-            </div>
-          </details>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="relative isolate overflow-hidden bg-[#f6f5f0] py-20 text-[#192F44] lg:py-24">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(35,100,118,0.08),transparent_28%)]"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(125,173,63,0.12),transparent_30%)]"></div>
-
-    <div class="relative mx-auto max-w-5xl px-4 text-center">
-      <h2 class="ajs-reveal-up text-3xl font-black leading-tight tracking-[-0.05em] md:text-5xl">
-        Request a Free Estimate
+    <div class="ajs-reveal-up max-w-3xl">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">What Happens Next</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
+        Here's What to Expect After You Submit
       </h2>
-
-      <div class="ajs-reveal-up mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a href="#"
-           class="rpc-contact-btn rpc-contact-btn-green inline-flex items-center justify-center px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-          Request a Free Estimate
-        </a>
-
-        <a href="tel:+19092326602"
-           class="rpc-contact-btn rpc-contact-btn-dark inline-flex items-center justify-center px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-          (909) 232-6602
-        </a>
-      </div>
-
-      <div class="rpc-contact-swipe rpc-contact-swipe-light mx-auto mt-10 max-w-2xl"></div>
+      <div class="mt-5 h-1 w-20 bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)]"></div>
     </div>
-  </section>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <?php foreach ($next_steps as $step) : ?>
+        <article class="ajs-reveal-stagger relative overflow-hidden border border-[#1B2B6B]/10 bg-[#F5F4EF] p-7">
+          <div class="absolute right-0 top-0 h-16 w-16 translate-x-1/4 -translate-y-1/4 rotate-12 bg-[#C9A84C]/10"></div>
+
+          <span class="inline-flex px-4 py-1.5 text-[0.7rem] font-black uppercase tracking-[0.18em] text-[#E8D49A]"
+            style="background:<?php echo esc_attr($step['tone']); ?>;">
+            <?php echo esc_html($step['num']); ?>
+          </span>
+
+          <h3 class="mt-5 text-lg font-black leading-tight tracking-[-0.03em] text-[#1B2B6B]">
+            <?php echo esc_html($step['title']); ?>
+          </h3>
+
+          <p class="mt-3 text-[0.88rem] leading-7 text-[#1B2B6B]/68">
+            <?php echo esc_html($step['copy']); ?>
+          </p>
+        </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
 
-  .hidden {
-    display: none !important;
-  }
-
-  .rpc-contact-page {
+  .kcs-contact-page {
     font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   }
-
-  .rpc-contact-page h1,
-  .rpc-contact-page h2,
-  .rpc-contact-page h3 {
-    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+  .kcs-contact-page h1,
+  .kcs-contact-page h2,
+  .kcs-contact-page h3 {
+    font-family: "Barlow Condensed", "Space Grotesk", "Segoe UI", sans-serif;
   }
 
-  .rpc-contact-input {
-    width: 100%;
-    border: 1px solid rgba(25, 47, 68, 0.12);
-    background: #ffffff;
-    color: #192F44;
-    padding: 0.95rem 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    transition: border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
-    outline: none;
+  .kcs-btn {
+    position: relative; border: 1px solid transparent; overflow: hidden;
+    transition: transform .22s ease, box-shadow .22s ease,
+                background .22s ease, border-color .22s ease, color .22s ease;
+  }
+  .kcs-btn::after {
+    content: ""; position: absolute; inset: 0;
+    transform: translateX(-115%);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: transform .65s ease;
+  }
+  .kcs-btn:hover::after { transform: translateX(115%); }
+  .kcs-btn:hover        { transform: translateY(-2px); }
+
+  .kcs-btn-gold {
+    background: linear-gradient(135deg, #C9A84C, #A8882E);
+    border-color: #C9A84C;
+    box-shadow: 0 16px 34px rgba(201,168,76,0.28);
+    color: #13204F;
+  }
+  .kcs-btn-gold:hover {
+    background: linear-gradient(135deg, #E8D49A, #C9A84C);
+    box-shadow: 0 20px 44px rgba(201,168,76,0.38);
   }
 
-  .rpc-contact-input:focus {
-    border-color: #236476;
-    box-shadow: 0 0 0 4px rgba(35, 100, 118, 0.10);
+  .kcs-label {
+    display: block; margin-bottom: 0.45rem;
+    font-size: 0.7rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.65);
   }
-
-  .rpc-contact-textarea {
-    resize: vertical;
-    min-height: 150px;
+  .kcs-input {
+    width: 100%; padding: 0.9rem 1rem;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.07);
+    color: #fff; font-size: 0.92rem; line-height: 1.5;
+    font-family: inherit; outline: none; appearance: none;
+    transition: border-color .22s ease, box-shadow .22s ease, background .22s ease;
   }
-
-  .rpc-contact-btn {
-    position: relative;
-    border: 1px solid transparent;
-    transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, color .22s ease, border-color .22s ease;
-    overflow: hidden;
+  .kcs-input::placeholder { color: rgba(255,255,255,0.32); }
+  .kcs-input:focus {
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.18);
+    background: rgba(255,255,255,0.10);
   }
-
-  .rpc-contact-btn::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    transform: translateX(-110%);
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
-    transition: transform .6s ease;
-  }
-
-  .rpc-contact-btn:hover::after {
-    transform: translateX(110%);
-  }
-
-  .rpc-contact-btn:hover {
-    transform: translateY(-2px);
-  }
-
-  .rpc-contact-btn-dark {
-    background: #192F44;
-    border-color: #192F44;
-    box-shadow: 0 16px 34px rgba(25,47,68,0.18);
-  }
-
-  .rpc-contact-btn-dark:hover {
-    background: #236476;
-    border-color: #236476;
-  }
-
-  .rpc-contact-btn-green {
-    background: #7DAD3F;
-    border-color: #7DAD3F;
-    box-shadow: 0 16px 34px rgba(125,173,63,0.22);
-  }
-
-  .rpc-contact-btn-green:hover {
-    background: #4A6C2F;
-    border-color: #4A6C2F;
-  }
-
-  .rpc-contact-social {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(25,47,68,0.10);
-    background: #fdfcf8;
-    color: #192F44;
-    padding: 0.85rem 1rem;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    transition: transform .22s ease, border-color .22s ease, background-color .22s ease;
-  }
-
-  .rpc-contact-social:hover {
-    transform: translateY(-2px);
-    border-color: rgba(35,100,118,0.24);
-    background: #ffffff;
-  }
-
-  .rpc-contact-faq[open] .rpc-contact-faq-icon {
-    transform: rotate(45deg);
-  }
-
-  .rpc-contact-faq-icon {
-    transition: transform .2s ease;
-  }
-
-  .rpc-contact-swipe {
-    height: 14px;
-    width: 100%;
-    background: linear-gradient(90deg, #192F44 0%, #236476 28%, #CFE0DA 55%, #7DAD3F 78%, #4A6C2F 100%);
-    clip-path: polygon(0 35%, 7% 20%, 14% 40%, 22% 18%, 30% 42%, 38% 22%, 48% 50%, 56% 26%, 66% 46%, 76% 18%, 86% 42%, 94% 22%, 100% 36%, 100% 100%, 0 100%);
-    opacity: 0.92;
-    animation: rpcContactSwipeShift 7s ease-in-out infinite alternate;
-  }
-
-  .rpc-contact-swipe-light {
-    background: linear-gradient(90deg, #CFE0DA 0%, #ffffff 36%, #CFE0DA 58%, #7DAD3F 100%);
-  }
+  .kcs-textarea  { resize: vertical; min-height: 120px; }
+  .kcs-input option { background: #1B2B6B; color: #fff; }
 
   .ajs-reveal-up,
   .ajs-reveal-left,
   .ajs-reveal-right,
   .ajs-reveal-stagger {
-    opacity: 0;
-    will-change: opacity, transform;
+    opacity: 0; will-change: opacity, transform;
     transition: opacity .85s ease, transform .85s ease;
   }
-
-  .ajs-reveal-up {
-    transform: translateY(34px);
-  }
-
-  .ajs-reveal-left {
-    transform: translateX(-36px);
-  }
-
-  .ajs-reveal-right {
-    transform: translateX(36px);
-  }
-
-  .ajs-reveal-stagger {
-    transform: translateY(28px);
-  }
+  .ajs-reveal-up      { transform: translateY(34px); }
+  .ajs-reveal-left    { transform: translateX(-36px); }
+  .ajs-reveal-right   { transform: translateX(36px); }
+  .ajs-reveal-stagger { transform: translateY(28px); }
 
   .ajs-reveal-up.is-visible,
   .ajs-reveal-left.is-visible,
   .ajs-reveal-right.is-visible,
   .ajs-reveal-stagger.is-visible {
-    opacity: 1;
-    transform: translate(0,0);
+    opacity: 1; transform: translate(0,0);
   }
 
-  @keyframes rpcContactSwipeShift {
-    0%   { transform: translateX(0) scaleX(1); }
-    100% { transform: translateX(6px) scaleX(1.01); }
-  }
+  .hidden { display: none !important; }
 
   @media (prefers-reduced-motion: reduce) {
-    .ajs-reveal-up,
-    .ajs-reveal-left,
-    .ajs-reveal-right,
-    .ajs-reveal-stagger,
-    .rpc-contact-btn,
-    .rpc-contact-swipe {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-      animation: none !important;
+    .ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right,
+    .ajs-reveal-stagger, .kcs-btn {
+      opacity: 1 !important; transform: none !important;
+      transition: none !important; animation: none !important;
     }
   }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll(
-      ".ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right, .ajs-reveal-stagger"
-    );
+document.addEventListener("DOMContentLoaded", function () {
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, idx) => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.classList.contains("ajs-reveal-stagger") ? (idx % 8) * 55 : 0;
-          setTimeout(() => {
-            entry.target.classList.add("is-visible");
-          }, delay);
-        }
-      });
-    }, { threshold: 0.12 });
+  /* ── Scroll reveal ──────────────────────────────────────────────── */
+  const items = document.querySelectorAll(
+    ".ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right, .ajs-reveal-stagger"
+  )
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, idx) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.classList.contains("ajs-reveal-stagger") ? (idx % 8) * 60 : 0
+        setTimeout(() => entry.target.classList.add("is-visible"), delay)
+      }
+    })
+  }, { threshold: 0.10 })
+  items.forEach(el => observer.observe(el))
 
-    items.forEach((item) => observer.observe(item));
+  /* ── EmailJS ────────────────────────────────────────────────────── */
+  if (window.emailjs) {
+    emailjs.init({ publicKey: "CDikedp0ZSxxiBeLb" }) // replace with KCS key
+  }
 
-    if (window.emailjs) {
-      emailjs.init({
-        publicKey: "CDikedp0ZSxxiBeLb"
-      });
-    }
+  const form      = document.getElementById("kcsContactForm")
+  const submitBtn = document.getElementById("kcsContactSubmitBtn")
+  const successEl = document.getElementById("kcsContactSuccess")
+  const errorEl   = document.getElementById("kcsContactError")
 
-    const form = document.getElementById("rpcContactForm");
-    const submitBtn = document.getElementById("rpcContactSubmitBtn");
-    const successBox = document.getElementById("rpcContactFormSuccess");
-    const errorBox = document.getElementById("rpcContactFormError");
+  if (!form) return
 
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault()
+    successEl.classList.add("hidden")
+    errorEl.classList.add("hidden")
 
-        successBox.classList.add("hidden");
-        errorBox.classList.add("hidden");
+    const originalText    = submitBtn.textContent
+    submitBtn.disabled    = true
+    submitBtn.textContent = "Sending..."
 
-        const policyCheckbox = form.querySelector('input[name="policy_agreement"]');
-        if (policyCheckbox && !policyCheckbox.checked) {
-          errorBox.textContent = "Please accept the Privacy Policy and Terms & Conditions.";
-          errorBox.classList.remove("hidden");
-          return;
-        }
-
-        const originalButtonText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-
-        const formData = {
-          name: document.getElementById("full_name").value,
-          phone: document.getElementById("phone_number").value,
-          email: document.getElementById("email_address").value,
-          service: document.getElementById("service_needed").value,
-          property: document.getElementById("property_address").value,
-          message: document.getElementById("project_details").value
-        };
-
-        emailjs.send(
-          "service_a03f0zf",
-          "template_17g32zt",
-          formData
-        ).then(function () {
-          form.reset();
-          successBox.classList.remove("hidden");
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalButtonText;
-        }).catch(function (error) {
-          console.error("EmailJS error:", error);
-          errorBox.classList.remove("hidden");
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalButtonText;
-        });
-      });
-    }
-  });
+    emailjs.send(
+      "service_a03f0zf",   // replace with KCS EmailJS service ID
+      "template_17g32zt",  // replace with KCS EmailJS template ID
+      {
+        name:    document.getElementById("ct_name").value,
+        company: document.getElementById("ct_company").value,
+        phone:   document.getElementById("ct_phone").value,
+        email:   document.getElementById("ct_email").value,
+        service: document.getElementById("ct_service").value,
+        city:    document.getElementById("ct_city").value,
+        message: document.getElementById("ct_details").value,
+      }
+    ).then(function () {
+      form.reset()
+      successEl.classList.remove("hidden")
+      submitBtn.disabled    = false
+      submitBtn.textContent = originalText
+      successEl.scrollIntoView({ behavior: "smooth", block: "center" })
+    }).catch(function (err) {
+      console.error("EmailJS error:", err)
+      errorEl.classList.remove("hidden")
+      submitBtn.disabled    = false
+      submitBtn.textContent = originalText
+    })
+  })
+})
 </script>
 
 <?php get_footer(); ?>

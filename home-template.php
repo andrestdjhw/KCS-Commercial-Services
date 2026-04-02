@@ -2,710 +2,778 @@
 /**
  * Template Name: Home Template
  *
- * Homepage Real Painting Corp
+ * Homepage — KCS Commercial Services LLC
+ * kcscommercial.com
  * Navbar y footer vienen de header.php / footer.php.
  */
 
 get_header(); ?>
 
-<main class="rpc-paint-home bg-[#f6f5f0] text-[#192F44] overflow-hidden">
+<main class="kcs-home bg-[#F5F4EF] text-[#1B2B6B] overflow-hidden">
 
-  <?php
-    $hero_image = 'http://real-painting-corp.local/wp-content/uploads/2026/03/flow-clark-ioOlenqfMqA-unsplash-scaled.jpg';
+<?php
+  /* ── Service dropdown options (form) ─────────────────────────────── */
+  $form_services = [
+    'Commercial Cleaning (Recurring)',
+    'Post-Construction Cleaning',
+    'Landscaping & Grounds',
+    'Drywall & Interior',
+    'Roofing & Siding',
+    'Multiple Services',
+  ];
 
-    // Temporary fallback set for gallery until you replace with 6–8 real project photos / before-after pairs.
-    $gallery_images = [
-      $hero_image,
-      $hero_image,
-      $hero_image,
-      $hero_image,
-      $hero_image,
-      $hero_image,
-    ];
-  ?>
+  /* ── Trust bar items ──────────────────────────────────────────────── */
+  $trust_items = [
+    'Fully Insured',
+    'Documented Protocols',
+    'Compliance-Ready',
+    'Institutional-Grade Service',
+    'KC Metro Based',
+  ];
 
-  <!-- HERO FULL WIDTH -->
-  <section class="relative h-[90vh] min-h-[640px] w-full overflow-hidden">
-    <img
-      src="<?php echo esc_url($hero_image); ?>"
-      alt="Premium residential painting project"
-      class="rpc-hero-image absolute inset-0 h-full w-full object-cover"
-    >
+  /* ── About pillars ────────────────────────────────────────────────── */
+  $pillars = [
+    [ 'title' => 'Operational Continuity',   'copy' => 'Consistent service so your facility never misses a beat.' ],
+    [ 'title' => 'Compliance-Ready',         'copy' => 'Documentation and standards for healthcare, education, and government.' ],
+    [ 'title' => 'Multi-Service Platform',   'copy' => 'One trusted partner for cleaning, grounds, drywall, and roofing.' ],
+    [ 'title' => 'Institutional Reliability','copy' => 'We show up, perform, and make it easy to justify internally.' ],
+  ];
 
-    <div class="absolute inset-0 bg-[#192F44]/70"></div>
+  /* ── Services ─────────────────────────────────────────────────────── */
+  $services = [
+    [
+      'headline' => 'Commercial Cleaning &amp; Janitorial Services in Kansas City',
+      'body'     => 'We provide professional commercial cleaning services for offices, medical facilities, schools, and institutional buildings across the Kansas City metro. Our teams follow documented cleaning protocols, use commercial-grade equipment, and maintain the same standards on week 52 as they do on week one. Whether you manage a single building or a portfolio of properties, we show up on schedule, complete the work without supervision, and make sure your space is always ready for whoever walks through the door.',
+      'bullets'  => [
+        'Daily, weekly, and custom-frequency janitorial service',
+        'Post-construction cleaning for general contractors',
+        'Medical and clinical facility cleaning',
+        'School and university campus janitorial services',
+        'Office buildings, corporate campuses, and flex spaces',
+      ],
+      'cta'   => 'Request a Cleaning Contract',
+      'tone'  => '#1B2B6B',
+    ],
+    [
+      'headline' => 'Commercial Landscaping &amp; Grounds Maintenance — KC Metro',
+      'body'     => 'First impressions happen at the curb. We maintain commercial grounds, institutional campuses, and multi-property portfolios so your asset always looks presentable — to tenants, to visitors, and to the people making decisions about renewing their lease. From regular lawn maintenance to seasonal snow removal, we handle the exterior so you don\'t have to coordinate another vendor.',
+      'bullets'  => [
+        'Commercial lawn maintenance and landscaping contracts',
+        'Hardscaping services for commercial properties',
+        'Seasonal snow removal — Kansas City metro',
+        'Grounds management for institutional campuses',
+        'Multi-property portfolio grounds consolidation',
+      ],
+      'cta'   => 'Request a Grounds Contract',
+      'tone'  => '#243580',
+    ],
+    [
+      'headline' => 'Drywall &amp; Interior Construction Services — Overland Park &amp; KC',
+      'body'     => 'When a general contractor trusts us to leave their job site clean, the next conversation is usually about what else we can take off their plate. Our drywall and interior construction services are built around that same reliability — showing up on schedule, working cleanly alongside other trades, and hitting the deadline every time. We handle tenant improvements, commercial build-outs, and interior renovation scopes across the KC metro.',
+      'bullets'  => [
+        'Commercial drywall installation and finishing',
+        'Tenant improvement (TI) renovations',
+        'Interior construction for general contractor pipelines',
+        'Office and healthcare facility build-outs',
+        'Retail and commercial space renovations',
+      ],
+      'cta'   => 'Request a Drywall Estimate',
+      'tone'  => '#C9A84C',
+    ],
+    [
+      'headline' => 'Commercial Roofing &amp; Siding — Kansas City Metro',
+      'body'     => 'Kansas City weather doesn\'t wait, and neither should you. When a hail storm hits or a roof reaches the end of its life, the last thing you want is to start searching for a contractor you\'ve never worked with. If we already manage your building\'s cleaning or grounds, we know the property — and we\'re ready to move fast. We handle commercial roof replacement, repair, and siding work across the KC metro with the same accountability we bring to every other service.',
+      'bullets'  => [
+        'Commercial roof replacement and repair',
+        'Hail and storm damage response — KC metro',
+        'Siding installation and replacement',
+        'Exterior envelope work for commercial buildings',
+        'Roofing assessments for property portfolios',
+      ],
+      'cta'   => 'Request a Roofing Estimate',
+      'tone'  => '#A8882E',
+    ],
+  ];
 
-    <div
-      class="absolute inset-0 opacity-20 mix-blend-overlay"
-      style="background-image:url('https://www.transparenttextures.com/patterns/brushed-alum.png')">
-    </div>
+  /* ── Why KCS differentiators ──────────────────────────────────────── */
+  $differentiators = [
+    [ 'num' => '01', 'title' => 'Zero Operational Surprises',       'copy' => 'We show up when we say we will, execute without supervision, and communicate proactively. Your silence is our best performance metric.' ],
+    [ 'num' => '02', 'title' => 'Compliance-Ready Documentation',   'copy' => 'Healthcare and education buyers require traceable processes. We deliver the documentation, certifications, and protocols that protect your facility from audits and liability.' ],
+    [ 'num' => '03', 'title' => 'Multi-Service, One Contract',      'copy' => 'Cleaning, grounds, drywall, roofing — under one trusted partner. Reduce your vendor count, eliminate coordination friction, and simplify your budget.' ],
+    [ 'num' => '04', 'title' => 'Institutional Buyer Experience',   'copy' => 'We understand RFP processes, committee approvals, and long contract cycles. We show up to the conversation prepared — not hoping to improvise.' ],
+    [ 'num' => '05', 'title' => 'KC-Dense Route Efficiency',        'copy' => 'We concentrate in the Overland Park–Lenexa–Olathe corridor. That means faster response times, lower operational cost, and consistent crew availability for your facility.' ],
+    [ 'num' => '06', 'title' => 'Asset Presentation Mindset',       'copy' => 'We don\'t think \'clean building.\' We think: how does this asset need to look to retain tenants, pass audits, and protect its long-term value? That difference shows up in the result.' ],
+  ];
 
-    <div class="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 text-center">
-      <p class="ajs-reveal-up text-xs font-black uppercase tracking-[0.28em] text-[#CFE0DA]">
-        Real Painting Corp
-      </p>
+  /* ── Locations ────────────────────────────────────────────────────── */
+  $locations_tier_a = [
+    [ 'city' => 'Overland Park, KS', 'note' => 'Primary market · Highest institutional density', 'href' => '/location/overland-park-ks' ],
+    [ 'city' => 'Olathe, KS',        'note' => 'Healthcare corridor · School district hub',       'href' => '/location/olathe-ks'       ],
+    [ 'city' => 'Lenexa, KS',        'note' => 'Corporate parks · Commercial flex space',         'href' => '/location/lenexa-ks'       ],
+  ];
+  $locations_tier_b = [
+    [ 'city' => 'Shawnee, KS',      'note' => 'Route support · Residential-commercial mix',   'href' => '/location/shawnee-ks'      ],
+    [ 'city' => 'Kansas City, KS',  'note' => 'Commercial & industrial corridor',              'href' => '/location/kansas-city-ks'  ],
+  ];
+  $locations_additional = [
+    [ 'city' => 'Paola, KS',        'note' => 'Selective service · High-ticket contracts',    'href' => '/location/paola-ks'        ],
+    [ 'city' => 'Springfield, MO',  'note' => 'Independent hub · Second market',              'href' => '/location/springfield-mo'  ],
+  ];
 
-      <p class="ajs-reveal-up mt-4 text-sm font-black uppercase tracking-[0.24em] text-white/82 md:text-base">
-        Be Real. Build Real.
-      </p>
+  /* ── Process steps ────────────────────────────────────────────────── */
+  $steps = [
+    [ 'num' => '01', 'title' => 'Initial Consultation',    'copy' => 'We learn your facility\'s needs, compliance requirements, and what reliable service actually looks like for your operation.' ],
+    [ 'num' => '02', 'title' => 'Site Assessment & Proposal', 'copy' => 'We visit, document scope, and deliver a structured proposal within 48 hours — clear pricing, no hidden costs.' ],
+    [ 'num' => '03', 'title' => 'Contract & Onboarding',   'copy' => '12-month agreement. Thorough onboarding so week one sets the standard for every week after.' ],
+    [ 'num' => '04', 'title' => 'Delivery & Expansion',    'copy' => 'We execute, check in regularly, and as trust grows, introduce adjacent services that add value without complexity.' ],
+  ];
 
-      <h1 class="ajs-reveal-up mt-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-white md:text-6xl">
-        When We Enter Your Home,<br class="hidden md:block">
-        the Stress Leaves.
-      </h1>
+  /* ── FAQs ─────────────────────────────────────────────────────────── */
+  $faqs = [
+    [
+      'q' => 'What types of facilities does KCS Commercial Services clean?',
+      'a' => 'KCS provides institutional-grade commercial cleaning for medical offices, hospitals, school districts, corporate campuses, office buildings, retail centers, and post-construction job sites across Overland Park, Olathe, Lenexa, Shawnee, and the greater Kansas City metro.',
+    ],
+    [
+      'q' => 'Does KCS offer recurring commercial cleaning contracts?',
+      'a' => 'Yes — recurring contracts are the foundation of our model. We structure 12-month janitorial and landscaping agreements with renewal options, giving your facility consistent service and your budget predictable costs.',
+    ],
+    [
+      'q' => 'Can KCS handle multiple services for the same property?',
+      'a' => 'Absolutely. Property managers and institutional buyers can consolidate commercial cleaning, landscaping, drywall, and roofing under one trusted partner — eliminating vendor coordination and simplifying your internal approval process.',
+    ],
+    [
+      'q' => 'Does KCS work with general contractors on construction projects?',
+      'a' => 'Yes. Post-construction cleaning is one of our most strategic entry points into GC relationships. From there, we expand naturally into drywall and roofing as trust is established across multiple project cycles.',
+    ],
+    [
+      'q' => 'Does KCS provide compliance documentation for healthcare and education facilities?',
+      'a' => 'Yes. We deliver the structured documentation and traceable cleaning protocols that protect your facility from liability and satisfy healthcare and education inspection requirements.',
+    ],
+    [
+      'q' => 'What areas does KCS Commercial Services serve?',
+      'a' => 'Our primary service area covers the Overland Park–Lenexa–Olathe corridor in Johnson County, Kansas. We also serve Shawnee, Kansas City KS, Paola KS, and operate an independent hub in Springfield, MO.',
+    ],
+    [
+      'q' => 'How quickly can KCS respond to a new service inquiry?',
+      'a' => 'We target a 24-hour response to all initial inquiries, a 48-hour turnaround on proposals following a site visit, and contract onboarding within one week of signature.',
+    ],
+  ];
+?>
 
-      <p class="ajs-reveal-up mt-6 max-w-2xl text-base leading-7 text-white/85 md:text-lg">
-        Premium painting and remodeling across Southern California — delivered with clean execution,
-        schedule discipline, and the certainty your home deserves.
-      </p>
+<!-- ════════════════════════════════════════════════════════════════════
+     1. HERO
+═════════════════════════════════════════════════════════════════════ -->
+<section id="hero" class="relative overflow-hidden bg-[#13204F] text-white">
 
-      <div class="ajs-reveal-up mt-10 flex flex-col gap-4 sm:flex-row">
-        <a href="/contact-us"
-           class="rpc-paint-btn rpc-paint-btn-green inline-flex items-center justify-center px-8 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-          Request a Free Estimate
-        </a>
+  <!-- Background texture -->
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
+  <!-- Gold corner accent -->
+  <div class="absolute top-0 right-0 w-[520px] h-[520px] opacity-[0.08]" style="background:radial-gradient(circle at top right,#C9A84C,transparent 65%);"></div>
 
-        <a href="#services"
-           class="rpc-paint-btn rpc-paint-btn-outline inline-flex items-center justify-center px-8 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-          Explore Our Services
-        </a>
+  <div class="relative mx-auto max-w-7xl px-4 py-16 lg:py-24">
+    <div class="grid gap-10 lg:grid-cols-[1fr_480px] lg:gap-14 xl:grid-cols-[1fr_520px]">
+
+      <!-- LEFT: Copy -->
+      <div class="ajs-reveal-left flex flex-col justify-center">
+
+        <!-- Eyebrow -->
+        <p class="text-xs font-black uppercase tracking-[0.28em] text-[#C9A84C]">
+          Kansas City Metro &nbsp;·&nbsp; Building Services Platform
+        </p>
+
+        <!-- H1 — DO NOT ALTER -->
+        <h1 class="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl xl:text-7xl">
+          We Don't Just Clean Buildings. We Protect Them.
+        </h1>
+
+        <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
+
+        <!-- Subheadline -->
+        <p class="mt-7 max-w-xl text-base leading-8 text-white/82 md:text-lg">
+          KCS Commercial Services delivers institutional-grade commercial cleaning, landscaping, drywall, and roofing for property managers, healthcare facilities, school districts, and general contractors across the KC metro.
+          <strong class="mt-3 block font-black text-white/95">Consistent. Compliant. Built for long-term retention.</strong>
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#contact-form" class="kcs-btn kcs-btn-gold inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em]">
+            Request a Contract Quote
+          </a>
+          <a href="#services" class="kcs-btn kcs-btn-ghost inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
+            Explore Services
+          </a>
+        </div>
+
+        <!-- Location badges -->
+        <div class="mt-8 flex flex-wrap gap-2">
+          <?php foreach (['Overland Park','Olathe','Lenexa','Shawnee','Kansas City KS','Springfield MO'] as $loc) : ?>
+            <span class="inline-flex items-center gap-1.5 border border-white/14 bg-white/07 px-3 py-1.5 text-[0.68rem] font-black uppercase tracking-[0.12em] text-white/80">
+              <span class="block h-1.5 w-1.5 rounded-full bg-[#C9A84C]"></span>
+              <?php echo esc_html($loc); ?>
+            </span>
+          <?php endforeach; ?>
+        </div>
       </div>
-    </div>
 
-    <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-white to-transparent"></div>
-  </section>
+      <!-- RIGHT: Lead Form -->
+      <div id="contact-form" class="ajs-reveal-right">
+        <div class="relative overflow-hidden border border-white/10 bg-white/06 shadow-[0_24px_60px_rgba(0,0,0,0.30)] backdrop-blur-sm">
+          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
 
-  <!-- TRUST BAR -->
-  <section class="border-b border-[#192F44]/10 bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-5">
-      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <div class="ajs-reveal-up flex items-start gap-3">
-          <span class="mt-1 block h-3 w-3 bg-[#192F44]"></span>
-          <p class="text-sm font-extrabold leading-6 text-[#192F44]">C-33 Licensed · Insured · Bonded</p>
-        </div>
+          <div class="p-7 md:p-9">
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Free Consultation</p>
+            <h2 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em]">Get a Free Contract Quote</h2>
+            <p class="mt-2 text-sm leading-6 text-white/72">Tell us about your facility. We'll respond within 24 hours.</p>
 
-        <div class="ajs-reveal-up flex items-start gap-3">
-          <span class="mt-1 block h-3 w-3 bg-[#236476]"></span>
-          <p class="text-sm font-extrabold leading-6 text-[#192F44]">40+ Years Combined Experience</p>
-        </div>
-
-        <div class="ajs-reveal-up flex items-start gap-3">
-          <span class="mt-1 block h-3 w-3 bg-[#7DAD3F]"></span>
-          <p class="text-sm font-extrabold leading-6 text-[#192F44]">24–48 Hour Response Time</p>
-        </div>
-
-        <div class="ajs-reveal-up flex items-start gap-3">
-          <span class="mt-1 block h-3 w-3 bg-[#4A6C2F]"></span>
-          <p class="text-sm font-extrabold leading-6 text-[#192F44]">Serving OC · LA · Riverside · San Bernardino</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO WE ARE -->
-  <section class="relative bg-[#f6f5f0] py-20 lg:py-24">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-        <div class="ajs-reveal-left">
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-[#4A6C2F]">
-            Who We Are
-          </p>
-
-          <h2 class="mt-5 max-w-[10ch] text-3xl font-black leading-[0.94] tracking-[-0.05em] text-[#192F44] md:text-5xl">
-            One Team. Every Detail. Zero Surprises.
-          </h2>
-
-          <div class="mt-7 h-2 w-32 bg-[linear-gradient(90deg,#192F44_0%,#236476_35%,#7DAD3F_100%)]"></div>
-        </div>
-
-        <div class="ajs-reveal-right">
-          <div class="space-y-5 text-base leading-8 text-[#192F44]/80">
-            <p>
-              Real Painting Corp is a full-service painting and remodeling company based in Southern California. We handle everything from interior and exterior painting to complete kitchen and bathroom transformations — with the structure, licensing, and accountability that most contractors simply don’t offer.
-            </p>
-
-            <p>
-              We exist to eliminate the stress and uncertainty homeowners feel when hiring someone to work inside their home. That means protecting your space before we touch a wall. It means showing up when we say and finishing when we promise. And it means delivering a result you can see and feel — one that makes you say, “These are different.”
-            </p>
-
-            <p>
-              Our clients are homeowners across Orange County, Los Angeles, Riverside, and San Bernardino who value their property and refuse to gamble on the wrong contractor.
-            </p>
-
-            <div class="pt-2">
-              <a href="/about-us"
-                 class="inline-flex items-center gap-2 border-b-2 border-[#236476] pb-1 text-sm font-black uppercase tracking-[0.12em] text-[#236476] transition hover:gap-3">
-                Learn About Us
-                <span>→</span>
-              </a>
+            <div id="kcsHeroFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
+              Thank you — we'll be in touch within 24 hours.
             </div>
+            <div id="kcsHeroFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
+              Something went wrong. Please try again.
+            </div>
+
+            <form id="kcsHeroForm" class="mt-6 space-y-4" novalidate>
+              <?php echo kcs_form_fields($form_services, 'hero'); ?>
+              <button id="kcsHeroSubmitBtn" type="submit"
+                class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
+                Submit Request
+              </button>
+              <p class="text-center text-[0.7rem] text-white/52">
+                🔒 Your information is private and will never be shared.
+              </p>
+            </form>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SERVICES OVERVIEW -->
-  <section id="services" class="relative overflow-hidden border-y border-[#192F44]/10 bg-white py-20 lg:py-24">
-    <div class="absolute right-0 top-0 h-full w-[28%] bg-[#CFE0DA]/30"></div>
+<!-- ════════════════════════════════════════════════════════════════════
+     2. TRUST BAR
+═════════════════════════════════════════════════════════════════════ -->
+<section class="border-b border-[#1B2B6B]/10 bg-[#C9A84C]">
+  <div class="mx-auto max-w-7xl px-4 py-5">
+    <div class="flex flex-wrap items-center justify-center gap-x-0 gap-y-3 divide-x divide-[#1B2B6B]/20">
+      <?php foreach ($trust_items as $item) : ?>
+        <div class="flex items-center gap-2 px-6 py-1">
+          <svg class="h-4 w-4 shrink-0 text-[#13204F]" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span class="text-sm font-black uppercase tracking-[0.10em] text-[#13204F]">
+            <?php echo esc_html($item); ?>
+          </span>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
 
-    <div class="relative mx-auto max-w-7xl px-4">
-      <div class="ajs-reveal-up max-w-4xl">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-          Services Overview
-        </p>
+<!-- ════════════════════════════════════════════════════════════════════
+     3. ABOUT US
+═════════════════════════════════════════════════════════════════════ -->
+<section id="about" class="relative overflow-hidden bg-white py-20 lg:py-28">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.08),transparent_30%)]"></div>
+  <div class="absolute left-0 top-0 h-full w-[6px] bg-[linear-gradient(180deg,#C9A84C,#1B2B6B,#C9A84C)]"></div>
 
-        <h2 class="mt-5 text-3xl font-black leading-tight tracking-[-0.05em] text-[#192F44] md:text-5xl">
-          Everything Your Home Needs. One Team You Can Trust.
-        </h2>
+  <div class="relative mx-auto max-w-7xl px-4">
+
+    <!-- Header -->
+    <div class="ajs-reveal-up max-w-3xl">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">About KCS Commercial Services</p>
+      <h2 class="mt-4 text-3xl font-black leading-[0.94] tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
+        We Manage Your Building So You Can Run Your Business
+      </h2>
+      <div class="mt-6 h-1 w-24 bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)]"></div>
+    </div>
+
+    <!-- Body copy + pillars -->
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+
+      <div class="ajs-reveal-left space-y-6 text-base leading-8 text-[#1B2B6B]/78">
+        <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company — we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, and roofing.</p>
+        <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Springfield MO, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should — without you having to think about it.</p>
+        <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver — contract after contract, year after year.</p>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="#contact-form" class="kcs-btn kcs-btn-navy inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em] text-white">Work With Us</a>
+          <a href="#services"     class="kcs-btn kcs-btn-outline inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em]">Our Services</a>
+        </div>
       </div>
 
-      <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        <?php
-        $services = [
-          ['title' => 'Interior Painting', 'copy' => 'Walls, ceilings, trim, and accent work — with full surface preparation, furniture protection, and daily cleanup as standard. The finish your home deserves.', 'link' => '/services/interior-painting', 'tone' => '#192F44', 'cta' => 'Explore Interior Painting →'],
-          ['title' => 'Exterior Painting', 'copy' => 'Complete exterior coatings for stucco, siding, and trim — engineered for Southern California’s sun, wind, and climate. Protection that performs.', 'link' => '/services/exterior-painting', 'tone' => '#236476', 'cta' => 'Explore Exterior Painting →'],
-          ['title' => 'Kitchen Remodeling', 'copy' => 'Full kitchen transformations — layout, cabinets, countertops, tile, and finishing. The project that changes how your family lives.', 'link' => '/services/kitchen-remodeling', 'tone' => '#4A6C2F', 'cta' => 'Explore Kitchen Remodeling →'],
-          ['title' => 'Bathroom Remodeling', 'copy' => 'Shower conversions, tile, vanities, and modern upgrades that add comfort, style, and lasting value to your home.', 'link' => '/services/bathroom-remodeling', 'tone' => '#7DAD3F', 'cta' => 'Explore Bathroom Remodeling →'],
-          ['title' => 'Cabinet Refinishing & Staining', 'copy' => 'Refresh the look of your kitchen without the cost of full replacement. Professional refinishing that transforms the space.', 'link' => '/services/cabinet-refinishing-staining', 'tone' => '#192F44', 'cta' => 'Explore Cabinet Refinishing →'],
-          ['title' => 'Surface Repair & Preparation', 'copy' => 'Drywall, stucco, texture, acoustic ceiling removal, baseboards, doors, and windows — the foundation behind every lasting finish.', 'link' => '/services/surface-repair-preparation', 'tone' => '#236476', 'cta' => 'Explore Surface Repair →'],
-          ['title' => 'Pressure Washing', 'copy' => 'Deep cleaning for driveways, patios, walkways, and exterior surfaces — restoring your property’s appearance and preparing it for what’s next.', 'link' => '/services/pressure-washing', 'tone' => '#7DAD3F', 'cta' => 'Explore Pressure Washing →'],
-          ['title' => 'Commercial Painting', 'copy' => 'Professional results for offices, retail, and commercial properties — executed on schedule with minimal disruption to your operations.', 'link' => '/services/commercial-painting', 'tone' => '#4A6C2F', 'cta' => 'Explore Commercial Painting →'],
-        ];
+      <!-- 4 Pillars -->
+      <div class="ajs-reveal-right grid grid-cols-2 gap-4">
+        <?php foreach ($pillars as $pillar) : ?>
+          <article class="group relative overflow-hidden border border-[#1B2B6B]/10 bg-[#F5F4EF] p-5">
+            <div class="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)] transition-all duration-500 group-hover:h-1"></div>
+            <h3 class="text-base font-black leading-tight tracking-[-0.02em] text-[#1B2B6B]">
+              <?php echo esc_html($pillar['title']); ?>
+            </h3>
+            <p class="mt-2 text-[0.82rem] leading-6 text-[#1B2B6B]/68">
+              <?php echo esc_html($pillar['copy']); ?>
+            </p>
+          </article>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+</section>
 
-        foreach ($services as $service) : ?>
-          <article class="ajs-reveal-stagger group relative overflow-hidden border border-[#192F44]/10 bg-[#fdfcf8] p-6 shadow-[0_16px_34px_rgba(25,47,68,0.06)]">
-            <div class="absolute inset-x-0 top-0 h-2 transition-all duration-500 group-hover:h-3" style="background: <?php echo esc_attr($service['tone']); ?>;"></div>
+<!-- ════════════════════════════════════════════════════════════════════
+     4. SERVICES
+═════════════════════════════════════════════════════════════════════ -->
+<section id="services" class="relative overflow-hidden bg-[#F5F4EF] py-20 lg:py-28">
+  <div class="absolute right-0 top-0 h-full w-[30%] bg-[#1B2B6B]/03"></div>
 
-            <div class="mb-6 mt-2 flex gap-2">
-              <span class="h-8 w-8 border border-[#192F44]/10 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110" style="background: <?php echo esc_attr($service['tone']); ?>;"></span>
-              <span class="h-8 w-8 border border-[#192F44]/10 bg-[#CFE0DA] transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"></span>
-            </div>
+  <div class="relative mx-auto max-w-7xl px-4">
 
-            <h3 class="text-xl font-black tracking-[-0.03em] text-[#192F44]">
-              <?php echo esc_html($service['title']); ?>
+    <div class="ajs-reveal-up max-w-3xl">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">What We Do</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
+        A Platform Built Around Your Building — Not Just One Service
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-[#1B2B6B]/72">
+        Every service we offer is connected. Commercial cleaning opens the relationship. Grounds, drywall, and roofing expand it. Each contract builds toward a long-term partnership — not a one-time job.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2">
+      <?php foreach ($services as $svc) : ?>
+        <article class="ajs-reveal-stagger group relative overflow-hidden border border-[#1B2B6B]/10 bg-white">
+          <!-- Tone top bar -->
+          <div class="h-[5px] w-full transition-all duration-500 group-hover:h-2"
+            style="background:<?php echo esc_attr($svc['tone']); ?>;"></div>
+
+          <div class="p-7 md:p-8">
+            <h3 class="text-xl font-black leading-tight tracking-[-0.03em] text-[#1B2B6B]">
+              <?php echo $svc['headline']; ?>
             </h3>
 
-            <p class="mt-4 text-[15px] leading-8 text-[#192F44]/76">
-              <?php echo esc_html($service['copy']); ?>
+            <p class="mt-4 text-[0.9rem] leading-7 text-[#1B2B6B]/72">
+              <?php echo esc_html($svc['body']); ?>
             </p>
 
-            <a href="<?php echo esc_url($service['link']); ?>"
-               class="mt-6 inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em] text-[#236476] transition hover:gap-3">
-              <?php echo esc_html($service['cta']); ?>
+            <ul class="mt-5 space-y-2">
+              <?php foreach ($svc['bullets'] as $bullet) : ?>
+                <li class="flex items-start gap-2.5 text-[0.85rem] leading-6 text-[#1B2B6B]/78">
+                  <span class="mt-1.5 block h-2 w-2 shrink-0 rotate-45 bg-[#C9A84C]"></span>
+                  <?php echo esc_html($bullet); ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+
+            <a href="#contact-form"
+              class="mt-7 inline-flex items-center gap-2 border-b-2 border-[#C9A84C] pb-0.5 text-sm font-black uppercase tracking-[0.12em] text-[#1B2B6B] transition-all hover:gap-3">
+              <?php echo esc_html($svc['cta']); ?>
+              <span>→</span>
             </a>
-          </article>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY REAL PAINTING -->
-  <section class="relative overflow-hidden bg-[#192F44] py-20 text-white lg:py-24">
-    <div class="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(135deg,rgba(255,255,255,0.35)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.35)_50%,rgba(255,255,255,0.35)_75%,transparent_75%,transparent)] [background-size:20px_20px]"></div>
-
-    <div class="relative mx-auto max-w-7xl px-4">
-      <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-        <div class="ajs-reveal-left">
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-[#CFE0DA]">
-            Why Real Painting
-          </p>
-
-          <h2 class="mt-5 text-3xl font-black leading-tight tracking-[-0.05em] md:text-5xl">
-            In an Industry Full of Broken Promises, We Deliver Certainty.
-          </h2>
-
-          <p class="mt-6 max-w-md text-base leading-8 text-white/76">
-            The most common complaints homeowners have about contractors are irresponsibility, lack of cleanliness, and broken timelines. We built our entire company around solving those three problems.
-          </p>
-        </div>
-
-        <div class="grid gap-5 md:grid-cols-2">
-          <article class="ajs-reveal-up border border-white/12 bg-white/6 p-6 backdrop-blur-sm">
-            <h3 class="text-xl font-black">Clean Site Protocol</h3>
-            <p class="mt-4 text-[15px] leading-8 text-white/80">
-              We protect every surface before we start — floors, furniture, fixtures. When we leave each day, your home is cleaner than when we arrived. This isn’t a promise we make at the estimate. It’s what you’ll see on day one.
-            </p>
-          </article>
-
-          <article class="ajs-reveal-up border border-white/12 bg-white/6 p-6 backdrop-blur-sm">
-            <h3 class="text-xl font-black">Schedule Discipline</h3>
-            <p class="mt-4 text-[15px] leading-8 text-white/80">
-              We arrive when we say. We finish when we promise. Your time matters to us as much as the final result. Every project has a defined timeline, and we hold to it.
-            </p>
-          </article>
-
-          <article class="ajs-reveal-up border border-white/12 bg-white/6 p-6 backdrop-blur-sm">
-            <h3 class="text-xl font-black">Aesthetic Certainty</h3>
-            <p class="mt-4 text-[15px] leading-8 text-white/80">
-              You’ll know exactly what the result will look like before we begin. Our experience in color, finish, and design means no guesswork — just a result that makes you proud of your home.
-            </p>
-          </article>
-
-          <article class="ajs-reveal-up border border-[#7DAD3F]/30 bg-[linear-gradient(135deg,rgba(125,173,63,0.18),rgba(74,108,47,0.36))] p-6">
-            <h3 class="text-xl font-black">Licensed, Insured & Bonded</h3>
-            <p class="mt-4 text-[15px] leading-8 text-white/86">
-              C-33 licensed, General Liability, Workers’ Compensation, and bonded. This eliminates over 60% of informal competitors who operate without protection. Your home and your investment are fully covered.
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW WE WORK -->
-  <section class="bg-[#f6f5f0] py-20 lg:py-24">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="ajs-reveal-up mx-auto max-w-3xl text-center">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-[#4A6C2F]">
-          How We Work
-        </p>
-
-        <h2 class="mt-5 text-3xl font-black leading-tight tracking-[-0.05em] text-[#192F44] md:text-5xl">
-          A Clear Process. No Guesswork. No Surprises.
-        </h2>
-      </div>
-
-      <div class="mt-14 grid gap-6 xl:grid-cols-4">
-        <?php
-        $steps = [
-          ['num' => '01', 'title' => 'Free Consultation', 'copy' => 'We visit your property, listen to your goals, and assess the scope before recommending anything. No pressure, no obligation — just an honest conversation about what your home needs.', 'bg' => '#CFE0DA'],
-          ['num' => '02', 'title' => 'Detailed Estimate', 'copy' => 'You receive a clear, written proposal with defined scope, timeline, and pricing. No vague numbers. No hidden costs. You know exactly what you’re getting before we touch a wall.', 'bg' => '#ffffff'],
-          ['num' => '03', 'title' => 'Expert Execution', 'copy' => 'Our crew arrives on schedule, protects your home, and delivers premium workmanship with daily cleanup and progress updates. You’ll always know what happened today and what’s happening tomorrow.', 'bg' => '#ffffff'],
-          ['num' => '04', 'title' => 'Final Walk-Through', 'copy' => 'We don’t consider a project complete until you do. Every job ends with a walk-through, your full approval, and the confidence that you made the right call.', 'bg' => '#CFE0DA'],
-        ];
-
-        foreach ($steps as $step) : ?>
-          <article class="ajs-reveal-stagger relative overflow-hidden border border-[#192F44]/10 p-6 shadow-[0_16px_36px_rgba(25,47,68,0.06)]" style="background: <?php echo esc_attr($step['bg']); ?>;">
-            <div class="absolute right-0 top-0 h-16 w-16 translate-x-[25%] -translate-y-[25%] rotate-12 bg-[#7DAD3F]/16"></div>
-
-            <span class="inline-flex bg-[#192F44] px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-white">
-              <?php echo esc_html($step['num']); ?>
-            </span>
-
-            <h3 class="mt-5 text-xl font-black tracking-[-0.03em] text-[#192F44]">
-              <?php echo esc_html($step['title']); ?>
-            </h3>
-
-            <p class="mt-4 text-[15px] leading-8 text-[#192F44]/76">
-              <?php echo esc_html($step['copy']); ?>
-            </p>
-          </article>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="border-y border-[#192F44]/10 bg-white py-20 lg:py-24">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="ajs-reveal-left">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-          Testimonials
-        </p>
-
-        <h2 class="mt-5 max-w-[10ch] text-3xl font-black leading-[0.94] tracking-[-0.05em] text-[#192F44] md:text-5xl">
-          What Our Clients Say
-        </h2>
-      </div>
-
-      <div class="mt-14 grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <article class="ajs-reveal-up rpc-testimonial-featured">
-          <div class="rpc-testimonial-featured__inner">
-            <div class="rpc-testimonial-featured__top">
-              <span class="rpc-testimonial-bar bg-[#192F44]"></span>
-              <span class="rpc-testimonial-kicker text-[#236476]">Cleanliness</span>
-            </div>
-
-            <div class="rpc-testimonial-quote-mark text-[#192F44]/12">“</div>
-
-            <p class="rpc-testimonial-featured__copy">
-              They protected every inch of our home. When they finished, the house was spotless — not just painted, but cleaner than before they started.
-            </p>
-
-            <div class="rpc-testimonial-featured__meta">
-              <p class="rpc-testimonial-name">Homeowner, Mission Viejo, CA</p>
-            </div>
           </div>
         </article>
-
-        <div class="grid gap-6">
-          <article class="ajs-reveal-stagger rpc-testimonial-side rpc-testimonial-side--dark">
-            <div class="rpc-testimonial-side__top">
-              <span class="rpc-testimonial-bar bg-[#CFE0DA]"></span>
-              <span class="rpc-testimonial-kicker text-[#CFE0DA]">Schedule Discipline</span>
-            </div>
-
-            <p class="rpc-testimonial-side__copy text-white/84">
-              They showed up when they said they would and finished on the exact day they promised. I’ve never had that experience with a contractor before.
-            </p>
-
-            <div class="rpc-testimonial-side__meta">
-              <p class="rpc-testimonial-name text-white">Homeowner, Irvine, CA</p>
-            </div>
-          </article>
-
-          <article class="ajs-reveal-stagger rpc-testimonial-side rpc-testimonial-side--green">
-            <div class="rpc-testimonial-side__top">
-              <span class="rpc-testimonial-bar bg-[#192F44]"></span>
-              <span class="rpc-testimonial-kicker text-white/84">Trust-to-Remodel Path</span>
-            </div>
-
-            <p class="rpc-testimonial-side__copy text-white/88">
-              We hired them for a repaint and trusted them enough to do our kitchen remodel. Best decision we’ve made for our home.
-            </p>
-
-            <div class="rpc-testimonial-side__meta">
-              <p class="rpc-testimonial-name text-white">Homeowner, Corona, CA</p>
-            </div>
-          </article>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
-  </section>
 
-  <!-- GALLERY TEASER -->
-  <section class="bg-[#f6f5f0] py-20">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div class="ajs-reveal-left">
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-[#4A6C2F]">
-            Real Projects
-          </p>
-
-          <h2 class="mt-3 text-3xl font-black tracking-[-0.04em] text-[#192F44] md:text-5xl">
-            Real Projects. Real Results.
-          </h2>
-        </div>
-
-        <p class="ajs-reveal-right max-w-xl text-sm leading-7 text-[#192F44]/70 md:text-right">
-          Every project tells a story of clean execution, attention to detail, and a homeowner who felt certain from start to finish. See the work for yourself.
-        </p>
-      </div>
-
-      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <?php foreach ($gallery_images as $index => $image) : ?>
-          <article class="ajs-reveal-stagger group relative overflow-hidden border border-[#192F44]/10 bg-white shadow-sm">
-            <div class="relative h-[240px] overflow-hidden">
-              <img
-                src="<?php echo esc_url($image); ?>"
-                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                alt="Project <?php echo esc_attr($index + 1); ?>"
-              >
-
-              <div class="absolute inset-y-0 left-1/2 w-[2px] bg-white/70 backdrop-blur-sm"></div>
-
-              <span class="absolute left-4 top-4 bg-[#192F44] px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-white">
-                Before
-              </span>
-
-              <span class="absolute right-4 bottom-4 bg-[#7DAD3F] px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-white">
-                After
-              </span>
-
-              <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(25,47,68,0.08)_0%,rgba(25,47,68,0.18)_100%)]"></div>
-            </div>
-          </article>
-        <?php endforeach; ?>
-      </div>
-
-      <div class="ajs-reveal-up mt-12 text-center">
-        <a href="/gallery"
-           class="rpc-paint-btn rpc-paint-btn-dark inline-flex items-center justify-center px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-          View Our Work →
+    <!-- Anchor link -->
+    <div class="ajs-reveal-up mt-10 border border-[#1B2B6B]/12 bg-white px-8 py-5 text-center">
+      <p class="text-sm font-bold text-[#1B2B6B]/72">
+        Not sure which service fits your facility? —&nbsp;
+        <a href="#contact-form" class="font-black text-[#1B2B6B] underline decoration-[#C9A84C] underline-offset-3 transition hover:text-[#C9A84C]">
+          Talk to our team and we'll build the right contract →
         </a>
-      </div>
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SERVICE AREAS -->
-  <section class="border-y border-[#192F44]/10 bg-white py-20 lg:py-24">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="ajs-reveal-up mx-auto max-w-4xl text-center">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-          Service Areas
-        </p>
+<!-- ════════════════════════════════════════════════════════════════════
+     5. WHY KCS
+═════════════════════════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden bg-[#1B2B6B] py-20 text-white lg:py-28">
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.35) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.35) 50%,rgba(255,255,255,0.35) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(201,168,76,0.12),transparent_40%)]"></div>
 
-        <h2 class="mt-5 text-3xl font-black leading-tight tracking-[-0.05em] text-[#192F44] md:text-5xl">
-          Serving Southern California’s Most Valued Communities
-        </h2>
-      </div>
+  <div class="relative mx-auto max-w-7xl px-4">
 
-      <div class="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-        <?php
-        $areas = [
-          ['title' => 'Orange County', 'link' => '/locations/orange-county', 'swatch' => '#192F44'],
-          ['title' => 'Los Angeles County', 'link' => '/locations/los-angeles-county', 'swatch' => '#236476'],
-          ['title' => 'Riverside County', 'link' => '/locations/riverside-county', 'swatch' => '#7DAD3F'],
-          ['title' => 'San Bernardino County', 'link' => '/locations/san-bernardino-county', 'swatch' => '#4A6C2F'],
-        ];
+    <div class="ajs-reveal-up max-w-3xl">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Why KCS</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] md:text-5xl">
+        The Field Isn't Saturated. It's Just Poorly Occupied.
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-white/76">
+        Most facility managers and property owners have dealt with vendors who overpromise and underdeliver. KCS was built to be the obvious alternative — a structured, accountable, institutional-grade operation that makes the decision to hire us easy to justify to anyone asking questions.
+      </p>
+    </div>
 
-        foreach ($areas as $area) : ?>
-          <a href="<?php echo esc_url($area['link']); ?>"
-             class="ajs-reveal-stagger group border border-[#192F44]/10 bg-[#fdfcf8] p-6 transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(25,47,68,0.10)]">
-            <div class="mb-5 h-4 w-20 transition-all duration-500 group-hover:w-28" style="background: <?php echo esc_attr($area['swatch']); ?>;"></div>
-            <h3 class="text-xl font-black tracking-[-0.03em] text-[#192F44]">
-              <?php echo esc_html($area['title']); ?>
-            </h3>
-            <span class="mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em] text-[#236476] transition group-hover:gap-3">
-              Explore
-              <span>→</span>
+    <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <?php foreach ($differentiators as $d) : ?>
+        <article class="ajs-reveal-stagger group relative overflow-hidden border border-white/10 bg-white/05 p-7 backdrop-blur-sm transition hover:bg-white/08">
+          <span class="inline-flex items-center border border-[#C9A84C]/40 bg-[#C9A84C]/12 px-3 py-1 text-[0.7rem] font-black uppercase tracking-[0.16em] text-[#E8D49A]">
+            <?php echo esc_html($d['num']); ?>
+          </span>
+          <h3 class="mt-4 text-lg font-black leading-tight tracking-[-0.03em]">
+            <?php echo esc_html($d['title']); ?>
+          </h3>
+          <p class="mt-3 text-[0.88rem] leading-7 text-white/72">
+            <?php echo esc_html($d['copy']); ?>
+          </p>
+        </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     6. LOCATIONS
+═════════════════════════════════════════════════════════════════════ -->
+<section id="locations" class="relative overflow-hidden bg-white py-20 lg:py-28">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,168,76,0.07),transparent_28%)]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4">
+
+    <div class="ajs-reveal-up max-w-3xl">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Areas We Serve</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
+        Commercial Building Services Across the Kansas City Metro
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-[#1B2B6B]/70">
+        We serve where we can do it right. Our primary focus is the Johnson County corridor — the densest concentration of institutional buyers, healthcare systems, school districts, and commercial properties in the KC metro.
+      </p>
+    </div>
+
+    <!-- Tier A -->
+    <div class="mt-14">
+      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#C9A84C]">Tier A — Primary Markets</p>
+      <div class="grid gap-4 md:grid-cols-3">
+        <?php foreach ($locations_tier_a as $loc) : ?>
+          <a href="<?php echo esc_url($loc['href']); ?>"
+            class="ajs-reveal-stagger group relative overflow-hidden border border-[#1B2B6B]/12 bg-[#1B2B6B] p-7 text-white transition hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(27,43,107,0.22)]">
+            <div class="absolute inset-x-0 bottom-0 h-[3px] bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
+            <span class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#C9A84C]">📍</span>
+            <h3 class="mt-2 text-xl font-black tracking-[-0.03em]"><?php echo esc_html($loc['city']); ?></h3>
+            <p class="mt-2 text-[0.78rem] leading-5 text-white/65"><?php echo esc_html($loc['note']); ?></p>
+            <span class="mt-5 inline-flex items-center gap-1.5 text-[0.72rem] font-black uppercase tracking-[0.12em] text-[#C9A84C] transition-all group-hover:gap-2.5">
+              View Location <span>→</span>
             </span>
           </a>
         <?php endforeach; ?>
       </div>
     </div>
-  </section>
 
-<!-- FINAL CTA -->
-<section class="relative isolate overflow-hidden bg-[#f6f5f0] py-20 text-[#192F44] lg:py-24">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(35,100,118,0.08),transparent_28%)]"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(125,173,63,0.12),transparent_30%)]"></div>
-
-  <div class="relative mx-auto max-w-5xl px-4 text-center">
-    <p class="ajs-reveal-up text-xs font-black uppercase tracking-[0.22em] text-[#236476]">
-      Final CTA
-    </p>
-
-    <h2 class="ajs-reveal-up mt-5 text-3xl font-black leading-tight tracking-[-0.05em] md:text-5xl">
-      Ready to See What Real Looks Like?
-    </h2>
-
-    <p class="ajs-reveal-up mx-auto mt-6 max-w-3xl text-base leading-8 text-[#192F44]/80">
-      Whether you need a fresh interior, a complete exterior transformation, or a kitchen and bathroom that changes how you live — we deliver the certainty your home deserves.
-    </p>
-
-    <div class="ajs-reveal-up mt-8 flex flex-wrap items-center justify-center gap-3">
-      <a href="/contact-us"
-         class="rpc-paint-btn rpc-paint-btn-green inline-flex items-center justify-center px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-        Request a Free Estimate
-      </a>
-
-      <a href="tel:+19092326602"
-         class="rpc-paint-btn rpc-paint-btn-dark inline-flex items-center justify-center px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
-        (909) 232-6602
-      </a>
+    <!-- Tier B -->
+    <div class="mt-8">
+      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Tier B — Support Markets</p>
+      <div class="grid gap-4 md:grid-cols-2">
+        <?php foreach ($locations_tier_b as $loc) : ?>
+          <a href="<?php echo esc_url($loc['href']); ?>"
+            class="ajs-reveal-stagger group border border-[#1B2B6B]/12 bg-[#F5F4EF] p-6 transition hover:-translate-y-1 hover:border-[#C9A84C]/40 hover:shadow-[0_16px_36px_rgba(27,43,107,0.10)]">
+            <h3 class="flex items-center gap-2 text-lg font-black tracking-[-0.03em] text-[#1B2B6B]">
+              <span class="h-2.5 w-2.5 shrink-0 rotate-45 bg-[#C9A84C]"></span>
+              <?php echo esc_html($loc['city']); ?>
+            </h3>
+            <p class="mt-2 text-[0.8rem] leading-6 text-[#1B2B6B]/60"><?php echo esc_html($loc['note']); ?></p>
+          </a>
+        <?php endforeach; ?>
+      </div>
     </div>
 
-    <div class="rpc-paint-swipe rpc-paint-swipe-light mx-auto mt-10 max-w-2xl"></div>
+    <!-- Additional -->
+    <div class="mt-8">
+      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Additional Markets</p>
+      <div class="grid gap-4 md:grid-cols-2">
+        <?php foreach ($locations_additional as $loc) : ?>
+          <a href="<?php echo esc_url($loc['href']); ?>"
+            class="ajs-reveal-stagger group border border-[#1B2B6B]/12 bg-[#F5F4EF] p-6 transition hover:-translate-y-1 hover:border-[#C9A84C]/40 hover:shadow-[0_16px_36px_rgba(27,43,107,0.10)]">
+            <h3 class="flex items-center gap-2 text-lg font-black tracking-[-0.03em] text-[#1B2B6B]">
+              <span class="h-2.5 w-2.5 shrink-0 rotate-45 bg-[#C9A84C]/60"></span>
+              <?php echo esc_html($loc['city']); ?>
+            </h3>
+            <p class="mt-2 text-[0.8rem] leading-6 text-[#1B2B6B]/60"><?php echo esc_html($loc['note']); ?></p>
+          </a>
+        <?php endforeach; ?>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     7. HOW WE WORK
+═════════════════════════════════════════════════════════════════════ -->
+<section class="bg-[#F5F4EF] py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <div class="ajs-reveal-up mx-auto max-w-3xl text-center">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Our Process</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
+        From First Call to Long-Term Contract
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <?php foreach ($steps as $step) : ?>
+        <article class="ajs-reveal-stagger relative overflow-hidden border border-[#1B2B6B]/10 bg-white p-7">
+          <div class="absolute right-0 top-0 h-14 w-14 translate-x-1/4 -translate-y-1/4 rotate-12 bg-[#C9A84C]/10"></div>
+          <span class="inline-flex bg-[#1B2B6B] px-4 py-1.5 text-[0.7rem] font-black uppercase tracking-[0.18em] text-[#C9A84C]">
+            <?php echo esc_html($step['num']); ?>
+          </span>
+          <h3 class="mt-5 text-lg font-black leading-tight tracking-[-0.03em] text-[#1B2B6B]">
+            <?php echo esc_html($step['title']); ?>
+          </h3>
+          <p class="mt-3 text-[0.88rem] leading-7 text-[#1B2B6B]/68">
+            <?php echo esc_html($step['copy']); ?>
+          </p>
+        </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     8. FAQ
+═════════════════════════════════════════════════════════════════════ -->
+<section class="border-y border-[#1B2B6B]/10 bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-5xl px-4">
+
+    <div class="ajs-reveal-up mx-auto max-w-3xl text-center">
+      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Frequently Asked Questions</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
+        Common Questions From Facility Managers &amp; Property Owners
+      </h2>
+      <div class="mx-auto mt-5 h-1 w-24 bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)]"></div>
+    </div>
+
+    <div class="mt-12 grid gap-3">
+      <?php foreach ($faqs as $faq) : ?>
+        <details class="ajs-reveal-stagger kcs-faq group border border-[#1B2B6B]/10 bg-[#F5F4EF]">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
+            <span class="text-[0.97rem] font-black leading-6 tracking-[-0.01em] text-[#1B2B6B]">
+              <?php echo esc_html($faq['q']); ?>
+            </span>
+            <span class="kcs-faq-icon shrink-0 text-2xl font-light text-[#C9A84C]">+</span>
+          </summary>
+          <div class="border-t border-[#1B2B6B]/10 px-6 py-5">
+            <p class="text-[0.92rem] leading-7 text-[#1B2B6B]/76">
+              <?php echo esc_html($faq['a']); ?>
+            </p>
+          </div>
+        </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     9. FINAL CTA + DUPLICATE FORM
+═════════════════════════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden bg-[#13204F] py-20 text-white lg:py-28">
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.10),transparent_35%)]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4">
+    <div class="grid gap-14 lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_520px]">
+
+      <!-- Copy -->
+      <div class="ajs-reveal-left flex flex-col justify-center">
+        <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Ready to Get Started?</p>
+        <h2 class="mt-5 text-3xl font-black leading-tight tracking-[-0.05em] md:text-5xl">
+          Your Facility Deserves a Partner That Shows Up Every Time.
+        </h2>
+        <div class="mt-5 h-1 w-24 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
+        <p class="mt-7 max-w-xl text-base leading-8 text-white/76">
+          Stop chasing vendors. Stop explaining standards. Stop settling for inconsistency. Tell us about your facility and let's build a contract around what you actually need.
+        </p>
+      </div>
+
+      <!-- Duplicate form -->
+      <div class="ajs-reveal-right">
+        <div class="relative overflow-hidden border border-white/10 bg-white/06 backdrop-blur-sm">
+          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
+          <div class="p-7 md:p-9">
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Request a Contract Quote</p>
+            <h3 class="mt-3 text-xl font-black leading-tight tracking-[-0.04em]">Tell us about your facility.</h3>
+
+            <div id="kcsCtaFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
+              Thank you — we'll be in touch within 24 hours.
+            </div>
+            <div id="kcsCtaFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
+              Something went wrong. Please try again.
+            </div>
+
+            <form id="kcsCtaForm" class="mt-6 space-y-4" novalidate>
+              <?php echo kcs_form_fields($form_services, 'cta'); ?>
+              <button id="kcsCtaSubmitBtn" type="submit"
+                class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
+                Send My Request →
+              </button>
+              <p class="text-center text-[0.7rem] text-white/52">
+                🔒 We respect your privacy. Your information will never be shared.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 </main>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+<?php
+/* ── Form fields helper (reused in hero + CTA) ───────────────────── */
+function kcs_form_fields( array $services, string $prefix ) {
+  $html  = '<div class="grid gap-4 md:grid-cols-2">';
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_name" class="kcs-label">Full Name *</label>';
+  $html .= '<input id="' . $prefix . '_name" name="name" type="text" class="kcs-input" required>';
+  $html .= '</div>';
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_phone" class="kcs-label">Phone Number *</label>';
+  $html .= '<input id="' . $prefix . '_phone" name="phone" type="tel" class="kcs-input" required>';
+  $html .= '</div>';
+  $html .= '</div>';
 
-  .rpc-paint-home {
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_email" class="kcs-label">Email Address *</label>';
+  $html .= '<input id="' . $prefix . '_email" name="email" type="email" class="kcs-input" required>';
+  $html .= '</div>';
+
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_service" class="kcs-label">Service Needed *</label>';
+  $html .= '<select id="' . $prefix . '_service" name="service" class="kcs-input" required>';
+  $html .= '<option value="">Select a service</option>';
+  foreach ( $services as $option ) {
+    $html .= '<option value="' . esc_attr( $option ) . '">' . esc_html( $option ) . '</option>';
+  }
+  $html .= '</select>';
+  $html .= '</div>';
+
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_details" class="kcs-label">Additional Details</label>';
+  $html .= '<textarea id="' . $prefix . '_details" name="message" rows="4" class="kcs-input kcs-textarea"></textarea>';
+  $html .= '</div>';
+
+  return $html;
+}
+?>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+
+  /* ── Page base ──────────────────────────────────────────────────── */
+  .kcs-home {
     font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   }
 
-  .rpc-paint-home h1,
-  .rpc-paint-home h2,
-  .rpc-paint-home h3 {
-    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+  .kcs-home h1,
+  .kcs-home h2,
+  .kcs-home h3 {
+    font-family: "Barlow Condensed", "Space Grotesk", "Segoe UI", sans-serif;
   }
 
-  .rpc-hero-image {
-    animation: rpcHeroZoom 14s ease-out forwards;
-    transform: scale(1.06);
-  }
-
-  .rpc-paint-swipe {
-    height: 14px;
-    width: 100%;
-    background: linear-gradient(90deg, #192F44 0%, #236476 28%, #CFE0DA 55%, #7DAD3F 78%, #4A6C2F 100%);
-    clip-path: polygon(0 35%, 7% 20%, 14% 40%, 22% 18%, 30% 42%, 38% 22%, 48% 50%, 56% 26%, 66% 46%, 76% 18%, 86% 42%, 94% 22%, 100% 36%, 100% 100%, 0 100%);
-    opacity: 0.92;
-    animation: rpcSwipeShift 7s ease-in-out infinite alternate;
-  }
-
-  .rpc-paint-swipe-light {
-    background: linear-gradient(90deg, #CFE0DA 0%, #ffffff 36%, #CFE0DA 58%, #7DAD3F 100%);
-  }
-
-  .rpc-paint-btn {
+  /* ── Buttons ────────────────────────────────────────────────────── */
+  .kcs-btn {
     position: relative;
     border: 1px solid transparent;
-    transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, color .22s ease, border-color .22s ease;
     overflow: hidden;
+    transition: transform .22s ease, box-shadow .22s ease,
+                background-color .22s ease, border-color .22s ease, color .22s ease;
   }
 
-  .rpc-paint-btn::after {
+  .kcs-btn::after {
     content: "";
-    position: absolute;
-    inset: 0;
-    transform: translateX(-110%);
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
-    transition: transform .6s ease;
+    position: absolute; inset: 0;
+    transform: translateX(-115%);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: transform .65s ease;
   }
 
-  .rpc-paint-btn:hover::after {
-    transform: translateX(110%);
+  .kcs-btn:hover::after  { transform: translateX(115%); }
+  .kcs-btn:hover         { transform: translateY(-2px); }
+
+  .kcs-btn-gold {
+    background: linear-gradient(135deg, #C9A84C, #A8882E);
+    border-color: #C9A84C;
+    box-shadow: 0 16px 34px rgba(201,168,76,0.28);
+    color: #13204F;
+  }
+  .kcs-btn-gold:hover {
+    background: linear-gradient(135deg, #E8D49A, #C9A84C);
+    box-shadow: 0 20px 44px rgba(201,168,76,0.36);
   }
 
-  .rpc-paint-btn:hover {
-    transform: translateY(-2px);
+  .kcs-btn-navy {
+    background: #1B2B6B;
+    border-color: #1B2B6B;
+    box-shadow: 0 16px 34px rgba(27,43,107,0.22);
+  }
+  .kcs-btn-navy:hover {
+    background: #13204F;
+    border-color: #13204F;
   }
 
-  .rpc-paint-btn-dark {
-    background: #192F44;
-    border-color: #192F44;
-    box-shadow: 0 16px 34px rgba(25,47,68,0.18);
-  }
-
-  .rpc-paint-btn-dark:hover {
-    background: #236476;
-    border-color: #236476;
-  }
-
-  .rpc-paint-btn-green {
-    background: #7DAD3F;
-    border-color: #7DAD3F;
-    box-shadow: 0 16px 34px rgba(125,173,63,0.22);
-  }
-
-  .rpc-paint-btn-green:hover {
-    background: #4A6C2F;
-    border-color: #4A6C2F;
-  }
-
-  .rpc-paint-btn-outline {
-    background: rgba(255,255,255,0.06);
+  .kcs-btn-ghost {
+    background: rgba(255,255,255,0.07);
     border-color: rgba(255,255,255,0.18);
     backdrop-filter: blur(6px);
   }
-
-  .rpc-paint-btn-outline:hover {
-    background: #ffffff;
-    color: #192F44;
+  .kcs-btn-ghost:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.28);
   }
 
-  .rpc-testimonial-featured {
-    position: relative;
+  .kcs-btn-outline {
+    background: transparent;
+    border-color: #1B2B6B;
+    color: #1B2B6B;
   }
-
-  .rpc-testimonial-featured__inner {
-    position: relative;
-    overflow: hidden;
-    min-height: 100%;
-    border: 1px solid rgba(25,47,68,0.10);
-    background: #f7f5ef;
-    box-shadow: 0 24px 60px rgba(25,47,68,0.10);
-    padding: 2rem;
-  }
-
-  .rpc-testimonial-featured__inner::after {
-    content: "";
-    position: absolute;
-    right: -50px;
-    top: -40px;
-    width: 220px;
-    height: 220px;
-    background: radial-gradient(circle, rgba(35,100,118,0.09), transparent 68%);
-    pointer-events: none;
-  }
-
-  .rpc-testimonial-featured__top,
-  .rpc-testimonial-side__top {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-    z-index: 2;
-  }
-
-  .rpc-testimonial-bar {
-    display: inline-block;
-    width: 68px;
-    height: 8px;
-    flex: 0 0 auto;
-  }
-
-  .rpc-testimonial-kicker {
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  .rpc-testimonial-quote-mark {
-    position: absolute;
-    right: 1.5rem;
-    top: 3.75rem;
-    font-size: 8rem;
-    line-height: 1;
-    font-weight: 800;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .rpc-testimonial-featured__copy {
-    position: relative;
-    z-index: 2;
-    margin-top: 3.25rem;
-    max-width: 820px;
-    font-size: clamp(1.2rem, 2vw, 1.7rem);
-    line-height: 1.7;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    color: #192F44;
-  }
-
-  .rpc-testimonial-featured__meta,
-  .rpc-testimonial-side__meta {
-    margin-top: 2rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(25,47,68,0.10);
-    position: relative;
-    z-index: 2;
-  }
-
-  .rpc-testimonial-name {
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .rpc-testimonial-side {
-    position: relative;
-    overflow: hidden;
-    min-height: 248px;
-    border: 1px solid rgba(25,47,68,0.10);
-    padding: 1.75rem;
-    box-shadow: 0 18px 40px rgba(25,47,68,0.08);
-  }
-
-  .rpc-testimonial-side::after {
-    content: "";
-    position: absolute;
-    right: -30px;
-    top: -30px;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%);
-    pointer-events: none;
-  }
-
-  .rpc-testimonial-side--dark {
-    background: #192F44;
+  .kcs-btn-outline:hover {
+    background: #1B2B6B;
     color: #fff;
   }
 
-  .rpc-testimonial-side--green {
-    background: #7DAD3F;
-    color: #fff;
+  /* ── Form inputs ────────────────────────────────────────────────── */
+  .kcs-label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.65);
   }
 
-  .rpc-testimonial-side__copy {
-    position: relative;
-    z-index: 2;
-    margin-top: 2rem;
-    font-size: 1rem;
-    line-height: 1.95;
-    font-weight: 700;
-    letter-spacing: -0.01em;
+  .kcs-input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.07);
+    color: #ffffff;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    font-family: inherit;
+    outline: none;
+    transition: border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
+    appearance: none;
   }
 
+  .kcs-input::placeholder { color: rgba(255,255,255,0.35); }
+
+  .kcs-input:focus {
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.18);
+    background: rgba(255,255,255,0.10);
+  }
+
+  .kcs-textarea { resize: vertical; min-height: 100px; }
+
+  .kcs-input option { background: #1B2B6B; color: #fff; }
+
+  /* ── FAQ accordion ──────────────────────────────────────────────── */
+  .kcs-faq[open] .kcs-faq-icon { transform: rotate(45deg); }
+  .kcs-faq-icon { transition: transform .2s ease; }
+
+  /* ── Scroll reveal ──────────────────────────────────────────────── */
   .ajs-reveal-up,
   .ajs-reveal-left,
   .ajs-reveal-right,
@@ -714,22 +782,10 @@ get_header(); ?>
     will-change: opacity, transform;
     transition: opacity .85s ease, transform .85s ease;
   }
-
-  .ajs-reveal-up {
-    transform: translateY(34px);
-  }
-
-  .ajs-reveal-left {
-    transform: translateX(-36px);
-  }
-
-  .ajs-reveal-right {
-    transform: translateX(36px);
-  }
-
-  .ajs-reveal-stagger {
-    transform: translateY(28px);
-  }
+  .ajs-reveal-up      { transform: translateY(34px); }
+  .ajs-reveal-left    { transform: translateX(-36px); }
+  .ajs-reveal-right   { transform: translateX(36px); }
+  .ajs-reveal-stagger { transform: translateY(28px); }
 
   .ajs-reveal-up.is-visible,
   .ajs-reveal-left.is-visible,
@@ -739,89 +795,90 @@ get_header(); ?>
     transform: translate(0,0);
   }
 
-  @keyframes rpcSwipeShift {
-    0%   { transform: translateX(0) scaleX(1); }
-    100% { transform: translateX(6px) scaleX(1.01); }
-  }
-
-  @keyframes rpcHeroZoom {
-    0% {
-      transform: scale(1.08);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  @media (max-width: 1280px) {
-    .rpc-testimonial-featured__copy {
-      font-size: 1.3rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .rpc-testimonial-featured__inner {
-      padding: 1.5rem;
-    }
-
-    .rpc-testimonial-featured__copy {
-      margin-top: 2.75rem;
-      font-size: 1.05rem;
-      line-height: 1.9;
-    }
-
-    .rpc-testimonial-side {
-      min-height: auto;
-      padding: 1.4rem;
-    }
-
-    .rpc-testimonial-side__copy {
-      font-size: 0.95rem;
-      line-height: 1.85;
-    }
-
-    .rpc-testimonial-quote-mark {
-      right: 1rem;
-      top: 3.25rem;
-      font-size: 6rem;
-    }
-  }
+  /* ── Utilities ──────────────────────────────────────────────────── */
+  .hidden { display: none !important; }
 
   @media (prefers-reduced-motion: reduce) {
-    .ajs-reveal-up,
-    .ajs-reveal-left,
-    .ajs-reveal-right,
-    .ajs-reveal-stagger,
-    .rpc-paint-btn,
-    .rpc-paint-swipe,
-    .rpc-hero-image {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-      animation: none !important;
-    }
+    .ajs-reveal-up, .ajs-reveal-left,
+    .ajs-reveal-right, .ajs-reveal-stagger,
+    .kcs-btn { opacity: 1 !important; transform: none !important;
+               transition: none !important; animation: none !important; }
   }
 </style>
 
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll(
-      ".ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right, .ajs-reveal-stagger"
-    );
+document.addEventListener("DOMContentLoaded", function () {
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, idx) => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.classList.contains("ajs-reveal-stagger") ? (idx % 8) * 55 : 0;
-          setTimeout(() => {
-            entry.target.classList.add("is-visible");
-          }, delay);
-        }
-      });
-    }, { threshold: 0.12 });
+  /* ── Scroll reveal ──────────────────────────────────────────────── */
+  const revealItems = document.querySelectorAll(
+    ".ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right, .ajs-reveal-stagger"
+  )
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, idx) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.classList.contains("ajs-reveal-stagger")
+          ? (idx % 8) * 60 : 0
+        setTimeout(() => entry.target.classList.add("is-visible"), delay)
+      }
+    })
+  }, { threshold: 0.1 })
+  revealItems.forEach(el => observer.observe(el))
 
-    items.forEach((item) => observer.observe(item));
-  });
+  /* ── EmailJS init ───────────────────────────────────────────────── */
+  if (window.emailjs) {
+    emailjs.init({ publicKey: "CDikedp0ZSxxiBeLb" }) // replace with KCS key
+  }
+
+  /* ── Form helper ────────────────────────────────────────────────── */
+  function bindForm(formId, submitBtnId, successId, errorId, prefix) {
+    const form      = document.getElementById(formId)
+    const submitBtn = document.getElementById(submitBtnId)
+    const successEl = document.getElementById(successId)
+    const errorEl   = document.getElementById(errorId)
+
+    if (!form) return
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault()
+      successEl.classList.add("hidden")
+      errorEl.classList.add("hidden")
+
+      const originalText = submitBtn.textContent
+      submitBtn.disabled   = true
+      submitBtn.textContent = "Sending..."
+
+      const data = {
+        name:    document.getElementById(prefix + "_name").value,
+        phone:   document.getElementById(prefix + "_phone").value,
+        email:   document.getElementById(prefix + "_email").value,
+        service: document.getElementById(prefix + "_service").value,
+        message: document.getElementById(prefix + "_details").value,
+      }
+
+      emailjs.send(
+        "service_a03f0zf",    // replace with KCS EmailJS service ID
+        "template_17g32zt",   // replace with KCS EmailJS template ID
+        data
+      ).then(function () {
+        form.reset()
+        successEl.classList.remove("hidden")
+        submitBtn.disabled    = false
+        submitBtn.textContent = originalText
+      }).catch(function (err) {
+        console.error("EmailJS error:", err)
+        errorEl.classList.remove("hidden")
+        submitBtn.disabled    = false
+        submitBtn.textContent = originalText
+      })
+    })
+  }
+
+  bindForm("kcsHeroForm", "kcsHeroSubmitBtn", "kcsHeroFormSuccess", "kcsHeroFormError", "hero")
+  bindForm("kcsCtaForm",  "kcsCtaSubmitBtn",  "kcsCtaFormSuccess",  "kcsCtaFormError",  "cta")
+})
 </script>
 
 <?php get_footer(); ?>

@@ -2,37 +2,26 @@ import React, { useState, useEffect, useRef } from "react"
 
 // ─── KCS Brand Tokens ────────────────────────────────────────────────────────
 const KCS = {
-  navy:        "#1B2B6B",
-  navyDeep:    "#13204F",
-  navyLight:   "#243580",
+  navy:        "#1B3A6B",
+  navyDeep:    "#122649",
+  navyLight:   "#244580",
   gold:        "#C9A84C",
   goldDark:    "#A8882E",
   goldLight:   "#E8D49A",
   cream:       "#F5F4EF",
   white:       "#ffffff",
-  border:      "rgba(27, 43, 107, 0.12)",
+  border:      "rgba(27, 58, 107, 0.12)",
   borderLight: "rgba(255, 255, 255, 0.12)",
-  shadow:      "0 18px 40px rgba(27, 43, 107, 0.10)",
-  shadowStrong:"0 18px 44px rgba(27, 43, 107, 0.16)",
+  shadow:      "0 18px 40px rgba(27, 58, 107, 0.10)",
+  shadowStrong:"0 18px 44px rgba(27, 58, 107, 0.16)",
 }
 
-// ─── Nav Data (mirrors header.php) ───────────────────────────────────────────
+// ─── Nav Data ─────────────────────────────────────────────────────────────────
 const SERVICES = [
-  { label: "Interior Painting",      href: "/services/interior-painting"           },
-  { label: "Exterior Painting",      href: "/services/exterior-painting"           },
-  { label: "Kitchen Remodeling",     href: "/services/kitchen-remodeling"          },
-  { label: "Bathroom Remodeling",    href: "/services/bathroom-remodeling"         },
-  { label: "Cabinet Refinishing",    href: "/services/cabinet-refinishing-staining"},
-  { label: "Surface Repair & Prep",  href: "/services/surface-repair-preparation"  },
-  { label: "Pressure Washing",       href: "/services/pressure-washing"            },
-  { label: "Commercial Painting",    href: "/services/commercial-painting"         },
-]
-
-const LOCATIONS = [
-  { label: "Orange County",          href: "/locations/orange-county"         },
-  { label: "Los Angeles County",     href: "/locations/los-angeles-county"    },
-  { label: "Riverside County",       href: "/locations/riverside-county"      },
-  { label: "San Bernardino County",  href: "/locations/san-bernardino-county" },
+  { label: "Commercial Cleaning",   href: "/services/commercial-cleaning"  },
+  { label: "Landscaping & Grounds", href: "/services/landscaping-grounds"  },
+  { label: "Drywall & Interior",    href: "/services/drywall-interior"     },
+  { label: "Roofing & Siding",      href: "/services/roofing-siding"       },
 ]
 
 // ─── Shared desktop link style ────────────────────────────────────────────────
@@ -93,7 +82,7 @@ export default function Navbar() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
 
         .kcs-mobile-open { overflow: hidden; }
 
@@ -222,7 +211,7 @@ export default function Navbar() {
             {/* LEFT */}
             <div style={{ display:"flex", alignItems:"center", gap:"1.25rem", flexWrap:"wrap" }}>
 
-              <a href="tel:+19092326602" className="kcs-topbar-link"
+              <a href="tel:#" className="kcs-topbar-link"
                 style={{ display:"inline-flex", alignItems:"center", gap:"0.5rem",
                          fontSize:"0.78rem", fontWeight:700,
                          color: KCS.white, textDecoration:"none" }}>
@@ -236,7 +225,7 @@ export default function Navbar() {
                 </span>
                 <span style={{ fontSize:"0.64rem", fontWeight:800, textTransform:"uppercase",
                                letterSpacing:"0.14em", color: KCS.goldLight }}>Phone</span>
-                <span>(909) 232-6602</span>
+                <span>[Phone Number]</span>
               </a>
 
               <a href="#" className="kcs-topbar-link"
@@ -321,7 +310,7 @@ export default function Navbar() {
                 fontSize:"0.68rem", fontWeight:800, letterSpacing:"0.08em",
                 textTransform:"uppercase", color: KCS.goldLight,
               }}>
-                CSLB #1111920
+                KC Metro Based
               </span>
             </div>
           </div>
@@ -370,7 +359,7 @@ export default function Navbar() {
 
                 <span style={{ display:"flex", flexDirection:"column", lineHeight:1 }}>
                   <strong style={{
-                    fontFamily:"'Barlow Condensed', 'Space Grotesk', 'Segoe UI', sans-serif",
+                    fontFamily:"'Montserrat', 'Segoe UI', sans-serif",
                     fontSize:"1rem", fontWeight:800,
                     letterSpacing:"0.06em", textTransform:"uppercase",
                     color: KCS.navy,
@@ -404,7 +393,7 @@ export default function Navbar() {
                   <a href="/about-us" className="kcs-menu-link" style={desktopLinkStyle}>About Us</a>
                 </li>
 
-                {/* Services */}
+                {/* Services — dropdown */}
                 <li style={{ position:"relative" }}>
                   <button
                     type="button"
@@ -419,19 +408,9 @@ export default function Navbar() {
                   <Dropdown items={SERVICES} visible={openDropdown === "services"} />
                 </li>
 
-                {/* Locations */}
-                <li style={{ position:"relative" }}>
-                  <button
-                    type="button"
-                    className={`kcs-menu-link${openDropdown === "locations" ? " is-open" : ""}`}
-                    aria-expanded={openDropdown === "locations"}
-                    onClick={() => toggleDropdown("locations")}
-                    style={{ ...desktopLinkStyle, border:0, background:"transparent",
-                             cursor:"pointer", fontFamily:"inherit" }}>
-                    <span>Locations</span>
-                    <Caret open={openDropdown === "locations"} />
-                  </button>
-                  <Dropdown items={LOCATIONS} visible={openDropdown === "locations"} />
+                {/* Locations — plain link, no dropdown */}
+                <li>
+                  <a href="/locations" className="kcs-menu-link" style={desktopLinkStyle}>Locations</a>
                 </li>
 
                 <li>
@@ -449,13 +428,13 @@ export default function Navbar() {
                   minHeight:50, paddingInline:"1.25rem",
                   border:`1px solid transparent`,
                   background:`linear-gradient(135deg, ${KCS.navy}, ${KCS.navyLight})`,
-                  boxShadow:`0 18px 34px rgba(27,43,107,0.18)`,
+                  boxShadow:`0 18px 34px rgba(27,58,107,0.18)`,
                   color: KCS.goldLight,
                   textDecoration:"none", textTransform:"uppercase",
                   fontSize:"0.76rem", fontWeight:700, letterSpacing:"0.14em",
                   fontFamily:"inherit",
                 }}>
-                  Request a Free Estimate
+                  Request a Quote
                 </a>
               </div>
 
@@ -513,12 +492,7 @@ export default function Navbar() {
                     onToggle={() => setOpenMobileGroup(p => p === "services" ? null : "services")}
                   />
 
-                  <MobileGroup
-                    label="Locations"
-                    items={LOCATIONS}
-                    open={openMobileGroup === "locations"}
-                    onToggle={() => setOpenMobileGroup(p => p === "locations" ? null : "locations")}
-                  />
+                  <MobileLink href="/locations">Locations</MobileLink>
 
                   <MobileLink href="/contact-us">Contact Us</MobileLink>
 
@@ -527,13 +501,13 @@ export default function Navbar() {
                     marginTop:"1rem", minHeight:50, paddingInline:"1.25rem",
                     border:`1px solid transparent`,
                     background:`linear-gradient(135deg, ${KCS.navy}, ${KCS.navyLight})`,
-                    boxShadow:`0 18px 34px rgba(27,43,107,0.18)`,
+                    boxShadow:`0 18px 34px rgba(27,58,107,0.18)`,
                     color: KCS.goldLight,
                     textDecoration:"none", textTransform:"uppercase",
                     fontSize:"0.76rem", fontWeight:700, letterSpacing:"0.14em",
                     fontFamily:"inherit",
                   }}>
-                    Request a Free Estimate
+                    Request a Quote
                   </a>
                 </nav>
               </div>

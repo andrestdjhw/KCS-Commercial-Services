@@ -533,58 +533,33 @@ __webpack_require__.r(__webpack_exports__);
 // ─── KCS Brand Tokens ────────────────────────────────────────────────────────
 
 const KCS = {
-  navy: "#1B2B6B",
-  navyDeep: "#13204F",
-  navyLight: "#243580",
+  navy: "#1B3A6B",
+  navyDeep: "#122649",
+  navyLight: "#244580",
   gold: "#C9A84C",
   goldDark: "#A8882E",
   goldLight: "#E8D49A",
   cream: "#F5F4EF",
   white: "#ffffff",
-  border: "rgba(27, 43, 107, 0.12)",
+  border: "rgba(27, 58, 107, 0.12)",
   borderLight: "rgba(255, 255, 255, 0.12)",
-  shadow: "0 18px 40px rgba(27, 43, 107, 0.10)",
-  shadowStrong: "0 18px 44px rgba(27, 43, 107, 0.16)"
+  shadow: "0 18px 40px rgba(27, 58, 107, 0.10)",
+  shadowStrong: "0 18px 44px rgba(27, 58, 107, 0.16)"
 };
 
-// ─── Nav Data (mirrors header.php) ───────────────────────────────────────────
+// ─── Nav Data ─────────────────────────────────────────────────────────────────
 const SERVICES = [{
-  label: "Interior Painting",
-  href: "/services/interior-painting"
+  label: "Commercial Cleaning",
+  href: "/services/commercial-cleaning"
 }, {
-  label: "Exterior Painting",
-  href: "/services/exterior-painting"
+  label: "Landscaping & Grounds",
+  href: "/services/landscaping-grounds"
 }, {
-  label: "Kitchen Remodeling",
-  href: "/services/kitchen-remodeling"
+  label: "Drywall & Interior",
+  href: "/services/drywall-interior"
 }, {
-  label: "Bathroom Remodeling",
-  href: "/services/bathroom-remodeling"
-}, {
-  label: "Cabinet Refinishing",
-  href: "/services/cabinet-refinishing-staining"
-}, {
-  label: "Surface Repair & Prep",
-  href: "/services/surface-repair-preparation"
-}, {
-  label: "Pressure Washing",
-  href: "/services/pressure-washing"
-}, {
-  label: "Commercial Painting",
-  href: "/services/commercial-painting"
-}];
-const LOCATIONS = [{
-  label: "Orange County",
-  href: "/locations/orange-county"
-}, {
-  label: "Los Angeles County",
-  href: "/locations/los-angeles-county"
-}, {
-  label: "Riverside County",
-  href: "/locations/riverside-county"
-}, {
-  label: "San Bernardino County",
-  href: "/locations/san-bernardino-county"
+  label: "Roofing & Siding",
+  href: "/services/roofing-siding"
 }];
 
 // ─── Shared desktop link style ────────────────────────────────────────────────
@@ -650,7 +625,7 @@ function Navbar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
       children: `
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
 
         .kcs-mobile-open { overflow: hidden; }
 
@@ -783,7 +758,7 @@ function Navbar() {
               flexWrap: "wrap"
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "tel:+19092326602",
+              href: "tel:#",
               className: "kcs-topbar-link",
               style: {
                 display: "inline-flex",
@@ -827,7 +802,7 @@ function Navbar() {
                 },
                 children: "Phone"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: "(909) 232-6602"
+                children: "[Phone Number]"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "#",
@@ -1012,7 +987,7 @@ function Navbar() {
                 textTransform: "uppercase",
                 color: KCS.goldLight
               },
-              children: "CSLB #1111920"
+              children: "KC Metro Based"
             })]
           })]
         })
@@ -1080,7 +1055,7 @@ function Navbar() {
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
                   style: {
-                    fontFamily: "'Barlow Condensed', 'Space Grotesk', 'Segoe UI', sans-serif",
+                    fontFamily: "'Montserrat', 'Segoe UI', sans-serif",
                     fontSize: "1rem",
                     fontWeight: 800,
                     letterSpacing: "0.06em",
@@ -1157,31 +1132,13 @@ function Navbar() {
                   items: SERVICES,
                   visible: openDropdown === "services"
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                style: {
-                  position: "relative"
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
-                  type: "button",
-                  className: `kcs-menu-link${openDropdown === "locations" ? " is-open" : ""}`,
-                  "aria-expanded": openDropdown === "locations",
-                  onClick: () => toggleDropdown("locations"),
-                  style: {
-                    ...desktopLinkStyle,
-                    border: 0,
-                    background: "transparent",
-                    cursor: "pointer",
-                    fontFamily: "inherit"
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                    children: "Locations"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Caret, {
-                    open: openDropdown === "locations"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Dropdown, {
-                  items: LOCATIONS,
-                  visible: openDropdown === "locations"
-                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: "/locations",
+                  className: "kcs-menu-link",
+                  style: desktopLinkStyle,
+                  children: "Locations"
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "/contact-us",
@@ -1213,7 +1170,7 @@ function Navbar() {
                   paddingInline: "1.25rem",
                   border: `1px solid transparent`,
                   background: `linear-gradient(135deg, ${KCS.navy}, ${KCS.navyLight})`,
-                  boxShadow: `0 18px 34px rgba(27,43,107,0.18)`,
+                  boxShadow: `0 18px 34px rgba(27,58,107,0.18)`,
                   color: KCS.goldLight,
                   textDecoration: "none",
                   textTransform: "uppercase",
@@ -1222,7 +1179,7 @@ function Navbar() {
                   letterSpacing: "0.14em",
                   fontFamily: "inherit"
                 },
-                children: "Request a Free Estimate"
+                children: "Request a Quote"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               className: "kcs-nav-toggle",
@@ -1287,11 +1244,9 @@ function Navbar() {
                 items: SERVICES,
                 open: openMobileGroup === "services",
                 onToggle: () => setOpenMobileGroup(p => p === "services" ? null : "services")
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(MobileGroup, {
-                label: "Locations",
-                items: LOCATIONS,
-                open: openMobileGroup === "locations",
-                onToggle: () => setOpenMobileGroup(p => p === "locations" ? null : "locations")
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(MobileLink, {
+                href: "/locations",
+                children: "Locations"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(MobileLink, {
                 href: "/contact-us",
                 children: "Contact Us"
@@ -1307,7 +1262,7 @@ function Navbar() {
                   paddingInline: "1.25rem",
                   border: `1px solid transparent`,
                   background: `linear-gradient(135deg, ${KCS.navy}, ${KCS.navyLight})`,
-                  boxShadow: `0 18px 34px rgba(27,43,107,0.18)`,
+                  boxShadow: `0 18px 34px rgba(27,58,107,0.18)`,
                   color: KCS.goldLight,
                   textDecoration: "none",
                   textTransform: "uppercase",
@@ -1316,7 +1271,7 @@ function Navbar() {
                   letterSpacing: "0.14em",
                   fontFamily: "inherit"
                 },
-                children: "Request a Free Estimate"
+                children: "Request a Quote"
               })]
             })
           })

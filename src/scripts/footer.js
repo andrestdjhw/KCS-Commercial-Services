@@ -2,9 +2,9 @@ import React from "react"
 
 // ─── KCS Brand Tokens ────────────────────────────────────────────────────────
 const KCS = {
-  navy:        "#1B2B6B",
-  navyDeep:    "#13204F",
-  navyLight:   "#243580",
+  navy:        "#1B3A6B",
+  navyDeep:    "#122649",
+  navyLight:   "#244580",
   gold:        "#C9A84C",
   goldDark:    "#A8882E",
   goldLight:   "#E8D49A",
@@ -14,25 +14,32 @@ const KCS = {
   textBody:    "rgba(255, 255, 255, 0.82)",
 }
 
-// ─── Footer Data (mirrors footer.php) ────────────────────────────────────────
+// ─── Footer Data ─────────────────────────────────────────────────────────────
 const SERVICES = [
-  { label: "Interior Painting",     href: "/services/interior-painting"           },
-  { label: "Exterior Painting",     href: "/services/exterior-painting"           },
-  { label: "Kitchen Remodeling",    href: "/services/kitchen-remodeling"          },
-  { label: "Bathroom Remodeling",   href: "/services/bathroom-remodeling"         },
-  { label: "Cabinet Refinishing",   href: "/services/cabinet-refinishing-staining"},
-  { label: "Surface Repair & Prep", href: "/services/surface-repair-preparation"  },
-  { label: "Pressure Washing",      href: "/services/pressure-washing"            },
-  { label: "Commercial Painting",   href: "/services/commercial-painting"         },
+  { label: "Commercial Cleaning",   href: "/services/commercial-cleaning"  },
+  { label: "Landscaping & Grounds", href: "/services/landscaping-grounds"  },
+  { label: "Drywall & Interior",    href: "/services/drywall-interior"     },
+  { label: "Roofing & Siding",      href: "/services/roofing-siding"       },
+]
+
+const LOCATIONS = [
+  { label: "Overland Park, KS",  href: "/location/overland-park-ks"  },
+  { label: "Olathe, KS",         href: "/location/olathe-ks"         },
+  { label: "Lenexa, KS",         href: "/location/lenexa-ks"         },
+  { label: "Shawnee, KS",        href: "/location/shawnee-ks"        },
+  { label: "Kansas City, KS",    href: "/location/kansas-city-ks"    },
+  { label: "Paola, KS",          href: "/location/paola-ks"          },
+  { label: "Springfield, MO",    href: "/location/springfield-mo"    },
 ]
 
 const QUICK_LINKS = [
-  { label: "Home",             href: "/"                },
-  { label: "About Us",         href: "/about-us"        },
-  { label: "Gallery",          href: "/gallery"         },
-  { label: "Contact Us",       href: "/contact-us"      },
-  { label: "Privacy Policy",   href: "/privacy-policy"  },
-  { label: "Terms & Conditions", href: "/terms-conditions" },
+  { label: "Home",               href: "/"                  },
+  { label: "About Us",           href: "/about-us"          },
+  { label: "Services",           href: "/services"          },
+  { label: "Locations",          href: "/locations"         },
+  { label: "Contact Us",         href: "/contact-us"        },
+  { label: "Privacy Policy",     href: "/privacy-policy"    },
+  { label: "Terms & Conditions", href: "/terms-conditions"  },
 ]
 
 // ─── Main Component ───────────────────────────────────────────────────────────
@@ -42,7 +49,7 @@ export default function Footer() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
 
         .kcs-footer-link {
           transition: color .2s ease, transform .2s ease;
@@ -118,39 +125,23 @@ export default function Footer() {
               {/* ── COL 1: Brand ── */}
               <div className="kcs-footer-brand-col" style={{ maxWidth: 420 }}>
 
-                {/* Brand mark + name */}
+                {/* PNG Logo */}
                 <a href="/" aria-label="KCS Commercial Services Home" style={{
-                  display: "inline-flex", alignItems: "center", gap: "0.9rem",
-                  textDecoration: "none", color: KCS.white,
+                  display: "inline-flex", alignItems: "center",
+                  textDecoration: "none",
                 }}>
-                  {/* Parallelogram mark — same shape as navbar */}
-                  <span style={{ position:"relative", width:18, height:42, flexShrink:0, display:"block" }}>
-                    <span style={{
-                      position: "absolute", inset: 0,
-                      background: `linear-gradient(180deg, ${KCS.gold}, ${KCS.goldDark})`,
-                      clipPath: "polygon(18% 0, 100% 0, 82% 100%, 0 100%)",
+                  <img
+                    src="/wp-content/uploads/2026/04/KCSLogoFooter-scaled.png"
+                    alt="KCS Commercial Services LLC"
+                    style={{
+                      height: 52,
+                      width: "auto",
+                      maxWidth: 220,
                       display: "block",
-                    }} />
-                  </span>
-
-                  <span style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-                    <strong style={{
-                      fontFamily: "'Barlow Condensed', 'Space Grotesk', 'Segoe UI', sans-serif",
-                      fontSize: "1rem", fontWeight: 800,
-                      letterSpacing: "0.06em", textTransform: "uppercase",
-                      color: KCS.white,
-                    }}>
-                      KCS Commercial Services
-                    </strong>
-                    <em style={{
-                      marginTop: "0.35rem", fontStyle: "normal",
-                      fontSize: "0.64rem", fontWeight: 800,
-                      textTransform: "uppercase", letterSpacing: "0.22em",
-                      color: KCS.gold,
-                    }}>
-                      LLC
-                    </em>
-                  </span>
+                      objectFit: "contain",
+                      filter: "brightness(0) invert(1)",
+                    }}
+                  />
                 </a>
 
                 {/* About blurb */}
@@ -159,15 +150,15 @@ export default function Footer() {
                   color: KCS.textBody,
                   fontSize: "0.95rem", lineHeight: 1.9,
                 }}>
-                  KCS Commercial Services is a full-service painting and remodeling
-                  company serving Southern California. Clean execution. Schedule
-                  discipline. Aesthetic certainty. Licensed, insured, and bonded —
-                  with 40+ years of combined experience.
+                  Kansas City's institutional building services platform. Anchored
+                  in commercial cleaning. Expanded through landscaping, drywall, and
+                  roofing. Built for property managers, healthcare, schools, and GCs
+                  who need a partner they can trust without supervision.
                 </p>
 
                 {/* Credential badges */}
                 <div style={{ display:"flex", flexWrap:"wrap", gap:"0.7rem", marginTop:"1.4rem" }}>
-                  {["C-33 Licensed", "Insured", "Bonded", "Google Reviews"].map((badge) => (
+                  {["Fully Insured", "Documented Protocols", "Compliance-Ready", "KC Metro Based"].map((badge) => (
                     <span key={badge} className="kcs-footer-badge" style={{
                       display: "inline-flex", alignItems: "center",
                       minHeight: 34, paddingInline: "0.8rem",
@@ -183,15 +174,6 @@ export default function Footer() {
 
                 {/* Social icons */}
                 <div style={{ display:"flex", gap:"0.5rem", marginTop:"1.4rem" }}>
-                  <FooterSocial href="#" label="Google">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" style={{width:16,height:16}}>
-                      <path fill="currentColor" d="M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5c-.2 1.2-.9 2.3-1.9 3v2.5h3.1c1.8-1.7 3.1-4.2 3.1-7.2Z"/>
-                      <path fill="currentColor" d="M12 22c2.7 0 5-.9 6.7-2.5l-3.1-2.5c-.9.6-2 .9-3.6.9-2.8 0-5.2-1.9-6-4.5H2.8v2.6A10 10 0 0 0 12 22Z"/>
-                      <path fill="currentColor" d="M6 13.4A6 6 0 0 1 5.7 12c0-.5.1-.9.2-1.4V8H2.8A10 10 0 0 0 2 12c0 1.4.3 2.8.8 4l3.2-2.6Z"/>
-                      <path fill="currentColor" d="M12 6c1.5 0 2.8.5 3.9 1.5l2.9-2.9A10 10 0 0 0 2.8 8l3.1 2.6C6.8 7.9 9.2 6 12 6Z"/>
-                    </svg>
-                  </FooterSocial>
-
                   <FooterSocial href="#" label="Facebook">
                     <svg viewBox="0 0 24 24" aria-hidden="true" style={{width:16,height:16}}>
                       <path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.6c0-.9.3-1.6 1.7-1.6h1.8V4.1c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6v2h-3v3.2h3V22h3.7Z"/>
@@ -203,6 +185,14 @@ export default function Footer() {
                       <path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.4 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"/>
                     </svg>
                   </FooterSocial>
+
+                  <FooterSocial href="#" label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" style={{width:16,height:16}}>
+                      <path fill="currentColor" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                      <rect fill="currentColor" x="2" y="9" width="4" height="12"/>
+                      <circle fill="currentColor" cx="4" cy="4" r="2"/>
+                    </svg>
+                  </FooterSocial>
                 </div>
               </div>
 
@@ -211,19 +201,32 @@ export default function Footer() {
                 <FooterHeading>Contact</FooterHeading>
                 <ul style={{ listStyle:"none", margin:0, padding:0, display:"grid", gap:"0.7rem" }}>
                   <li>
-                    <a href="tel:+19092326602" className="kcs-footer-link" style={footerLinkStyle}>
-                      (909) 232-6602
+                    <a href="tel:#" className="kcs-footer-link" style={footerLinkStyle}>
+                      [Phone Number]
                     </a>
                   </li>
                   <li>
                     <a href="#" className="kcs-footer-link" style={footerLinkStyle}>
-                      [client email]
+                      [Email Address]
                     </a>
                   </li>
                   <li>
                     <span style={{ color: KCS.textMuted, fontSize:"0.92rem", lineHeight:1.7 }}>
-                      Serving OC · LA · Riverside · San Bernardino
+                      Kansas City Metro, KS · Springfield, MO
                     </span>
+                  </li>
+                  <li style={{ paddingTop: "0.5rem" }}>
+                    <a href="/contact-us" style={{
+                      display: "inline-flex", alignItems: "center", justifyContent: "center",
+                      paddingInline: "1rem", minHeight: 40,
+                      background: `linear-gradient(135deg, ${KCS.gold}, ${KCS.goldDark})`,
+                      color: "#122649",
+                      textDecoration: "none",
+                      fontSize: "0.72rem", fontWeight: 800,
+                      letterSpacing: "0.12em", textTransform: "uppercase",
+                    }}>
+                      Get a Quote →
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -240,6 +243,19 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
+
+                <div style={{ marginTop: "1.75rem" }}>
+                  <FooterHeading>Locations</FooterHeading>
+                  <ul style={{ listStyle:"none", margin:0, padding:0, display:"grid", gap:"0.7rem" }}>
+                    {LOCATIONS.map((l) => (
+                      <li key={l.href}>
+                        <a href={l.href} className="kcs-footer-link" style={footerLinkStyle}>
+                          {l.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               {/* ── COL 4: Quick Links ── */}
@@ -271,12 +287,33 @@ export default function Footer() {
             minHeight: 64,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "0.75rem",
+            paddingBlock: "0.75rem",
           }}>
             <p style={{ margin:0, color: KCS.textMuted, fontSize:"0.84rem", lineHeight:1.6 }}>
               © {currentYear} KCS Commercial Services LLC. All Rights Reserved.
             </p>
+            <div style={{ display:"flex", gap:"1.25rem", flexWrap:"wrap" }}>
+              {[
+                { label: "kcscommercial.com", href: "/" },
+                { label: "Privacy Policy",    href: "/privacy-policy" },
+                { label: "Terms & Conditions",href: "/terms-conditions" },
+                { label: "Sitemap",           href: "/sitemap.xml" },
+              ].map((link) => (
+                <a key={link.href} href={link.href} style={{
+                  color: KCS.textMuted, textDecoration: "none",
+                  fontSize: "0.78rem", fontWeight: 600,
+                  transition: "color .2s ease",
+                }}
+                  onMouseEnter={e => e.currentTarget.style.color = KCS.white}
+                  onMouseLeave={e => e.currentTarget.style.color = KCS.textMuted}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -291,7 +328,7 @@ function FooterHeading({ children }) {
   return (
     <h3 style={{
       margin: "0 0 1rem",
-      fontFamily: "'Barlow Condensed', 'Space Grotesk', 'Segoe UI', sans-serif",
+      fontFamily: "'Montserrat', 'Segoe UI', sans-serif",
       fontSize: "0.88rem", fontWeight: 700,
       letterSpacing: "0.14em", textTransform: "uppercase",
       color: KCS.gold,

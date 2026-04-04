@@ -338,43 +338,20 @@ export default function Navbar() {
             {/* ── BRAND ── */}
             <div>
               <a href="/" aria-label="KCS Commercial Services Home"
-                style={{ display:"inline-flex", alignItems:"center", gap:"0.9rem",
+                style={{ display:"inline-flex", alignItems:"center",
                          textDecoration:"none", color: KCS.navy }}>
-
-                {/* Brand mark — parallelogram with KCS gold, mirrors rpc-brand__mark shape */}
-                <span style={{ position:"relative", width:18, height:42, flexShrink:0, display:"block" }}>
-                  <span className="kcs-brand-mark-outer" style={{
-                    position:"absolute", inset:0,
-                    border:`2px solid ${KCS.gold}`,
-                    clipPath:"polygon(18% 0, 100% 0, 82% 100%, 0 100%)",
-                    display:"block",
-                  }} />
-                  <span style={{
-                    position:"absolute", inset:3,
-                    background:`linear-gradient(180deg, ${KCS.gold}, ${KCS.goldDark})`,
-                    clipPath:"polygon(18% 0, 100% 0, 82% 100%, 0 100%)",
-                    display:"block",
-                  }} />
-                </span>
-
-                <span style={{ display:"flex", flexDirection:"column", lineHeight:1 }}>
-                  <strong style={{
-                    fontFamily:"'Montserrat', 'Segoe UI', sans-serif",
-                    fontSize:"1rem", fontWeight:800,
-                    letterSpacing:"0.06em", textTransform:"uppercase",
-                    color: KCS.navy,
-                  }}>
-                    KCS Commercial Services
-                  </strong>
-                  <em style={{
-                    marginTop:"0.35rem", fontStyle:"normal",
-                    fontSize:"0.64rem", fontWeight:800,
-                    textTransform:"uppercase", letterSpacing:"0.22em",
-                    color: KCS.gold,
-                  }}>
-                    LLC
-                  </em>
-                </span>
+                <img
+                  src="/wp-content/uploads/2026/04/KCSBrandLogo-scaled.png"
+                  alt="KCS Commercial Services LLC"
+                  style={{
+                    height: 52,
+                    width: "auto",
+                    maxWidth: 240,
+                    display: "block",
+                    objectFit: "contain",
+                    flexShrink: 0,
+                  }}
+                />
               </a>
             </div>
 

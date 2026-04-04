@@ -58,9 +58,9 @@ __webpack_require__.r(__webpack_exports__);
 // ─── KCS Brand Tokens ────────────────────────────────────────────────────────
 
 const KCS = {
-  navy: "#1B2B6B",
-  navyDeep: "#13204F",
-  navyLight: "#243580",
+  navy: "#1B3A6B",
+  navyDeep: "#122649",
+  navyLight: "#244580",
   gold: "#C9A84C",
   goldDark: "#A8882E",
   goldLight: "#E8D49A",
@@ -70,31 +70,41 @@ const KCS = {
   textBody: "rgba(255, 255, 255, 0.82)"
 };
 
-// ─── Footer Data (mirrors footer.php) ────────────────────────────────────────
+// ─── Footer Data ─────────────────────────────────────────────────────────────
 const SERVICES = [{
-  label: "Interior Painting",
-  href: "/services/interior-painting"
+  label: "Commercial Cleaning",
+  href: "/services/commercial-cleaning"
 }, {
-  label: "Exterior Painting",
-  href: "/services/exterior-painting"
+  label: "Landscaping & Grounds",
+  href: "/services/landscaping-grounds"
 }, {
-  label: "Kitchen Remodeling",
-  href: "/services/kitchen-remodeling"
+  label: "Drywall & Interior",
+  href: "/services/drywall-interior"
 }, {
-  label: "Bathroom Remodeling",
-  href: "/services/bathroom-remodeling"
+  label: "Roofing & Siding",
+  href: "/services/roofing-siding"
+}];
+const LOCATIONS = [{
+  label: "Overland Park, KS",
+  href: "/location/overland-park-ks"
 }, {
-  label: "Cabinet Refinishing",
-  href: "/services/cabinet-refinishing-staining"
+  label: "Olathe, KS",
+  href: "/location/olathe-ks"
 }, {
-  label: "Surface Repair & Prep",
-  href: "/services/surface-repair-preparation"
+  label: "Lenexa, KS",
+  href: "/location/lenexa-ks"
 }, {
-  label: "Pressure Washing",
-  href: "/services/pressure-washing"
+  label: "Shawnee, KS",
+  href: "/location/shawnee-ks"
 }, {
-  label: "Commercial Painting",
-  href: "/services/commercial-painting"
+  label: "Kansas City, KS",
+  href: "/location/kansas-city-ks"
+}, {
+  label: "Paola, KS",
+  href: "/location/paola-ks"
+}, {
+  label: "Springfield, MO",
+  href: "/location/springfield-mo"
 }];
 const QUICK_LINKS = [{
   label: "Home",
@@ -103,8 +113,11 @@ const QUICK_LINKS = [{
   label: "About Us",
   href: "/about-us"
 }, {
-  label: "Gallery",
-  href: "/gallery"
+  label: "Services",
+  href: "/services"
+}, {
+  label: "Locations",
+  href: "/locations"
 }, {
   label: "Contact Us",
   href: "/contact-us"
@@ -122,7 +135,7 @@ function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
       children: `
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
 
         .kcs-footer-link {
           transition: color .2s ease, transform .2s ease;
@@ -205,62 +218,26 @@ function Footer() {
               style: {
                 maxWidth: 420
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                 href: "/",
                 "aria-label": "KCS Commercial Services Home",
                 style: {
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "0.9rem",
-                  textDecoration: "none",
-                  color: KCS.white
+                  textDecoration: "none"
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                  src: "/wp-content/uploads/2026/04/KCSLogoFooter-scaled.png",
+                  alt: "KCS Commercial Services LLC",
                   style: {
-                    position: "relative",
-                    width: 18,
-                    height: 42,
-                    flexShrink: 0,
-                    display: "block"
-                  },
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                    style: {
-                      position: "absolute",
-                      inset: 0,
-                      background: `linear-gradient(180deg, ${KCS.gold}, ${KCS.goldDark})`,
-                      clipPath: "polygon(18% 0, 100% 0, 82% 100%, 0 100%)",
-                      display: "block"
-                    }
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                  style: {
-                    display: "flex",
-                    flexDirection: "column",
-                    lineHeight: 1
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
-                    style: {
-                      fontFamily: "'Barlow Condensed', 'Space Grotesk', 'Segoe UI', sans-serif",
-                      fontSize: "1rem",
-                      fontWeight: 800,
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                      color: KCS.white
-                    },
-                    children: "KCS Commercial Services"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("em", {
-                    style: {
-                      marginTop: "0.35rem",
-                      fontStyle: "normal",
-                      fontSize: "0.64rem",
-                      fontWeight: 800,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.22em",
-                      color: KCS.gold
-                    },
-                    children: "LLC"
-                  })]
-                })]
+                    height: 52,
+                    width: "auto",
+                    maxWidth: 220,
+                    display: "block",
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)"
+                  }
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
                 style: {
                   marginTop: "1.2rem",
@@ -268,7 +245,7 @@ function Footer() {
                   fontSize: "0.95rem",
                   lineHeight: 1.9
                 },
-                children: "KCS Commercial Services is a full-service painting and remodeling company serving Southern California. Clean execution. Schedule discipline. Aesthetic certainty. Licensed, insured, and bonded \u2014 with 40+ years of combined experience."
+                children: "Kansas City's institutional building services platform. Anchored in commercial cleaning. Expanded through landscaping, drywall, and roofing. Built for property managers, healthcare, schools, and GCs who need a partner they can trust without supervision."
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                 style: {
                   display: "flex",
@@ -276,7 +253,7 @@ function Footer() {
                   gap: "0.7rem",
                   marginTop: "1.4rem"
                 },
-                children: ["C-33 Licensed", "Insured", "Bonded", "Google Reviews"].map(badge => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: ["Fully Insured", "Documented Protocols", "Compliance-Ready", "KC Metro Based"].map(badge => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
                   className: "kcs-footer-badge",
                   style: {
                     display: "inline-flex",
@@ -299,30 +276,6 @@ function Footer() {
                   marginTop: "1.4rem"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSocial, {
-                  href: "#",
-                  label: "Google",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-                    viewBox: "0 0 24 24",
-                    "aria-hidden": "true",
-                    style: {
-                      width: 16,
-                      height: 16
-                    },
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                      fill: "currentColor",
-                      d: "M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5c-.2 1.2-.9 2.3-1.9 3v2.5h3.1c1.8-1.7 3.1-4.2 3.1-7.2Z"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                      fill: "currentColor",
-                      d: "M12 22c2.7 0 5-.9 6.7-2.5l-3.1-2.5c-.9.6-2 .9-3.6.9-2.8 0-5.2-1.9-6-4.5H2.8v2.6A10 10 0 0 0 12 22Z"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                      fill: "currentColor",
-                      d: "M6 13.4A6 6 0 0 1 5.7 12c0-.5.1-.9.2-1.4V8H2.8A10 10 0 0 0 2 12c0 1.4.3 2.8.8 4l3.2-2.6Z"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                      fill: "currentColor",
-                      d: "M12 6c1.5 0 2.8.5 3.9 1.5l2.9-2.9A10 10 0 0 0 2.8 8l3.1 2.6C6.8 7.9 9.2 6 12 6Z"
-                    })]
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSocial, {
                   href: "#",
                   label: "Facebook",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
@@ -352,6 +305,32 @@ function Footer() {
                       d: "M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.4 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"
                     })
                   })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSocial, {
+                  href: "#",
+                  label: "LinkedIn",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                    viewBox: "0 0 24 24",
+                    "aria-hidden": "true",
+                    style: {
+                      width: 16,
+                      height: 16
+                    },
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                      fill: "currentColor",
+                      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+                      fill: "currentColor",
+                      x: "2",
+                      y: "9",
+                      width: "4",
+                      height: "12"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                      fill: "currentColor",
+                      cx: "4",
+                      cy: "4",
+                      r: "2"
+                    })]
+                  })
                 })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -367,17 +346,17 @@ function Footer() {
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                    href: "tel:+19092326602",
+                    href: "tel:#",
                     className: "kcs-footer-link",
                     style: footerLinkStyle,
-                    children: "(909) 232-6602"
+                    children: "[Phone Number]"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                     href: "#",
                     className: "kcs-footer-link",
                     style: footerLinkStyle,
-                    children: "[client email]"
+                    children: "[Email Address]"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -386,7 +365,29 @@ function Footer() {
                       fontSize: "0.92rem",
                       lineHeight: 1.7
                     },
-                    children: "Serving OC \xB7 LA \xB7 Riverside \xB7 San Bernardino"
+                    children: "Kansas City Metro, KS \xB7 Springfield, MO"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                  style: {
+                    paddingTop: "0.5rem"
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                    href: "/contact-us",
+                    style: {
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      paddingInline: "1rem",
+                      minHeight: 40,
+                      background: `linear-gradient(135deg, ${KCS.gold}, ${KCS.goldDark})`,
+                      color: "#122649",
+                      textDecoration: "none",
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase"
+                    },
+                    children: "Get a Quote \u2192"
                   })
                 })]
               })]
@@ -409,6 +410,29 @@ function Footer() {
                     children: s.label
                   })
                 }, s.href))
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                style: {
+                  marginTop: "1.75rem"
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterHeading, {
+                  children: "Locations"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+                  style: {
+                    listStyle: "none",
+                    margin: 0,
+                    padding: 0,
+                    display: "grid",
+                    gap: "0.7rem"
+                  },
+                  children: LOCATIONS.map(l => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                      href: l.href,
+                      className: "kcs-footer-link",
+                      style: footerLinkStyle,
+                      children: l.label
+                    })
+                  }, l.href))
+                })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterHeading, {
@@ -438,17 +462,19 @@ function Footer() {
           borderTop: `1px solid ${KCS.borderLight}`,
           background: "rgba(0,0,0,0.15)"
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           style: {
             width: "min(100% - 2rem, 1280px)",
             margin: "0 auto",
             minHeight: 64,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center"
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "0.75rem",
+            paddingBlock: "0.75rem"
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
             style: {
               margin: 0,
               color: KCS.textMuted,
@@ -456,7 +482,38 @@ function Footer() {
               lineHeight: 1.6
             },
             children: ["\xA9 ", currentYear, " KCS Commercial Services LLC. All Rights Reserved."]
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              display: "flex",
+              gap: "1.25rem",
+              flexWrap: "wrap"
+            },
+            children: [{
+              label: "kcscommercial.com",
+              href: "/"
+            }, {
+              label: "Privacy Policy",
+              href: "/privacy-policy"
+            }, {
+              label: "Terms & Conditions",
+              href: "/terms-conditions"
+            }, {
+              label: "Sitemap",
+              href: "/sitemap.xml"
+            }].map(link => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: link.href,
+              style: {
+                color: KCS.textMuted,
+                textDecoration: "none",
+                fontSize: "0.78rem",
+                fontWeight: 600,
+                transition: "color .2s ease"
+              },
+              onMouseEnter: e => e.currentTarget.style.color = KCS.white,
+              onMouseLeave: e => e.currentTarget.style.color = KCS.textMuted,
+              children: link.label
+            }, link.href))
+          })]
         })
       })]
     })]
@@ -471,7 +528,7 @@ function FooterHeading({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
     style: {
       margin: "0 0 1rem",
-      fontFamily: "'Barlow Condensed', 'Space Grotesk', 'Segoe UI', sans-serif",
+      fontFamily: "'Montserrat', 'Segoe UI', sans-serif",
       fontSize: "0.88rem",
       fontWeight: 700,
       letterSpacing: "0.14em",
@@ -1011,71 +1068,27 @@ function Navbar() {
             minHeight: 84
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
               href: "/",
               "aria-label": "KCS Commercial Services Home",
               style: {
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "0.9rem",
                 textDecoration: "none",
                 color: KCS.navy
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                src: "/wp-content/uploads/2026/04/KCSBrandLogo-scaled.png",
+                alt: "KCS Commercial Services LLC",
                 style: {
-                  position: "relative",
-                  width: 18,
-                  height: 42,
-                  flexShrink: 0,
-                  display: "block"
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  className: "kcs-brand-mark-outer",
-                  style: {
-                    position: "absolute",
-                    inset: 0,
-                    border: `2px solid ${KCS.gold}`,
-                    clipPath: "polygon(18% 0, 100% 0, 82% 100%, 0 100%)",
-                    display: "block"
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  style: {
-                    position: "absolute",
-                    inset: 3,
-                    background: `linear-gradient(180deg, ${KCS.gold}, ${KCS.goldDark})`,
-                    clipPath: "polygon(18% 0, 100% 0, 82% 100%, 0 100%)",
-                    display: "block"
-                  }
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                style: {
-                  display: "flex",
-                  flexDirection: "column",
-                  lineHeight: 1
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
-                  style: {
-                    fontFamily: "'Montserrat', 'Segoe UI', sans-serif",
-                    fontSize: "1rem",
-                    fontWeight: 800,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                    color: KCS.navy
-                  },
-                  children: "KCS Commercial Services"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("em", {
-                  style: {
-                    marginTop: "0.35rem",
-                    fontStyle: "normal",
-                    fontSize: "0.64rem",
-                    fontWeight: 800,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.22em",
-                    color: KCS.gold
-                  },
-                  children: "LLC"
-                })]
-              })]
+                  height: 52,
+                  width: "auto",
+                  maxWidth: 240,
+                  display: "block",
+                  objectFit: "contain",
+                  flexShrink: 0
+                }
+              })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
             className: "kcs-desktop-nav",

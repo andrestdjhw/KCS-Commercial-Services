@@ -166,8 +166,20 @@ get_header(); ?>
 ═════════════════════════════════════════════════════════════════════ -->
 <section id="hero" class="relative overflow-hidden bg-[#13204F] text-white">
 
-  <!-- Background texture -->
-  <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
+  <!-- Background image — reemplaza el src con tu imagen real -->
+  <div class="absolute inset-0">
+    <img
+      src="/wp-content/uploads/2026/04/KCSHeroImage-scaled.jpg"
+      alt=""
+      aria-hidden="true"
+      class="kcs-hero-bg-img h-full w-full object-cover object-center"
+    >
+    <!-- Overlay navy: controla la opacidad para más/menos imagen visible -->
+    <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(19,32,79,0.99) 0%, rgba(27,58,107,0.82) 50%, rgba(19,32,79,0.88) 100%);"></div>
+  </div>
+
+  <!-- Background texture encima del overlay -->
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
   <!-- Gold corner accent -->
   <div class="absolute top-0 right-0 w-[520px] h-[520px] opacity-[0.08]" style="background:radial-gradient(circle at top right,#C9A84C,transparent 65%);"></div>
 
@@ -723,6 +735,17 @@ function kcs_form_fields( array $services, string $prefix ) {
   .kcs-home h2,
   .kcs-home h3 {
     font-family: "Montserrat", "Segoe UI", sans-serif;
+  }
+
+  /* ── Hero background image ──────────────────────────────────────── */
+  .kcs-hero-bg-img {
+    animation: kcsHeroBgZoom 16s ease-out forwards;
+    transform: scale(1.06);
+  }
+
+  @keyframes kcsHeroBgZoom {
+    0%   { transform: scale(1.08); }
+    100% { transform: scale(1.00); }
   }
 
   /* ── Buttons ────────────────────────────────────────────────────── */

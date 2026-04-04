@@ -107,11 +107,20 @@ get_header(); ?>
      1. HERO
 ═════════════════════════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden bg-[#122649] py-20 text-white lg:py-28">
-  <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
+
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src="/wp-content/uploads/2026/04/CommercialCleaningService-scaled.jpg"
+      alt="" aria-hidden="true"
+      class="kcs-hero-bg-img h-full w-full object-cover object-center"
+    >
+    <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(18,38,73,0.88) 0%,rgba(27,58,107,0.80) 50%,rgba(18,38,73,0.88) 100%);"></div>
+  </div>
+
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.12),transparent_38%)]"></div>
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(36,64,128,0.55),transparent_45%)]"></div>
-
-  <!-- Gold left-edge rule -->
   <div class="absolute left-0 top-0 h-full w-[5px] bg-[linear-gradient(180deg,#C9A84C,rgba(201,168,76,0.2),#C9A84C)]"></div>
 
   <div class="relative mx-auto max-w-7xl px-4">
@@ -471,6 +480,17 @@ get_header(); ?>
   .kcs-svc-cleaning h2,
   .kcs-svc-cleaning h3 {
     font-family: "Montserrat", "Segoe UI", sans-serif;
+  }
+
+  /* ── Hero background image ──────────────────────────────────────── */
+  .kcs-hero-bg-img {
+    animation: kcsHeroBgZoom 16s ease-out forwards;
+    transform: scale(1.06);
+  }
+
+  @keyframes kcsHeroBgZoom {
+    0%   { transform: scale(1.08); }
+    100% { transform: scale(1.00); }
   }
 
   /* ── Buttons ────────────────────────────────────────────────────── */

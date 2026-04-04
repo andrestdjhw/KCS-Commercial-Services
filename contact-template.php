@@ -277,15 +277,15 @@ get_header(); ?>
 </main>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-  .kcs-contact-page {
-    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+  .kcs-home {
+    font-family: "Montserrat", "Segoe UI", sans-serif;
   }
-  .kcs-contact-page h1,
-  .kcs-contact-page h2,
-  .kcs-contact-page h3 {
-    font-family: "Barlow Condensed", "Space Grotesk", "Segoe UI", sans-serif;
+  .kcs-home h1,
+  .kcs-home h2,
+  .kcs-home h3 {
+    font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 
   .kcs-btn {

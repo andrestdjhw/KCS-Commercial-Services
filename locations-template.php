@@ -283,14 +283,14 @@ get_header(); ?>
 </main>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-  .kcs-locations-page {
-    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+  .kcs-home {
+    font-family: "Montserrat", "Segoe UI", sans-serif;
   }
-  .kcs-locations-page h1,
-  .kcs-locations-page h2,
-  .kcs-locations-page h3 {
+  .kcs-home h1,
+  .kcs-home h2,
+  .kcs-home h3 {
     font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 

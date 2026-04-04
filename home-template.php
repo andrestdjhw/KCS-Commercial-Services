@@ -252,24 +252,78 @@ get_header(); ?>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════════
-     2. TRUST BAR
+     2. TRUST BAR — Marquee
 ═════════════════════════════════════════════════════════════════════ -->
-<section class="border-b border-[#1B2B6B]/10 bg-[#C9A84C]">
-  <div class="mx-auto max-w-7xl px-4 py-5">
-    <div class="flex flex-wrap items-center justify-center gap-x-0 gap-y-3 divide-x divide-[#1B2B6B]/20">
-      <?php foreach ($trust_items as $item) : ?>
-        <div class="flex items-center gap-2 px-6 py-1">
-          <svg class="h-4 w-4 shrink-0 text-[#13204F]" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-          </svg>
-          <span class="text-sm font-black uppercase tracking-[0.10em] text-[#13204F]">
-            <?php echo esc_html($item); ?>
-          </span>
-        </div>
-      <?php endforeach; ?>
-    </div>
+<section class="kcs-trust-bar border-b border-[#1B2B6B]/10 bg-[#C9A84C] overflow-hidden">
+  <div class="kcs-trust-track py-4">
+    <?php
+      /* Duplicate items 3× so the loop is seamless on any screen width */
+      $marquee_items = array_merge($trust_items, $trust_items, $trust_items);
+    ?>
+    <?php foreach ($marquee_items as $item) : ?>
+      <div class="kcs-trust-item flex items-center gap-2.5">
+        <svg class="h-4 w-4 shrink-0 text-[#13204F]" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="whitespace-nowrap text-sm font-black uppercase tracking-[0.12em] text-[#13204F]">
+          <?php echo esc_html($item); ?>
+        </span>
+        <!-- Separator dot -->
+        <span class="mx-4 block h-1.5 w-1.5 shrink-0 rotate-45 bg-[#13204F]/30"></span>
+      </div>
+    <?php endforeach; ?>
   </div>
 </section>
+
+<style>
+  .kcs-trust-bar { position: relative; }
+
+  /* Fade edges */
+  .kcs-trust-bar::before,
+  .kcs-trust-bar::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .kcs-trust-bar::before {
+    left: 0;
+    background: linear-gradient(90deg, #C9A84C, transparent);
+  }
+  .kcs-trust-bar::after {
+    right: 0;
+    background: linear-gradient(270deg, #C9A84C, transparent);
+  }
+
+  .kcs-trust-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: kcsTrustScroll 28s linear infinite;
+  }
+
+  .kcs-trust-track:hover {
+    animation-play-state: paused;
+  }
+
+  .kcs-trust-item {
+    flex-shrink: 0;
+    padding-inline: 1rem;
+  }
+
+  @keyframes kcsTrustScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kcs-trust-track { animation: none; }
+    .kcs-trust-bar::before,
+    .kcs-trust-bar::after { display: none; }
+  }
+</style>
 
 <!-- ════════════════════════════════════════════════════════════════════
      3. ABOUT US
@@ -658,17 +712,17 @@ function kcs_form_fields( array $services, string $prefix ) {
 ?>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
   /* ── Page base ──────────────────────────────────────────────────── */
   .kcs-home {
-    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 
   .kcs-home h1,
   .kcs-home h2,
   .kcs-home h3 {
-    font-family: "Barlow Condensed", "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 
   /* ── Buttons ────────────────────────────────────────────────────── */

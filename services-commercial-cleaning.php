@@ -22,19 +22,19 @@ get_header(); ?>
     ],
     [
       'title' => 'Healthcare Facilities',
-      'copy'  => 'Medical offices, clinics, and hospital-adjacent facilities. Documented protocols that meet healthcare standards and keep your facility audit-ready.',
+      'copy'  => 'Medical offices, clinics, and hospital adjacent facilities. Documented protocols that meet healthcare standards and keep your facility audit ready.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8M8 12h8"/></svg>',
       'tone'  => '#244080',
     ],
     [
       'title' => 'Schools & Universities',
-      'copy'  => 'K-12 districts and university campuses across Johnson County. Consistent service during the school year and deep cleaning during summer and break windows.',
+      'copy'  => 'K 12 districts and university campuses across Johnson County. Consistent service during the school year and deep cleaning during summer and break windows.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
       'tone'  => '#C9A84C',
     ],
     [
       'title' => 'Post-Construction Sites',
-      'copy'  => 'Final clean for general contractors. We coordinate with your project timeline, work around other trades, and leave the site inspection-ready.',
+      'copy'  => 'Final clean for general contractors. We coordinate with your project timeline, work around other trades, and leave the site inspection ready.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
       'tone'  => '#A8882E',
     ],
@@ -66,13 +66,13 @@ get_header(); ?>
   $service_options = [
     [
       'title' => 'Recurring Janitorial Contracts',
-      'copy'  => '12-month agreements with renewal options. Daily, weekly, or custom-frequency schedules built around your facility. The anchor service that opens the door to everything else we offer.',
+      'copy'  => '12 month agreements with renewal options. Daily, weekly, or custom frequency schedules built around your facility. The anchor service that opens the door to everything else we offer.',
       'tone'  => '#1B3A6B',
       'full'  => true,
     ],
     [
       'title' => 'Post-Construction Cleaning',
-      'copy'  => 'One-time or project-based. We coordinate with your GC to schedule around the build timeline and deliver a site ready for inspection or occupancy.',
+      'copy'  => 'One time or project based. We coordinate with your GC to schedule around the build timeline and deliver a site ready for inspection or occupancy.',
       'tone'  => '#244080',
       'full'  => false,
     ],
@@ -84,7 +84,7 @@ get_header(); ?>
     ],
     [
       'title' => 'Compliance Cleaning',
-      'copy'  => 'Documented protocol cleaning with traceable service records and compliance-ready reports — for facilities subject to regulatory inspection.',
+      'copy'  => 'Documented protocol cleaning with traceable service records and compliance ready reports for facilities subject to regulatory inspection.',
       'tone'  => '#A8882E',
       'full'  => true,
     ],
@@ -93,7 +93,7 @@ get_header(); ?>
   /* ── Form services ──────────────────────────────────────────────── */
   $form_services = [
     'Commercial Cleaning (Recurring)',
-    'Post-Construction Cleaning',
+    'Post Construction Cleaning',
     'Deep Cleaning / Seasonal',
     'Compliance Cleaning',
     'Landscaping & Grounds',
@@ -129,11 +129,11 @@ get_header(); ?>
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
         <p class="ajs-reveal-up mt-7 text-base leading-8 text-white/80 md:text-lg">
-          Your building reflects your organization. When it is clean, consistent, and always ready — tenants stay, visitors notice, and compliance audits pass without a call to you. When it is not, you spend your time chasing a vendor instead of managing your operation.
+          Your building reflects your organization. When it is clean, consistent, and always ready tenants stay, visitors notice, and compliance audits pass without a call to you. When it is not, you spend your time chasing a vendor instead of managing your operation.
         </p>
 
         <p class="ajs-reveal-up mt-4 text-base leading-8 text-white/80 md:text-lg">
-          KCS delivers institutional-grade commercial cleaning across the KC metro so that conversation never happens.
+          KCS delivers institutional grade commercial cleaning across the KC metro so that conversation never happens.
         </p>
 
         <div class="ajs-reveal-up mt-9 flex flex-wrap gap-3">
@@ -229,7 +229,7 @@ get_header(); ?>
         <div class="mt-5 h-1 w-20 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
         <p class="mt-7 text-base leading-8 text-white/76">
-          Consistency is the hardest thing to maintain in this industry — and the most important. KCS was built around the systems that keep quality steady from week one to year three: documented protocols, assigned teams, supervisory walkthroughs, and regular check-ins with every client.
+          Consistency is the hardest thing to maintain in this industry and the most important. KCS was built around the systems that keep quality steady from week one to year three: documented protocols, assigned teams, supervisory walkthroughs, and regular check ins with every client.
         </p>
 
         <div class="mt-8">
@@ -365,7 +365,7 @@ get_header(); ?>
             <p class="mt-2 text-sm leading-6 text-white/60">We respond within 24 hours.</p>
 
             <div id="kcsCleanFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours.
+              Thank you we'll be in touch within 24 hours.
             </div>
             <div id="kcsCleanFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.

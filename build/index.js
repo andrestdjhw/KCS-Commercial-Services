@@ -86,25 +86,25 @@ const SERVICES = [{
 }];
 const LOCATIONS = [{
   label: "Overland Park, KS",
-  href: "/location/overland-park-ks"
+  href: "#"
 }, {
   label: "Olathe, KS",
-  href: "/location/olathe-ks"
+  href: "#"
 }, {
   label: "Lenexa, KS",
-  href: "/location/lenexa-ks"
+  href: "#"
 }, {
   label: "Shawnee, KS",
-  href: "/location/shawnee-ks"
+  href: "#"
 }, {
   label: "Kansas City, KS",
-  href: "/location/kansas-city-ks"
+  href: "#"
 }, {
   label: "Paola, KS",
-  href: "/location/paola-ks"
+  href: "#"
 }, {
   label: "Springfield, MO",
-  href: "/location/springfield-mo"
+  href: "#"
 }];
 const QUICK_LINKS = [{
   label: "Home",
@@ -349,7 +349,7 @@ function Footer() {
                     href: "tel:#",
                     className: "kcs-footer-link",
                     style: footerLinkStyle,
-                    children: "[Phone Number]"
+                    children: "(913) 257-7291"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -859,7 +859,7 @@ function Navbar() {
                 },
                 children: "Phone"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: "[Phone Number]"
+                children: "(913) 257-7291"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "#",

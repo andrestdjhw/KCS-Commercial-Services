@@ -15,7 +15,7 @@ get_header(); ?>
   /* ── Service dropdown options (form) ─────────────────────────────── */
   $form_services = [
     'Commercial Cleaning (Recurring)',
-    'Post-Construction Cleaning',
+    'Post Construction Cleaning',
     'Landscaping & Grounds',
     'Drywall & Interior',
     'Roofing & Siding',
@@ -26,7 +26,7 @@ get_header(); ?>
   $trust_items = [
     'Fully Insured',
     'Documented Protocols',
-    'Compliance-Ready',
+    'Compliance Ready',
     'Institutional-Grade Service',
     'KC Metro Based',
   ];
@@ -34,8 +34,8 @@ get_header(); ?>
   /* ── About pillars ────────────────────────────────────────────────── */
   $pillars = [
     [ 'title' => 'Operational Continuity',   'copy' => 'Consistent service so your facility never misses a beat.' ],
-    [ 'title' => 'Compliance-Ready',         'copy' => 'Documentation and standards for healthcare, education, and government.' ],
-    [ 'title' => 'Multi-Service Platform',   'copy' => 'One trusted partner for cleaning, grounds, drywall, and roofing.' ],
+    [ 'title' => 'Compliance Ready',         'copy' => 'Documentation and standards for healthcare, education, and government.' ],
+    [ 'title' => 'Multi Service Platform',   'copy' => 'One trusted partner for cleaning, grounds, drywall, and roofing.' ],
     [ 'title' => 'Institutional Reliability','copy' => 'We show up, perform, and make it easy to justify internally.' ],
   ];
 
@@ -43,10 +43,10 @@ get_header(); ?>
   $services = [
     [
       'headline' => 'Commercial Cleaning &amp; Janitorial Services in Kansas City',
-      'body'     => 'We provide professional commercial cleaning services for offices, medical facilities, schools, and institutional buildings across the Kansas City metro. Our teams follow documented cleaning protocols, use commercial-grade equipment, and maintain the same standards on week 52 as they do on week one. Whether you manage a single building or a portfolio of properties, we show up on schedule, complete the work without supervision, and make sure your space is always ready for whoever walks through the door.',
+      'body'     => 'We provide professional commercial cleaning services for offices, medical facilities, schools, and institutional buildings across the Kansas City metro. Our teams follow documented cleaning protocols, use commercial grade equipment, and maintain the same standards on week 52 as they do on week one. Whether you manage a single building or a portfolio of properties, we show up on schedule, complete the work without supervision, and make sure your space is always ready for whoever walks through the door.',
       'bullets'  => [
         'Daily, weekly, and custom-frequency janitorial service',
-        'Post-construction cleaning for general contractors',
+        'Post construction cleaning for general contractors',
         'Medical and clinical facility cleaning',
         'School and university campus janitorial services',
         'Office buildings, corporate campuses, and flex spaces',
@@ -55,12 +55,12 @@ get_header(); ?>
       'tone'  => '#1B2B6B',
     ],
     [
-      'headline' => 'Commercial Landscaping &amp; Grounds Maintenance — KC Metro',
-      'body'     => 'First impressions happen at the curb. We maintain commercial grounds, institutional campuses, and multi-property portfolios so your asset always looks presentable — to tenants, to visitors, and to the people making decisions about renewing their lease. From regular lawn maintenance to seasonal snow removal, we handle the exterior so you don\'t have to coordinate another vendor.',
+      'headline' => 'Commercial Landscaping &amp; Grounds Maintenance  KC Metro',
+      'body'     => 'First impressions happen at the curb. We maintain commercial grounds, institutional campuses, and multi-property portfolios so your asset always looks presentable to tenants, to visitors, and to the people making decisions about renewing their lease. From regular lawn maintenance to seasonal snow removal, we handle the exterior so you don\'t have to coordinate another vendor.',
       'bullets'  => [
         'Commercial lawn maintenance and landscaping contracts',
         'Hardscaping services for commercial properties',
-        'Seasonal snow removal — Kansas City metro',
+        'Seasonal snow removal  Kansas City metro',
         'Grounds management for institutional campuses',
         'Multi-property portfolio grounds consolidation',
       ],
@@ -68,8 +68,8 @@ get_header(); ?>
       'tone'  => '#243580',
     ],
     [
-      'headline' => 'Drywall &amp; Interior Construction Services — Overland Park &amp; KC',
-      'body'     => 'When a general contractor trusts us to leave their job site clean, the next conversation is usually about what else we can take off their plate. Our drywall and interior construction services are built around that same reliability — showing up on schedule, working cleanly alongside other trades, and hitting the deadline every time. We handle tenant improvements, commercial build-outs, and interior renovation scopes across the KC metro.',
+      'headline' => 'Drywall &amp; Interior Construction Services  Overland Park &amp; KC',
+      'body'     => 'When a general contractor trusts us to leave their job site clean, the next conversation is usually about what else we can take off their plate. Our drywall and interior construction services are built around that same reliability showing up on schedule, working cleanly alongside other trades, and hitting the deadline every time. We handle tenant improvements, commercial build outs, and interior renovation scopes across the KC metro.',
       'bullets'  => [
         'Commercial drywall installation and finishing',
         'Tenant improvement (TI) renovations',
@@ -81,11 +81,11 @@ get_header(); ?>
       'tone'  => '#C9A84C',
     ],
     [
-      'headline' => 'Commercial Roofing &amp; Siding — Kansas City Metro',
-      'body'     => 'Kansas City weather doesn\'t wait, and neither should you. When a hail storm hits or a roof reaches the end of its life, the last thing you want is to start searching for a contractor you\'ve never worked with. If we already manage your building\'s cleaning or grounds, we know the property — and we\'re ready to move fast. We handle commercial roof replacement, repair, and siding work across the KC metro with the same accountability we bring to every other service.',
+      'headline' => 'Commercial Roofing &amp; Siding  Kansas City Metro',
+      'body'     => 'Kansas City weather doesn\'t wait, and neither should you. When a hail storm hits or a roof reaches the end of its life, the last thing you want is to start searching for a contractor you\'ve never worked with. If we already manage your building\'s cleaning or grounds, we know the property  and we\'re ready to move fast. We handle commercial roof replacement, repair, and siding work across the KC metro with the same accountability we bring to every other service.',
       'bullets'  => [
         'Commercial roof replacement and repair',
-        'Hail and storm damage response — KC metro',
+        'Hail and storm damage response  KC metro',
         'Siding installation and replacement',
         'Exterior envelope work for commercial buildings',
         'Roofing assessments for property portfolios',
@@ -99,10 +99,10 @@ get_header(); ?>
   $differentiators = [
     [ 'num' => '01', 'title' => 'Zero Operational Surprises',       'copy' => 'We show up when we say we will, execute without supervision, and communicate proactively. Your silence is our best performance metric.' ],
     [ 'num' => '02', 'title' => 'Compliance-Ready Documentation',   'copy' => 'Healthcare and education buyers require traceable processes. We deliver the documentation, certifications, and protocols that protect your facility from audits and liability.' ],
-    [ 'num' => '03', 'title' => 'Multi-Service, One Contract',      'copy' => 'Cleaning, grounds, drywall, roofing — under one trusted partner. Reduce your vendor count, eliminate coordination friction, and simplify your budget.' ],
-    [ 'num' => '04', 'title' => 'Institutional Buyer Experience',   'copy' => 'We understand RFP processes, committee approvals, and long contract cycles. We show up to the conversation prepared — not hoping to improvise.' ],
-    [ 'num' => '05', 'title' => 'KC-Dense Route Efficiency',        'copy' => 'We concentrate in the Overland Park–Lenexa–Olathe corridor. That means faster response times, lower operational cost, and consistent crew availability for your facility.' ],
-    [ 'num' => '06', 'title' => 'Asset Presentation Mindset',       'copy' => 'We don\'t think \'clean building.\' We think: how does this asset need to look to retain tenants, pass audits, and protect its long-term value? That difference shows up in the result.' ],
+    [ 'num' => '03', 'title' => 'Multi Service, One Contract',      'copy' => 'Cleaning, grounds, drywall, roofing under one trusted partner. Reduce your vendor count, eliminate coordination friction, and simplify your budget.' ],
+    [ 'num' => '04', 'title' => 'Institutional Buyer Experience',   'copy' => 'We understand RFP processes, committee approvals, and long contract cycles. We show up to the conversation prepared not hoping to improvise.' ],
+    [ 'num' => '05', 'title' => 'KC Dense Route Efficiency',        'copy' => 'We concentrate in the Overland Park Lenexa Olathe corridor. That means faster response times, lower operational cost, and consistent crew availability for your facility.' ],
+    [ 'num' => '06', 'title' => 'Asset Presentation Mindset',       'copy' => 'We don\'t think \'clean building.\' We think: how does this asset need to look to retain tenants, pass audits, and protect its long term value? That difference shows up in the result.' ],
   ];
 
   /* ── Locations ────────────────────────────────────────────────────── */
@@ -123,8 +123,8 @@ get_header(); ?>
   /* ── Process steps ────────────────────────────────────────────────── */
   $steps = [
     [ 'num' => '01', 'title' => 'Initial Consultation',    'copy' => 'We learn your facility\'s needs, compliance requirements, and what reliable service actually looks like for your operation.' ],
-    [ 'num' => '02', 'title' => 'Site Assessment & Proposal', 'copy' => 'We visit, document scope, and deliver a structured proposal within 48 hours — clear pricing, no hidden costs.' ],
-    [ 'num' => '03', 'title' => 'Contract & Onboarding',   'copy' => '12-month agreement. Thorough onboarding so week one sets the standard for every week after.' ],
+    [ 'num' => '02', 'title' => 'Site Assessment & Proposal', 'copy' => 'We visit, document scope, and deliver a structured proposal within 48 hours clear pricing, no hidden costs.' ],
+    [ 'num' => '03', 'title' => 'Contract & Onboarding',   'copy' => '12 month agreement. Thorough onboarding so week one sets the standard for every week after.' ],
     [ 'num' => '04', 'title' => 'Delivery & Expansion',    'copy' => 'We execute, check in regularly, and as trust grows, introduce adjacent services that add value without complexity.' ],
   ];
 
@@ -152,7 +152,7 @@ get_header(); ?>
     ],
     [
       'q' => 'What areas does KCS Commercial Services serve?',
-      'a' => 'Our primary service area covers the Overland Park–Lenexa–Olathe corridor in Johnson County, Kansas. We also serve Shawnee, Kansas City KS, Paola KS, and operate an independent hub in Springfield, MO.',
+      'a' => 'Our primary service area covers the Overland Park Lenexa Olathe corridor in Johnson County, Kansas. We also serve Shawnee, Kansas City KS, Paola KS, and operate an independent hub in Springfield, MO.',
     ],
     [
       'q' => 'How quickly can KCS respond to a new service inquiry?',
@@ -203,8 +203,8 @@ get_header(); ?>
 
         <!-- Subheadline -->
         <p class="mt-7 max-w-xl text-base leading-8 text-white/82 md:text-lg">
-          KCS Commercial Services delivers institutional-grade commercial cleaning, landscaping, drywall, and roofing for property managers, healthcare facilities, school districts, and general contractors across the KC metro.
-          <strong class="mt-3 block font-black text-white/95">Consistent. Compliant. Built for long-term retention.</strong>
+          KCS Commercial Services delivers institutional grade commercial cleaning, landscaping, drywall, and roofing for property managers, healthcare facilities, school districts, and general contractors across the KC metro.
+          <strong class="mt-3 block font-black text-white/95">Consistent. Compliant. Built for long term retention.</strong>
         </p>
 
         <!-- CTAs -->
@@ -239,7 +239,7 @@ get_header(); ?>
             <p class="mt-2 text-sm leading-6 text-white/72">Tell us about your facility. We'll respond within 24 hours.</p>
 
             <div id="kcsHeroFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours.
+              Thank you We'll be in touch within 24 hours.
             </div>
             <div id="kcsHeroFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.
@@ -359,9 +359,9 @@ get_header(); ?>
     <div class="mt-12 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
       <div class="ajs-reveal-left space-y-6 text-base leading-8 text-[#1B2B6B]/78">
-        <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company — we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, and roofing.</p>
-        <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Springfield MO, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should — without you having to think about it.</p>
-        <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver — contract after contract, year after year.</p>
+        <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company, we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, and roofing.</p>
+        <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Springfield MO, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should  without you having to think about it.</p>
+        <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver contract after contract, year after year.</p>
 
         <div class="flex flex-wrap gap-3 pt-2">
           <a href="#contact-form" class="kcs-btn kcs-btn-navy inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em] text-white">Work With Us</a>
@@ -398,10 +398,10 @@ get_header(); ?>
     <div class="ajs-reveal-up max-w-3xl">
       <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">What We Do</p>
       <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
-        A Platform Built Around Your Building — Not Just One Service
+        A Platform Built Around Your Building  Not Just One Service
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-8 text-[#1B2B6B]/72">
-        Every service we offer is connected. Commercial cleaning opens the relationship. Grounds, drywall, and roofing expand it. Each contract builds toward a long-term partnership — not a one-time job.
+        Every service we offer is connected. Commercial cleaning opens the relationship. Grounds, drywall, and roofing expand it. Each contract builds toward a long-term partnership not a one time job.
       </p>
     </div>
 
@@ -467,7 +467,7 @@ get_header(); ?>
         The Field Isn't Saturated. It's Just Poorly Occupied.
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-8 text-white/76">
-        Most facility managers and property owners have dealt with vendors who overpromise and underdeliver. KCS was built to be the obvious alternative — a structured, accountable, institutional-grade operation that makes the decision to hire us easy to justify to anyone asking questions.
+        Most facility managers and property owners have dealt with vendors who overpromise and underdeliver. KCS was built to be the obvious alternative a structured, accountable, institutional-grade operation that makes the decision to hire us easy to justify to anyone asking questions.
       </p>
     </div>
 
@@ -492,7 +492,7 @@ get_header(); ?>
 <!-- ════════════════════════════════════════════════════════════════════
      6. LOCATIONS
 ═════════════════════════════════════════════════════════════════════ -->
-<section id="locations" class="relative overflow-hidden bg-white py-20 lg:py-28">
+<!-- <section id="locations" class="relative overflow-hidden bg-white py-20 lg:py-28">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,168,76,0.07),transparent_28%)]"></div>
 
   <div class="relative mx-auto max-w-7xl px-4">
@@ -503,11 +503,11 @@ get_header(); ?>
         Commercial Building Services Across the Kansas City Metro
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-8 text-[#1B2B6B]/70">
-        We serve where we can do it right. Our primary focus is the Johnson County corridor — the densest concentration of institutional buyers, healthcare systems, school districts, and commercial properties in the KC metro.
+        We serve where we can do it right. Our primary focus is the Johnson County corridor the densest concentration of institutional buyers, healthcare systems, school districts, and commercial properties in the KC metro.
       </p>
     </div>
 
-    <!-- Tier A -->
+    <!-- Tier A 
     <div class="mt-14">
       <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#C9A84C]">Tier A — Primary Markets</p>
       <div class="grid gap-4 md:grid-cols-3">
@@ -526,9 +526,9 @@ get_header(); ?>
       </div>
     </div>
 
-    <!-- Tier B -->
+     Tier B 
     <div class="mt-8">
-      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Tier B — Support Markets</p>
+      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Tier B Support Markets</p>
       <div class="grid gap-4 md:grid-cols-2">
         <?php foreach ($locations_tier_b as $loc) : ?>
           <a href="<?php echo esc_url($loc['href']); ?>"
@@ -543,7 +543,7 @@ get_header(); ?>
       </div>
     </div>
 
-    <!-- Additional -->
+    Additional 
     <div class="mt-8">
       <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Additional Markets</p>
       <div class="grid gap-4 md:grid-cols-2">
@@ -560,7 +560,7 @@ get_header(); ?>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ════════════════════════════════════════════════════════════════════
      7. HOW WE WORK
@@ -659,7 +659,7 @@ get_header(); ?>
             <h3 class="mt-3 text-xl font-black leading-tight tracking-[-0.04em]">Tell us about your facility.</h3>
 
             <div id="kcsCtaFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours.
+              Thank you, we'll be in touch within 24 hours.
             </div>
             <div id="kcsCtaFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.

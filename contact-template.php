@@ -13,7 +13,7 @@ get_header(); ?>
 <?php
   $form_services = [
     'Commercial Cleaning (Recurring)',
-    'Post-Construction Cleaning',
+    'Post Construction Cleaning',
     'Landscaping & Grounds',
     'Drywall & Interior',
     'Roofing & Siding',
@@ -41,7 +41,7 @@ get_header(); ?>
     [
       'num'   => '02',
       'title' => 'Within 48 Hours of Site Visit',
-      'copy'  => 'We deliver a structured proposal — clear pricing, clear deliverables, no ambiguity. You will know exactly what you are getting and what it costs.',
+      'copy'  => 'We deliver a structured proposal clear pricing, clear deliverables, no ambiguity. You will know exactly what you are getting and what it costs.',
       'tone'  => '#243580',
     ],
     [
@@ -79,7 +79,7 @@ get_header(); ?>
     <div class="mx-auto mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
     <p class="ajs-reveal-up mx-auto mt-7 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-      Whether you need a recurring cleaning contract, a landscaping proposal, or a roofing estimate after a storm — the process starts here. Fill out the form, tell us what you are working with, and we will get back to you within 24 hours with a clear next step.
+      Whether you need a recurring cleaning contract, a landscaping proposal, or a roofing estimate after a storm the process starts here. Fill out the form, tell us what you are working with, and we will get back to you within 24 hours with a clear next step.
     </p>
   </div>
 </section>

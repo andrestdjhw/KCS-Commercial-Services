@@ -22,7 +22,7 @@ get_header(); ?>
     ],
     [
       'title' => 'Seasonal Planting & Care',
-      'copy'  => 'Seasonal color rotations, mulching, shrub trimming, and plant care to keep the property looking intentional year-round.',
+      'copy'  => 'Seasonal color rotations, mulching, shrub trimming, and plant care to keep the property looking intentional year round.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 3a9 9 0 0 0 0 18h7"/><path d="M12 12C12 7 17 3 22 3c0 5-4 9-10 9z"/></svg>',
       'tone'  => '#244080',
     ],
@@ -34,7 +34,7 @@ get_header(); ?>
     ],
     [
       'title' => 'Snow & Ice Removal',
-      'copy'  => 'Seasonal snow removal and ice treatment for parking lots, walkways, and building entries across the KC metro — December through February.',
+      'copy'  => 'Seasonal snow removal and ice treatment for parking lots, walkways, and building entries across the KC metro December through February.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="m20 6-8 4-8-4"/><path d="m20 18-8-4-8 4"/><path d="m2 12 8-4 8 4"/></svg>',
       'tone'  => '#A8882E',
     ],
@@ -46,7 +46,7 @@ get_header(); ?>
     ],
     [
       'title' => 'Portfolio Consolidation',
-      'copy'  => 'Managing grounds for five properties with five vendors is where most operations fall apart. We handle multi-property portfolios with one contact and one standard across every site.',
+      'copy'  => 'Managing grounds for five properties with five vendors is where most operations fall apart. We handle multi property portfolios with one contact and one standard across every site.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="0"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>',
       'tone'  => '#244080',
     ],
@@ -56,12 +56,12 @@ get_header(); ?>
   $clients = [
     [
       'title' => 'Property Managers',
-      'copy'  => 'Multiple assets across Johnson County. You need a grounds crew that shows up on schedule, maintains the same standard at every property, and does not require follow-up. That is the contract we build.',
+      'copy'  => 'Multiple assets across Johnson County. You need a grounds crew that shows up on schedule, maintains the same standard at every property, and does not require follow up. That is the contract we build.',
       'tone'  => '#1B3A6B',
     ],
     [
       'title' => 'Corporate Campuses & Institutions',
-      'copy'  => 'Hospitals, schools, and corporate headquarters where the exterior is the first thing every employee, patient, and visitor sees. We treat the grounds as part of the brand — not just a maintenance task.',
+      'copy'  => 'Hospitals, schools, and corporate headquarters where the exterior is the first thing every employee, patient, and visitor sees. We treat the grounds as part of the brand not just a maintenance task.',
       'tone'  => '#C9A84C',
     ],
   ];
@@ -99,16 +99,16 @@ get_header(); ?>
         </p>
 
         <h1 class="ajs-reveal-up mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
-          Commercial Landscaping &amp; Grounds Maintenance — Kansas City Metro
+          Commercial Landscaping &amp; Grounds Maintenance Kansas City Metro
         </h1>
 
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
         <p class="ajs-reveal-up mt-7 text-base leading-8 text-white/80 md:text-lg">
-          A well-maintained exterior tells tenants, visitors, and prospective clients something about the organization inside. It signals that standards are held, that details matter, and that someone is accountable for the property.
+          A well maintained exterior tells tenants, visitors, and prospective clients something about the organization inside. It signals that standards are held, that details matter, and that someone is accountable for the property.
         </p>
         <p class="ajs-reveal-up mt-4 text-base leading-8 text-white/80 md:text-lg">
-          KCS manages commercial grounds across the KC metro so that signal is always the right one — without you managing another vendor to make it happen.
+          KCS manages commercial grounds across the KC metro so that signal is always the right one without you managing another vendor to make it happen.
         </p>
 
         <div class="ajs-reveal-up mt-9 flex flex-wrap gap-3">
@@ -271,7 +271,7 @@ get_header(); ?>
             <p class="mt-2 text-sm leading-6 text-white/60">We respond within 24 hours.</p>
 
             <div id="kcsGrnFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours.
+              Thank you we'll be in touch within 24 hours.
             </div>
             <div id="kcsGrnFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.

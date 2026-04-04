@@ -101,7 +101,7 @@ get_header(); ?>
         </p>
 
         <h1 class="ajs-reveal-up mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
-          Drywall &amp; Interior Construction Services — Overland Park &amp; Kansas City
+          Drywall &amp; Interior Construction Services Overland Park &amp; Kansas City
         </h1>
 
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
@@ -110,7 +110,7 @@ get_header(); ?>
           Interior construction lives or dies on coordination and timing. The wrong subcontractor stalls the project, creates rework, and puts the delivery date at risk. KCS takes that variable off the board.
         </p>
         <p class="ajs-reveal-up mt-4 text-base leading-8 text-white/80 md:text-lg">
-          We deliver commercial drywall and interior construction across the KC metro with the same discipline GCs already trust us for on the post-construction side — on time, clean, and ready for the next trade.
+          We deliver commercial drywall and interior construction across the KC metro with the same discipline GCs already trust us for on the post construction side on time, clean, and ready for the next trade.
         </p>
 
         <div class="ajs-reveal-up mt-9 flex flex-wrap gap-3">
@@ -237,7 +237,7 @@ get_header(); ?>
         <div class="mt-5 h-1 w-20 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
         <p class="mt-7 text-base leading-8 text-white/76">
-          When a GC has a post-construction clean with KCS, the feedback is almost always the same: they showed up, did the work, and got out without creating a single issue. That is how we approach drywall — as a subcontractor whose job is to make your job easier, not harder.
+          When a GC has a post-construction clean with KCS, the feedback is almost always the same: they showed up, did the work, and got out without creating a single issue. That is how we approach drywall as a subcontractor whose job is to make your job easier, not harder.
         </p>
 
         <div class="mt-8">
@@ -295,7 +295,7 @@ get_header(); ?>
         </h2>
         <div class="mt-5 h-1 w-20 bg-[linear-gradient(90deg,#1B3A6B,#C9A84C)]"></div>
         <p class="mt-6 max-w-md text-base leading-8 text-[#1B3A6B]/70">
-          Tell us about the project — scope, timeline, facility type, and location. We will get back to you within 48 hours.
+          Tell us about the project scope, timeline, facility type, and location. We will get back to you within 48 hours.
         </p>
 
         <!-- Response promise -->
@@ -326,7 +326,7 @@ get_header(); ?>
             <p class="mt-2 text-sm leading-6 text-white/60">We respond within 48 hours.</p>
 
             <div id="kcsRwlFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll get back to you within 48 hours.
+              Thank you we'll get back to you within 48 hours.
             </div>
             <div id="kcsRwlFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.

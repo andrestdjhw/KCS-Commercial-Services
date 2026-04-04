@@ -14,7 +14,7 @@ get_header(); ?>
   /* ── Values ───────────────────────────────────────────────────────── */
   $values = [
     [
-      'title' => 'Reliability is Non-Negotiable',
+      'title' => 'Reliability is Non Negotiable',
       'copy'  => 'We show up when we say we will. Every time. Inconsistency is the single biggest complaint in this industry and we treat eliminating it as our primary competitive advantage.',
       'tone'  => '#1B2B6B',
     ],
@@ -30,12 +30,12 @@ get_header(); ?>
     ],
     [
       'title' => 'The Asset is the Priority',
-      'copy'  => 'Your building is an investment. The way it looks affects tenant retention, lease renewals, and long-term property value. We think like asset managers, not janitors.',
+      'copy'  => 'Your building is an investment. The way it looks affects tenant retention, lease renewals, and long term property value. We think like asset managers, not janitors.',
       'tone'  => '#A8882E',
     ],
     [
       'title' => 'Compliance Protects Everyone',
-      'copy'  => 'In healthcare and education a poorly maintained building is a liability. We maintain documented protocols and traceable service records so your facility is always audit-ready.',
+      'copy'  => 'In healthcare and education a poorly maintained building is a liability. We maintain documented protocols and traceable service records so your facility is always audit ready.',
       'tone'  => '#1B2B6B',
     ],
     [
@@ -49,17 +49,17 @@ get_header(); ?>
   $clients = [
     [
       'title' => 'Property Managers',
-      'copy'  => 'Multi-property portfolios across Johnson County. You need one reliable partner for cleaning, grounds, and maintenance across all your assets — with one point of contact and one standard at every site.',
+      'copy'  => 'Multi property portfolios across Johnson County. You need one reliable partner for cleaning, grounds, and maintenance across all your assets with one point of contact and one standard at every site.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
     ],
     [
       'title' => 'Healthcare & Education',
-      'copy'  => 'Hospitals, clinics, school districts, and universities. You need documented protocols, compliance-ready records, and a contractor who understands the standards that come with regulated, high-traffic environments.',
+      'copy'  => 'Hospitals, clinics, school districts, and universities. You need documented protocols, compliance-ready records, and a contractor who understands the standards that come with regulated, high traffic environments.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
     ],
     [
       'title' => 'General Contractors',
-      'copy'  => 'GCs building across KC who need a post-construction cleaning crew that shows up on time, coordinates without friction, and is ready to take on interior and exterior scopes on the next project.',
+      'copy'  => 'GCs building across KC who need a post construction cleaning crew that shows up on time, coordinates without friction, and is ready to take on interior and exterior scopes on the next project.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
     ],
   ];
@@ -67,7 +67,7 @@ get_header(); ?>
   /* ── Form services ────────────────────────────────────────────────── */
   $form_services = [
     'Commercial Cleaning (Recurring)',
-    'Post-Construction Cleaning',
+    'Post Construction Cleaning',
     'Landscaping & Grounds',
     'Drywall & Interior',
     'Roofing & Siding',
@@ -95,7 +95,7 @@ get_header(); ?>
     <div class="mx-auto mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
     <p class="ajs-reveal-up mx-auto mt-7 max-w-3xl text-base leading-8 text-white/80 md:text-lg">
-      KCS Commercial Services was built to give property managers, facility directors, and institutional buyers a partner they never have to chase. From commercial cleaning to landscaping, drywall, and roofing — we manage the asset so you can manage the business.
+      KCS Commercial Services was built to give property managers, facility directors, and institutional buyers a partner they never have to chase. From commercial cleaning to landscaping, drywall, and roofing we manage the asset so you can manage the business.
     </p>
   </div>
 </section>
@@ -135,13 +135,13 @@ get_header(); ?>
           <div class="absolute right-0 top-0 h-24 w-24 translate-x-1/4 -translate-y-1/4 rotate-12 bg-[#C9A84C]/08"></div>
 
           <div class="space-y-6 text-base leading-8 text-[#1B2B6B]/76">
-            <p>KCS Commercial Services LLC was founded in 2025 because property managers, facility directors, and institutional buyers deserve a service partner built around their standards — not the other way around. Too often, finding a reliable building services contractor takes longer than it should, and the search starts over sooner than it should. We built KCS to make that search the last one our clients ever have to do.</p>
+            <p>KCS Commercial Services LLC was founded in 2025 because property managers, facility directors, and institutional buyers deserve a service partner built around their standards not the other way around. Too often, finding a reliable building services contractor takes longer than it should, and the search starts over sooner than it should. We built KCS to make that search the last one our clients ever have to do.</p>
 
             <p>We started with commercial cleaning because it is the most recurring, most trust-dependent service in building maintenance. A monthly cleaning contract means we are in your facility every week. That frequency builds familiarity, accountability, and the kind of operational trust that makes everything else possible.</p>
 
             <div class="border border-[#1B2B6B]/10 bg-white px-6 py-5">
               <p class="text-lg font-black leading-7 tracking-[-0.03em] text-[#1B2B6B]">
-                Not because more services means more revenue — but because the property manager who trusts us for cleaning should not have to find three other vendors for everything else their building needs.
+                Not because more services means more revenue but because the property manager who trusts us for cleaning should not have to find three other vendors for everything else their building needs.
               </p>
             </div>
 
@@ -211,7 +211,7 @@ get_header(); ?>
         Built for Institutional Buyers and Property Professionals
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-8 text-white/76">
-        We work best with clients who have high standards, multiple properties, and no patience for vendors who require supervision. If you manage a portfolio, run a facility with compliance requirements, or oversee construction projects in the KC metro — we were built for you.
+        We work best with clients who have high standards, multiple properties, and no patience for vendors who require supervision. If you manage a portfolio, run a facility with compliance requirements, or oversee construction projects in the KC metro we were built for you.
       </p>
     </div>
 
@@ -296,7 +296,7 @@ get_header(); ?>
             </p>
 
             <div id="kcsAboutFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours.
+              Thank you we'll be in touch within 24 hours.
             </div>
             <div id="kcsAboutFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.

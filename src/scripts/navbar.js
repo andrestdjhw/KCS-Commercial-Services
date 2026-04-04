@@ -225,7 +225,7 @@ export default function Navbar() {
                 </span>
                 <span style={{ fontSize:"0.64rem", fontWeight:800, textTransform:"uppercase",
                                letterSpacing:"0.14em", color: KCS.goldLight }}>Phone</span>
-                <span>[Phone Number]</span>
+                <span>(913) 257-7291</span>
               </a>
 
               <a href="#" className="kcs-topbar-link"

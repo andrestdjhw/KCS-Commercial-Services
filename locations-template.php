@@ -105,7 +105,7 @@ get_header(); ?>
     <div class="mx-auto mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
     <p class="ajs-reveal-up mx-auto mt-7 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-      We serve where we can do it right. Our primary focus is the Johnson County corridor — with an independent hub in Springfield, MO.
+      We serve where we can do it right. Our primary focus is the Johnson County corridor with an independent hub in Springfield, MO.
     </p>
 
     <!-- Location badges -->
@@ -226,7 +226,7 @@ get_header(); ?>
         KC Metro &amp; Springfield, MO
       </h2>
       <p class="mt-4 max-w-xl text-base leading-7 text-[#1B3A6B]/65">
-        Our primary concentration is the Overland Park–Lenexa–Olathe corridor in Johnson County. We extend into Shawnee, Kansas City KS, Paola, and operate a standalone hub in Springfield, MO.
+        Our primary concentration is the Overland Park Lenexa Olathe corridor in Johnson County. We extend into Shawnee, Kansas City KS, Paola, and operate a standalone hub in Springfield, MO.
       </p>
     </div>
 

@@ -44,7 +44,7 @@ get_header(); ?>
     ],
     [
       'title'    => 'Exterior Envelope Assessment',
-      'copy'     => 'Pre-season or post-storm inspections for property portfolios. We assess roof and siding condition and deliver a clear report with prioritized recommendations.',
+      'copy'     => 'Pre season or post storm inspections for property portfolios. We assess roof and siding condition and deliver a clear report with prioritized recommendations.',
       'tone'     => '#1B3A6B',
       'featured' => false,
       'icon'     => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
@@ -61,9 +61,9 @@ get_header(); ?>
   /* ── KC Metro Advantage bullets ─────────────────────────────────── */
   $advantages = [
     'We know your property before the storm hits',
-    'Same-day assessment response for existing clients',
+    'Same day assessment response for existing clients',
     'Full documentation for insurance carrier coordination',
-    'No subcontracting layers — our crew, our accountability',
+    'No subcontracting layers our crew, our accountability',
     'Available across Overland Park, Olathe, Lenexa, Shawnee, and KC metro',
   ];
 
@@ -102,13 +102,13 @@ get_header(); ?>
         </p>
 
         <h1 class="ajs-reveal-up mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
-          Commercial Roofing &amp; Siding — Kansas City Metro
+          Commercial Roofing &amp; Siding Kansas City Metro
         </h1>
 
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
         <p class="ajs-reveal-up mt-7 text-base leading-8 text-white/80 md:text-lg">
-          Kansas City weather is hard on commercial roofs. When a hail storm moves through or a roof reaches the end of its serviceable life, the last thing a property manager needs is to start searching for a roofing contractor they have never worked with — under time pressure, with an asset at risk.
+          Kansas City weather is hard on commercial roofs. When a hail storm moves through or a roof reaches the end of its serviceable life, the last thing a property manager needs is to start searching for a roofing contractor they have never worked with under time pressure, with an asset at risk.
         </p>
         <p class="ajs-reveal-up mt-4 text-base leading-8 text-white/80 md:text-lg">
           If KCS already manages your building, we already know it. We respond fast, assess accurately, and get the work done without turning a roofing issue into an operational crisis.
@@ -129,7 +129,7 @@ get_header(); ?>
           <div>
             <span class="block text-[0.68rem] font-black uppercase tracking-[0.16em] text-[#C9A84C]">Storm Damage? Emergency Response</span>
             <a href="tel:#" class="mt-0.5 block text-sm font-black text-white transition hover:text-[#E8D49A]">
-              Call us directly — [Phone Number]
+              Call us directly (913) 257-7291
             </a>
           </div>
         </div>
@@ -248,7 +248,7 @@ get_header(); ?>
         <div class="mt-5 h-1 w-20 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
         <p class="mt-7 text-base leading-8 text-white/76">
-          When you have an existing relationship with KCS for cleaning or grounds, the roofing conversation is different. We already know the property. When a storm creates urgency, you do not start from scratch — you call a partner who already knows what you are working with and can respond the same day.
+          When you have an existing relationship with KCS for cleaning or grounds, the roofing conversation is different. We already know the property. When a storm creates urgency, you do not start from scratch you call a partner who already knows what you are working with and can respond the same day.
         </p>
 
         <!-- Emergency CTA -->
@@ -258,7 +258,7 @@ get_header(); ?>
           </a>
           <a href="tel:#" class="inline-flex items-center gap-2 text-sm font-black text-[#C9A84C] transition hover:text-[#E8D49A]">
             <span class="text-lg">⚡</span>
-            <span>Emergency? Call directly — [Phone Number]</span>
+            <span>Emergency? Call directly (913) 257-7291</span>
           </a>
         </div>
       </div>
@@ -281,7 +281,7 @@ get_header(); ?>
         <!-- Pull quote -->
         <div class="mt-8 border-l-4 border-[#C9A84C] bg-white/06 px-6 py-5">
           <p class="text-base font-black leading-7 tracking-[-0.02em] text-white/90">
-            "When a storm creates urgency, you do not start from scratch — you call a partner who already knows what you are working with."
+            "When a storm creates urgency, you do not start from scratch you call a partner who already knows what you are working with."
           </p>
           <span class="mt-2 block text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#C9A84C]">
             The KCS Difference
@@ -311,7 +311,7 @@ get_header(); ?>
         </h2>
         <div class="mt-5 h-1 w-20 bg-[linear-gradient(90deg,#1B3A6B,#C9A84C)]"></div>
         <p class="mt-6 max-w-md text-base leading-8 text-[#1B3A6B]/70">
-          Tell us about your property. We will get back to you within 24 hours — faster if it is urgent.
+          Tell us about your property. We will get back to you within 24 hours faster if it is urgent.
         </p>
 
         <!-- Response promises -->
@@ -334,7 +334,7 @@ get_header(); ?>
           <div>
             <span class="block text-[0.68rem] font-black uppercase tracking-[0.14em] text-[#A8882E]">Need Emergency Response?</span>
             <a href="tel:#" class="mt-0.5 block text-sm font-black text-[#1B3A6B] transition hover:text-[#C9A84C]">
-              Call us directly — [Phone Number]
+              Call us directly (913) 257-7291
             </a>
           </div>
         </div>
@@ -351,11 +351,11 @@ get_header(); ?>
               Request a Roofing Estimate
             </h3>
             <p class="mt-2 text-sm leading-6 text-white/60">
-              We respond within 24 hours — faster for storm damage.
+              We respond within 24 hours faster for storm damage.
             </p>
 
             <div id="kcsRfgFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours. For urgent situations call us directly at [Phone Number].
+              Thank you we'll be in touch within 24 hours. For urgent situations call us directly at (913) 257-7291.
             </div>
             <div id="kcsRfgFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.

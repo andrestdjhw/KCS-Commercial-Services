@@ -23,13 +23,13 @@ const SERVICES = [
 ]
 
 const LOCATIONS = [
-  { label: "Overland Park, KS",  href: "/location/overland-park-ks"  },
-  { label: "Olathe, KS",         href: "/location/olathe-ks"         },
-  { label: "Lenexa, KS",         href: "/location/lenexa-ks"         },
-  { label: "Shawnee, KS",        href: "/location/shawnee-ks"        },
-  { label: "Kansas City, KS",    href: "/location/kansas-city-ks"    },
-  { label: "Paola, KS",          href: "/location/paola-ks"          },
-  { label: "Springfield, MO",    href: "/location/springfield-mo"    },
+  { label: "Overland Park, KS",  href: "#"  },
+  { label: "Olathe, KS",         href: "#"         },
+  { label: "Lenexa, KS",         href: "#"         },
+  { label: "Shawnee, KS",        href: "#"        },
+  { label: "Kansas City, KS",    href: "#"    },
+  { label: "Paola, KS",          href: "#"          },
+  { label: "Springfield, MO",    href: "#"    },
 ]
 
 const QUICK_LINKS = [
@@ -202,7 +202,7 @@ export default function Footer() {
                 <ul style={{ listStyle:"none", margin:0, padding:0, display:"grid", gap:"0.7rem" }}>
                   <li>
                     <a href="tel:#" className="kcs-footer-link" style={footerLinkStyle}>
-                      [Phone Number]
+                      (913) 257-7291
                     </a>
                   </li>
                   <li>

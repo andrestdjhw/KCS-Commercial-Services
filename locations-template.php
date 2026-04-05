@@ -130,7 +130,7 @@ get_header(); ?>
   <div class="relative mx-auto max-w-7xl px-4">
 
     <!-- Tier legend -->
-    <div class="ajs-reveal-up mb-12 flex flex-wrap items-center gap-3">
+    <!-- <div class="ajs-reveal-up mb-12 flex flex-wrap items-center gap-3">
       <span class="text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#1B3A6B]/50 mr-1">Tier:</span>
       <?php foreach ($tier_styles as $label => $style) : ?>
         <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[0.65rem] font-black uppercase tracking-[0.12em]"
@@ -138,7 +138,7 @@ get_header(); ?>
           <?php echo esc_html($label); ?>
         </span>
       <?php endforeach; ?>
-    </div>
+    </div> -->
 
     <!-- Grid: 3 cols on xl, 2 on md, 1 on mobile -->
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

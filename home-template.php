@@ -33,10 +33,26 @@ get_header(); ?>
 
   /* ── About pillars ────────────────────────────────────────────────── */
   $pillars = [
-    [ 'title' => 'Operational Continuity',   'copy' => 'Consistent service so your facility never misses a beat.' ],
-    [ 'title' => 'Compliance Ready',         'copy' => 'Documentation and standards for healthcare, education, and government.' ],
-    [ 'title' => 'Multi Service Platform',   'copy' => 'One trusted partner for cleaning, grounds, drywall, and roofing.' ],
-    [ 'title' => 'Institutional Reliability','copy' => 'We show up, perform, and make it easy to justify internally.' ],
+    [
+      'title' => 'Operational Continuity',
+      'copy'  => 'Consistent service so your facility never misses a beat.',
+      'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    ],
+    [
+      'title' => 'Compliance Ready',
+      'copy'  => 'Documentation and standards for healthcare, education, and government.',
+      'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+    ],
+    [
+      'title' => 'Multi Service Platform',
+      'copy'  => 'One trusted partner for cleaning, grounds, drywall, and roofing.',
+      'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+    ],
+    [
+      'title' => 'Institutional Reliability',
+      'copy'  => 'We show up, perform, and make it easy to justify internally.',
+      'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    ],
   ];
 
   /* ── Services ─────────────────────────────────────────────────────── */
@@ -209,7 +225,7 @@ get_header(); ?>
 
         <!-- CTAs -->
         <div class="mt-9 flex flex-wrap gap-3">
-          <a href="#contact-form" class="kcs-btn kcs-btn-gold inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em]">
+          <a href="tel:+19132577291" class="kcs-btn kcs-btn-gold inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em]">
             Request a Contract Quote
           </a>
           <a href="#services" class="kcs-btn kcs-btn-ghost inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
@@ -364,8 +380,7 @@ get_header(); ?>
         <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver contract after contract, year after year.</p>
 
         <div class="flex flex-wrap gap-3 pt-2">
-          <a href="#contact-form" class="kcs-btn kcs-btn-navy inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em] text-white">Work With Us</a>
-          <a href="#services"     class="kcs-btn kcs-btn-outline inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em]">Our Services</a>
+          <a href="#services" class="kcs-btn kcs-btn-outline inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em]">Our Services</a>
         </div>
       </div>
 
@@ -374,6 +389,10 @@ get_header(); ?>
         <?php foreach ($pillars as $pillar) : ?>
           <article class="group relative overflow-hidden border border-[#1B2B6B]/10 bg-[#F5F4EF] p-5">
             <div class="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)] transition-all duration-500 group-hover:h-1"></div>
+            <!-- Icon -->
+            <div class="mb-3 flex h-9 w-9 items-center justify-center bg-[#1B2B6B] text-[#C9A84C]">
+              <?php echo $pillar['icon']; ?>
+            </div>
             <h3 class="text-base font-black leading-tight tracking-[-0.02em] text-[#1B2B6B]">
               <?php echo esc_html($pillar['title']); ?>
             </h3>
@@ -430,7 +449,7 @@ get_header(); ?>
               <?php endforeach; ?>
             </ul>
 
-            <a href="#contact-form"
+            <a href="/contact-us"
               class="mt-7 inline-flex items-center gap-2 border-b-2 border-[#C9A84C] pb-0.5 text-sm font-black uppercase tracking-[0.12em] text-[#1B2B6B] transition-all hover:gap-3">
               <?php echo esc_html($svc['cta']); ?>
               <span>→</span>

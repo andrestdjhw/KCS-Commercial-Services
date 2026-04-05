@@ -185,7 +185,7 @@ get_header(); ?>
         <div class="border border-[#1B2B6B]/10 bg-white px-6 py-5 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
           <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#C9A84C]">Phone</p>
           <a href="#" class="mt-2 block text-xl font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
-            [Phone Number]
+            (913) 257-7291
           </a>
         </div>
 

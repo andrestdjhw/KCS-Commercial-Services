@@ -167,16 +167,31 @@ export default function Navbar() {
         .kcs-mobile-group-item { transition: background-color .15s ease; }
         .kcs-mobile-group-item:hover { background: rgba(201,168,76,0.08) !important; }
 
+        .kcs-kcbadge {
+          transition: opacity .2s ease, transform .2s ease,
+                      border-color .2s ease, background .2s ease;
+        }
+        .kcs-kcbadge:hover {
+          opacity: 0.88 !important;
+          transform: translateY(-1px) !important;
+          border-color: rgba(201,168,76,0.55) !important;
+          background: rgba(201,168,76,0.20) !important;
+        }
+
         @media (max-width: 980px) {
           .kcs-desktop-nav,
           .kcs-nav-cta    { display: none !important; }
           .kcs-nav-toggle { display: inline-flex !important; }
         }
 
+        @media (max-width: 780px) {
+          .kcs-topbar-center { display: none !important; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .kcs-topbar-link, .kcs-social-link, .kcs-menu-link,
           .kcs-btn-primary, .kcs-mobile-panel, .kcs-brand-mark-outer,
-          .kcs-nav-toggle, .kcs-mobile-group__panel {
+          .kcs-nav-toggle, .kcs-mobile-group__panel, .kcs-kcbadge {
             transition: none !important; animation: none !important;
           }
         }
@@ -202,16 +217,16 @@ export default function Navbar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
             gap: "0.75rem",
             minHeight: 48,
             paddingBlock: "0.5rem",
           }}>
 
-            {/* LEFT */}
+            {/* ── LEFT: Phone + Email ── */}
             <div style={{ display:"flex", alignItems:"center", gap:"1.25rem", flexWrap:"wrap" }}>
 
-              <a href="tel:#" className="kcs-topbar-link"
+              <a href="tel:+19132577291" className="kcs-topbar-link"
                 style={{ display:"inline-flex", alignItems:"center", gap:"0.5rem",
                          fontSize:"0.78rem", fontWeight:700,
                          color: KCS.white, textDecoration:"none" }}>
@@ -243,11 +258,38 @@ export default function Navbar() {
                 </span>
                 <span style={{ fontSize:"0.64rem", fontWeight:800, textTransform:"uppercase",
                                letterSpacing:"0.14em", color: KCS.goldLight }}>Email</span>
-                <span>[client email]</span>
+                <span>info@kcscommercial.com</span>
               </a>
             </div>
 
-            {/* RIGHT */}
+            {/* ── CENTER: KC Metro Based badge ── */}
+            <div className="kcs-topbar-center" style={{ display:"flex", justifyContent:"center", flexShrink:0 }}>
+              <a
+                href="https://www.google.com/maps/search/Kansas+City+Metro+Area"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="kcs-kcbadge"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: "0.45rem",
+                  minHeight: 30, paddingInline: "0.85rem",
+                  border: `1px solid rgba(201,168,76,0.35)`,
+                  background: "rgba(201,168,76,0.12)",
+                  fontSize: "0.68rem", fontWeight: 800,
+                  letterSpacing: "0.08em", textTransform: "uppercase",
+                  color: KCS.goldLight, textDecoration: "none",
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"
+                  style={{ width: 13, height: 13, flexShrink: 0 }}>
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                KC Metro Based
+              </a>
+            </div>
+
+            {/* ── RIGHT: Badges + Socials ── */}
             <div style={{ display:"flex", alignItems:"center", gap:"0.85rem", flexWrap:"wrap" }}>
 
               <span style={{
@@ -301,18 +343,8 @@ export default function Navbar() {
                   </svg>
                 </a>
               </div>
-
-              <span style={{
-                display:"inline-flex", alignItems:"center", minHeight:30,
-                paddingInline:"0.8rem",
-                border:`1px solid rgba(201,168,76,0.35)`,
-                background:"rgba(201,168,76,0.12)",
-                fontSize:"0.68rem", fontWeight:800, letterSpacing:"0.08em",
-                textTransform:"uppercase", color: KCS.goldLight,
-              }}>
-                KC Metro Based
-              </span>
             </div>
+
           </div>
         </div>
 
@@ -470,7 +502,6 @@ export default function Navbar() {
                   />
 
                   <MobileLink href="/locations">Locations</MobileLink>
-
                   <MobileLink href="/contact-us">Contact Us</MobileLink>
 
                   <a href="/contact-us" className="kcs-btn-primary" style={{
@@ -512,7 +543,6 @@ function Dropdown({ items, visible }) {
       transition:"opacity .22s ease, transform .22s ease, visibility .22s ease",
       zIndex: 50,
     }}>
-      {/* Gold accent bar — matches KCS brand */}
       <div style={{
         height:3,
         background:`linear-gradient(90deg, ${KCS.navy}, ${KCS.gold})`,

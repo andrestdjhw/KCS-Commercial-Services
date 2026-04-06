@@ -207,7 +207,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <a href="#" className="kcs-footer-link" style={footerLinkStyle}>
-                      [Email Address]
+                      info@kcscommercial.com
                     </a>
                   </li>
                   <li>

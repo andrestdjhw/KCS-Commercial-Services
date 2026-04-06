@@ -108,7 +108,7 @@ get_header(); ?>
 
             <!-- Success / Error -->
             <div id="kcsContactSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-5 py-4 text-sm leading-6 text-green-200">
-              Thank you. We have received your request and will respond within 24 hours. If your need is urgent, call us directly at <strong>[phone number]</strong>.
+              Thank you. We have received your request and will respond within 24 hours. If your need is urgent, call us directly at <strong>(913) 257-7291</strong>.
             </div>
             <div id="kcsContactError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-5 py-4 text-sm text-red-200">
               Something went wrong. Please try again.
@@ -163,6 +163,19 @@ get_header(); ?>
                 <textarea id="ct_details" name="message" rows="5" class="kcs-input kcs-textarea" required></textarea>
               </div>
 
+              <!-- ── reCAPTCHA v2 ── -->
+              <div>
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6Ldb4aksAAAAAF6H4Hs58PvpVgiL4Kxevwn_nvzw"
+                  data-theme="dark"
+                  data-size="normal">
+                </div>
+                <p id="kcsCaptchaError" class="hidden mt-2 text-[0.78rem] font-bold text-red-300">
+                  Please complete the captcha before submitting.
+                </p>
+              </div>
+
               <div class="pt-1">
                 <button id="kcsContactSubmitBtn" type="submit"
                   class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
@@ -184,7 +197,7 @@ get_header(); ?>
         <!-- Phone -->
         <div class="border border-[#1B2B6B]/10 bg-white px-6 py-5 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
           <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#C9A84C]">Phone</p>
-          <a href="#" class="mt-2 block text-xl font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
+          <a href="tel:+19132577291" class="mt-2 block text-xl font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
             (913) 257-7291
           </a>
         </div>
@@ -193,7 +206,7 @@ get_header(); ?>
         <div class="border border-[#1B2B6B]/10 bg-white px-6 py-5 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
           <p class="text-[0.65rem] font-black uppercase tracking-[0.20em] text-[#1B2B6B]/50">Email</p>
           <a href="#" class="mt-2 block text-xl font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
-            [Email Address]
+            info@kcscommercial.com
           </a>
         </div>
 
@@ -218,7 +231,7 @@ get_header(); ?>
           </p>
         </div>
 
-        <!-- Map embed — centered on Overland Park, KS -->
+        <!-- Map embed -->
         <div class="overflow-hidden border border-[#1B2B6B]/10 shadow-[0_10px_24px_rgba(27,43,107,0.06)]">
           <iframe
             title="KCS Commercial Services — Service Area Map"
@@ -279,12 +292,12 @@ get_header(); ?>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-  .kcs-home {
+  .kcs-contact-page {
     font-family: "Montserrat", "Segoe UI", sans-serif;
   }
-  .kcs-home h1,
-  .kcs-home h2,
-  .kcs-home h3 {
+  .kcs-contact-page h1,
+  .kcs-contact-page h2,
+  .kcs-contact-page h3 {
     font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 
@@ -336,6 +349,9 @@ get_header(); ?>
   .kcs-textarea  { resize: vertical; min-height: 120px; }
   .kcs-input option { background: #1B2B6B; color: #fff; }
 
+  /* reCAPTCHA spacing */
+  .g-recaptcha { margin-top: 0.25rem; }
+
   .ajs-reveal-up,
   .ajs-reveal-left,
   .ajs-reveal-right,
@@ -366,7 +382,12 @@ get_header(); ?>
   }
 </style>
 
+<!-- reCAPTCHA v2 API -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -386,28 +407,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ── EmailJS ────────────────────────────────────────────────────── */
   if (window.emailjs) {
-    emailjs.init({ publicKey: "CDikedp0ZSxxiBeLb" }) // replace with KCS key
+    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" }) // replace with KCS key
   }
 
-  const form      = document.getElementById("kcsContactForm")
-  const submitBtn = document.getElementById("kcsContactSubmitBtn")
-  const successEl = document.getElementById("kcsContactSuccess")
-  const errorEl   = document.getElementById("kcsContactError")
+  const form         = document.getElementById("kcsContactForm")
+  const submitBtn    = document.getElementById("kcsContactSubmitBtn")
+  const successEl    = document.getElementById("kcsContactSuccess")
+  const errorEl      = document.getElementById("kcsContactError")
+  const captchaError = document.getElementById("kcsCaptchaError")
 
   if (!form) return
 
   form.addEventListener("submit", function (e) {
     e.preventDefault()
+
+    // Hide all messages
     successEl.classList.add("hidden")
     errorEl.classList.add("hidden")
+    captchaError.classList.add("hidden")
+
+    // ── Validate reCAPTCHA ───────────────────────────────────────────
+    const recaptchaResponse = grecaptcha.getResponse()
+    if (!recaptchaResponse) {
+      captchaError.classList.remove("hidden")
+      captchaError.scrollIntoView({ behavior: "smooth", block: "center" })
+      return
+    }
+    // ────────────────────────────────────────────────────────────────
 
     const originalText    = submitBtn.textContent
     submitBtn.disabled    = true
     submitBtn.textContent = "Sending..."
 
     emailjs.send(
-      "service_a03f0zf",   // replace with KCS EmailJS service ID
-      "template_17g32zt",  // replace with KCS EmailJS template ID
+      "service_5e06r2o",   // replace with KCS EmailJS service ID
+      "template_r2st5jy",  // replace with KCS EmailJS template ID
       {
         name:    document.getElementById("ct_name").value,
         company: document.getElementById("ct_company").value,
@@ -419,12 +453,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     ).then(function () {
       form.reset()
+      grecaptcha.reset()
       successEl.classList.remove("hidden")
       submitBtn.disabled    = false
       submitBtn.textContent = originalText
       successEl.scrollIntoView({ behavior: "smooth", block: "center" })
     }).catch(function (err) {
       console.error("EmailJS error:", err)
+      grecaptcha.reset()
       errorEl.classList.remove("hidden")
       submitBtn.disabled    = false
       submitBtn.textContent = originalText

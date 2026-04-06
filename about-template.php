@@ -263,13 +263,13 @@ get_header(); ?>
           <div class="border border-[#1B2B6B]/10 bg-[#F5F4EF] px-6 py-5">
             <p class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#C9A84C]">Phone</p>
             <a href="#" class="mt-1.5 block text-lg font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
-              [Add number]
+              (913) 257-7291
             </a>
           </div>
           <div class="border border-[#1B2B6B]/10 bg-[#F5F4EF] px-6 py-5">
             <p class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#1B2B6B]/50">Email</p>
             <a href="#" class="mt-1.5 block text-lg font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
-              [Add email]
+              info@kcscommercial.com
             </a>
           </div>
           <div class="border border-[#1B2B6B]/10 bg-[#C9A84C]/10 px-6 py-5">
@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ── EmailJS ────────────────────────────────────────────────────── */
   if (window.emailjs) {
-    emailjs.init({ publicKey: "CDikedp0ZSxxiBeLb" }) // replace with KCS key
+    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" }) // replace with KCS key
   }
 
   /* ── Form ───────────────────────────────────────────────────────── */
@@ -508,8 +508,8 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.textContent = "Sending..."
 
     emailjs.send(
-      "service_a03f0zf",   // replace with KCS EmailJS service ID
-      "template_17g32zt",  // replace with KCS EmailJS template ID
+      "service_5e06r2o",   // replace with KCS EmailJS service ID
+      "template_r2st5jy",  // replace with KCS EmailJS template ID
       {
         name:    document.getElementById("about_name").value,
         phone:   document.getElementById("about_phone").value,

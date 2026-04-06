@@ -356,7 +356,7 @@ function Footer() {
                     href: "#",
                     className: "kcs-footer-link",
                     style: footerLinkStyle,
-                    children: "[Email Address]"
+                    children: "info@kcscommercial.com"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -767,16 +767,31 @@ function Navbar() {
         .kcs-mobile-group-item { transition: background-color .15s ease; }
         .kcs-mobile-group-item:hover { background: rgba(201,168,76,0.08) !important; }
 
+        .kcs-kcbadge {
+          transition: opacity .2s ease, transform .2s ease,
+                      border-color .2s ease, background .2s ease;
+        }
+        .kcs-kcbadge:hover {
+          opacity: 0.88 !important;
+          transform: translateY(-1px) !important;
+          border-color: rgba(201,168,76,0.55) !important;
+          background: rgba(201,168,76,0.20) !important;
+        }
+
         @media (max-width: 980px) {
           .kcs-desktop-nav,
           .kcs-nav-cta    { display: none !important; }
           .kcs-nav-toggle { display: inline-flex !important; }
         }
 
+        @media (max-width: 780px) {
+          .kcs-topbar-center { display: none !important; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .kcs-topbar-link, .kcs-social-link, .kcs-menu-link,
           .kcs-btn-primary, .kcs-mobile-panel, .kcs-brand-mark-outer,
-          .kcs-nav-toggle, .kcs-mobile-group__panel {
+          .kcs-nav-toggle, .kcs-mobile-group__panel, .kcs-kcbadge {
             transition: none !important; animation: none !important;
           }
         }
@@ -802,7 +817,7 @@ function Navbar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
             gap: "0.75rem",
             minHeight: 48,
             paddingBlock: "0.5rem"
@@ -815,7 +830,7 @@ function Navbar() {
               flexWrap: "wrap"
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "tel:#",
+              href: "tel:+19132577291",
               className: "kcs-topbar-link",
               style: {
                 display: "inline-flex",
@@ -908,9 +923,57 @@ function Navbar() {
                 },
                 children: "Email"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: "[client email]"
+                children: "info@kcscommercial.com"
               })]
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "kcs-topbar-center",
+            style: {
+              display: "flex",
+              justifyContent: "center",
+              flexShrink: 0
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "https://www.google.com/maps/search/Kansas+City+Metro+Area",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "kcs-kcbadge",
+              style: {
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.45rem",
+                minHeight: 30,
+                paddingInline: "0.85rem",
+                border: `1px solid rgba(201,168,76,0.35)`,
+                background: "rgba(201,168,76,0.12)",
+                fontSize: "0.68rem",
+                fontWeight: 800,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: KCS.goldLight,
+                textDecoration: "none"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "1.8",
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                style: {
+                  width: 13,
+                  height: 13,
+                  flexShrink: 0
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                  cx: "12",
+                  cy: "10",
+                  r: "3"
+                })]
+              }), "KC Metro Based"]
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             style: {
               display: "flex",
@@ -1030,21 +1093,6 @@ function Navbar() {
                   })
                 })
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              style: {
-                display: "inline-flex",
-                alignItems: "center",
-                minHeight: 30,
-                paddingInline: "0.8rem",
-                border: `1px solid rgba(201,168,76,0.35)`,
-                background: "rgba(201,168,76,0.12)",
-                fontSize: "0.68rem",
-                fontWeight: 800,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: KCS.goldLight
-              },
-              children: "KC Metro Based"
             })]
           })]
         })

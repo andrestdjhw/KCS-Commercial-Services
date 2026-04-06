@@ -20,6 +20,7 @@ get_header(); ?>
     'Drywall & Interior',
     'Roofing & Siding',
     'Multiple Services',
+    'Other / Not Sure',
   ];
 
   /* ── Trust bar items ──────────────────────────────────────────────── */
@@ -182,7 +183,6 @@ get_header(); ?>
 ═════════════════════════════════════════════════════════════════════ -->
 <section id="hero" class="relative overflow-hidden bg-[#13204F] text-white">
 
-  <!-- Background image — reemplaza el src con tu imagen real -->
   <div class="absolute inset-0">
     <img
       src="/wp-content/uploads/2026/04/KCSHeroImage-scaled.jpg"
@@ -190,13 +190,10 @@ get_header(); ?>
       aria-hidden="true"
       class="kcs-hero-bg-img h-full w-full object-cover object-center"
     >
-    <!-- Overlay navy: controla la opacidad para más/menos imagen visible -->
     <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(19,32,79,0.99) 0%, rgba(27,58,107,0.82) 50%, rgba(19,32,79,0.88) 100%);"></div>
   </div>
 
-  <!-- Background texture encima del overlay -->
   <div class="absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
-  <!-- Gold corner accent -->
   <div class="absolute top-0 right-0 w-[520px] h-[520px] opacity-[0.08]" style="background:radial-gradient(circle at top right,#C9A84C,transparent 65%);"></div>
 
   <div class="relative mx-auto max-w-7xl px-4 py-16 lg:py-24">
@@ -204,26 +201,17 @@ get_header(); ?>
 
       <!-- LEFT: Copy -->
       <div class="ajs-reveal-left flex flex-col justify-center">
-
-        <!-- Eyebrow -->
         <p class="text-xs font-black uppercase tracking-[0.28em] text-[#C9A84C]">
           Kansas City Metro &nbsp;·&nbsp; Building Services Platform
         </p>
-
-        <!-- H1 — DO NOT ALTER -->
         <h1 class="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl xl:text-7xl">
           We Don't Just Clean Buildings. We Protect Them.
         </h1>
-
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
-
-        <!-- Subheadline -->
         <p class="mt-7 max-w-xl text-base leading-8 text-white/82 md:text-lg">
           KCS Commercial Services delivers institutional grade commercial cleaning, landscaping, drywall, and roofing for property managers, healthcare facilities, school districts, and general contractors across the KC metro.
           <strong class="mt-3 block font-black text-white/95">Consistent. Compliant. Built for long term retention.</strong>
         </p>
-
-        <!-- CTAs -->
         <div class="mt-9 flex flex-wrap gap-3">
           <a href="tel:+19132577291" class="kcs-btn kcs-btn-gold inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em]">
             Request a Contract Quote
@@ -232,8 +220,6 @@ get_header(); ?>
             Explore Services
           </a>
         </div>
-
-        <!-- Location badges -->
         <div class="mt-8 flex flex-wrap gap-2">
           <?php foreach (['Overland Park','Olathe','Lenexa','Shawnee','Kansas City KS','Springfield MO'] as $loc) : ?>
             <span class="inline-flex items-center gap-1.5 border border-white/14 bg-white/07 px-3 py-1.5 text-[0.68rem] font-black uppercase tracking-[0.12em] text-white/80">
@@ -248,14 +234,13 @@ get_header(); ?>
       <div id="contact-form" class="ajs-reveal-right">
         <div class="relative overflow-hidden border border-white/10 bg-white/06 shadow-[0_24px_60px_rgba(0,0,0,0.30)] backdrop-blur-sm">
           <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-
           <div class="p-7 md:p-9">
             <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Free Consultation</p>
             <h2 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em]">Get a Free Contract Quote</h2>
             <p class="mt-2 text-sm leading-6 text-white/72">Tell us about your facility. We'll respond within 24 hours.</p>
 
             <div id="kcsHeroFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you We'll be in touch within 24 hours.
+              Thank you — we'll be in touch within 24 hours.
             </div>
             <div id="kcsHeroFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
               Something went wrong. Please try again.
@@ -263,6 +248,15 @@ get_header(); ?>
 
             <form id="kcsHeroForm" class="mt-6 space-y-4" novalidate>
               <?php echo kcs_form_fields($form_services, 'hero'); ?>
+
+              <!-- reCAPTCHA hero -->
+              <div>
+                <div id="kcs-captcha-hero"></div>
+                <p id="kcsCaptchaHeroError" class="hidden mt-2 text-[0.78rem] font-bold text-red-300">
+                  Please complete the captcha before submitting.
+                </p>
+              </div>
+
               <button id="kcsHeroSubmitBtn" type="submit"
                 class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
                 Submit Request
@@ -284,10 +278,7 @@ get_header(); ?>
 ═════════════════════════════════════════════════════════════════════ -->
 <section class="kcs-trust-bar border-b border-[#1B2B6B]/10 bg-[#C9A84C] overflow-hidden">
   <div class="kcs-trust-track py-4">
-    <?php
-      /* Duplicate items 3× so the loop is seamless on any screen width */
-      $marquee_items = array_merge($trust_items, $trust_items, $trust_items);
-    ?>
+    <?php $marquee_items = array_merge($trust_items, $trust_items, $trust_items); ?>
     <?php foreach ($marquee_items as $item) : ?>
       <div class="kcs-trust-item flex items-center gap-2.5">
         <svg class="h-4 w-4 shrink-0 text-[#13204F]" viewBox="0 0 20 20" fill="currentColor">
@@ -296,7 +287,6 @@ get_header(); ?>
         <span class="whitespace-nowrap text-sm font-black uppercase tracking-[0.12em] text-[#13204F]">
           <?php echo esc_html($item); ?>
         </span>
-        <!-- Separator dot -->
         <span class="mx-4 block h-1.5 w-1.5 shrink-0 rotate-45 bg-[#13204F]/30"></span>
       </div>
     <?php endforeach; ?>
@@ -305,51 +295,26 @@ get_header(); ?>
 
 <style>
   .kcs-trust-bar { position: relative; }
-
-  /* Fade edges */
   .kcs-trust-bar::before,
   .kcs-trust-bar::after {
-    content: "";
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 120px;
-    z-index: 2;
-    pointer-events: none;
+    content: ""; position: absolute; top: 0; bottom: 0;
+    width: 120px; z-index: 2; pointer-events: none;
   }
-  .kcs-trust-bar::before {
-    left: 0;
-    background: linear-gradient(90deg, #C9A84C, transparent);
-  }
-  .kcs-trust-bar::after {
-    right: 0;
-    background: linear-gradient(270deg, #C9A84C, transparent);
-  }
-
+  .kcs-trust-bar::before { left: 0;  background: linear-gradient(90deg, #C9A84C, transparent); }
+  .kcs-trust-bar::after  { right: 0; background: linear-gradient(270deg, #C9A84C, transparent); }
   .kcs-trust-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
+    display: flex; align-items: center; width: max-content;
     animation: kcsTrustScroll 28s linear infinite;
   }
-
-  .kcs-trust-track:hover {
-    animation-play-state: paused;
-  }
-
-  .kcs-trust-item {
-    flex-shrink: 0;
-    padding-inline: 1rem;
-  }
-
+  .kcs-trust-track:hover { animation-play-state: paused; }
+  .kcs-trust-item { flex-shrink: 0; padding-inline: 1rem; }
   @keyframes kcsTrustScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-33.333%); }
   }
-
   @media (prefers-reduced-motion: reduce) {
     .kcs-trust-track { animation: none; }
-    .kcs-trust-bar::before,
-    .kcs-trust-bar::after { display: none; }
+    .kcs-trust-bar::before, .kcs-trust-bar::after { display: none; }
   }
 </style>
 
@@ -359,10 +324,7 @@ get_header(); ?>
 <section id="about" class="relative overflow-hidden bg-white py-20 lg:py-28">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.08),transparent_30%)]"></div>
   <div class="absolute left-0 top-0 h-full w-[6px] bg-[linear-gradient(180deg,#C9A84C,#1B2B6B,#C9A84C)]"></div>
-
   <div class="relative mx-auto max-w-7xl px-4">
-
-    <!-- Header -->
     <div class="ajs-reveal-up max-w-3xl">
       <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">About KCS Commercial Services</p>
       <h2 class="mt-4 text-3xl font-black leading-[0.94] tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
@@ -370,26 +332,19 @@ get_header(); ?>
       </h2>
       <div class="mt-6 h-1 w-24 bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)]"></div>
     </div>
-
-    <!-- Body copy + pillars -->
     <div class="mt-12 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-
       <div class="ajs-reveal-left space-y-6 text-base leading-8 text-[#1B2B6B]/78">
         <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company, we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, and roofing.</p>
         <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Springfield MO, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should  without you having to think about it.</p>
         <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver contract after contract, year after year.</p>
-
         <div class="flex flex-wrap gap-3 pt-2">
           <a href="#services" class="kcs-btn kcs-btn-outline inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em]">Our Services</a>
         </div>
       </div>
-
-      <!-- 4 Pillars -->
       <div class="ajs-reveal-right grid grid-cols-2 gap-4">
         <?php foreach ($pillars as $pillar) : ?>
           <article class="group relative overflow-hidden border border-[#1B2B6B]/10 bg-[#F5F4EF] p-5">
             <div class="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)] transition-all duration-500 group-hover:h-1"></div>
-            <!-- Icon -->
             <div class="mb-3 flex h-9 w-9 items-center justify-center bg-[#1B2B6B] text-[#C9A84C]">
               <?php echo $pillar['icon']; ?>
             </div>
@@ -411,9 +366,7 @@ get_header(); ?>
 ═════════════════════════════════════════════════════════════════════ -->
 <section id="services" class="relative overflow-hidden bg-[#F5F4EF] py-20 lg:py-28">
   <div class="absolute right-0 top-0 h-full w-[30%] bg-[#1B2B6B]/03"></div>
-
   <div class="relative mx-auto max-w-7xl px-4">
-
     <div class="ajs-reveal-up max-w-3xl">
       <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">What We Do</p>
       <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
@@ -423,23 +376,18 @@ get_header(); ?>
         Every service we offer is connected. Commercial cleaning opens the relationship. Grounds, drywall, and roofing expand it. Each contract builds toward a long-term partnership not a one time job.
       </p>
     </div>
-
     <div class="mt-14 grid gap-6 md:grid-cols-2">
       <?php foreach ($services as $svc) : ?>
         <article class="ajs-reveal-stagger group relative overflow-hidden border border-[#1B2B6B]/10 bg-white">
-          <!-- Tone top bar -->
           <div class="h-[5px] w-full transition-all duration-500 group-hover:h-2"
             style="background:<?php echo esc_attr($svc['tone']); ?>;"></div>
-
           <div class="p-7 md:p-8">
             <h3 class="text-xl font-black leading-tight tracking-[-0.03em] text-[#1B2B6B]">
               <?php echo $svc['headline']; ?>
             </h3>
-
             <p class="mt-4 text-[0.9rem] leading-7 text-[#1B2B6B]/72">
               <?php echo esc_html($svc['body']); ?>
             </p>
-
             <ul class="mt-5 space-y-2">
               <?php foreach ($svc['bullets'] as $bullet) : ?>
                 <li class="flex items-start gap-2.5 text-[0.85rem] leading-6 text-[#1B2B6B]/78">
@@ -448,7 +396,6 @@ get_header(); ?>
                 </li>
               <?php endforeach; ?>
             </ul>
-
             <a href="/contact-us"
               class="mt-7 inline-flex items-center gap-2 border-b-2 border-[#C9A84C] pb-0.5 text-sm font-black uppercase tracking-[0.12em] text-[#1B2B6B] transition-all hover:gap-3">
               <?php echo esc_html($svc['cta']); ?>
@@ -458,8 +405,6 @@ get_header(); ?>
         </article>
       <?php endforeach; ?>
     </div>
-
-    <!-- Anchor link -->
     <div class="ajs-reveal-up mt-10 border border-[#1B2B6B]/12 bg-white px-8 py-5 text-center">
       <p class="text-sm font-bold text-[#1B2B6B]/72">
         Not sure which service fits your facility? —&nbsp;
@@ -477,9 +422,7 @@ get_header(); ?>
 <section class="relative overflow-hidden bg-[#1B2B6B] py-20 text-white lg:py-28">
   <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.35) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.35) 50%,rgba(255,255,255,0.35) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(201,168,76,0.12),transparent_40%)]"></div>
-
   <div class="relative mx-auto max-w-7xl px-4">
-
     <div class="ajs-reveal-up max-w-3xl">
       <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Why KCS</p>
       <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] md:text-5xl">
@@ -489,7 +432,6 @@ get_header(); ?>
         Most facility managers and property owners have dealt with vendors who overpromise and underdeliver. KCS was built to be the obvious alternative a structured, accountable, institutional-grade operation that makes the decision to hire us easy to justify to anyone asking questions.
       </p>
     </div>
-
     <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       <?php foreach ($differentiators as $d) : ?>
         <article class="ajs-reveal-stagger group relative overflow-hidden border border-white/10 bg-white/05 p-7 backdrop-blur-sm transition hover:bg-white/08">
@@ -509,91 +451,21 @@ get_header(); ?>
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════════
-     6. LOCATIONS
+     6. LOCATIONS (commented out)
 ═════════════════════════════════════════════════════════════════════ -->
-<!-- <section id="locations" class="relative overflow-hidden bg-white py-20 lg:py-28">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,168,76,0.07),transparent_28%)]"></div>
-
-  <div class="relative mx-auto max-w-7xl px-4">
-
-    <div class="ajs-reveal-up max-w-3xl">
-      <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Areas We Serve</p>
-      <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
-        Commercial Building Services Across the Kansas City Metro
-      </h2>
-      <p class="mt-5 max-w-2xl text-base leading-8 text-[#1B2B6B]/70">
-        We serve where we can do it right. Our primary focus is the Johnson County corridor the densest concentration of institutional buyers, healthcare systems, school districts, and commercial properties in the KC metro.
-      </p>
-    </div>
-
-    <!-- Tier A 
-    <div class="mt-14">
-      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#C9A84C]">Tier A — Primary Markets</p>
-      <div class="grid gap-4 md:grid-cols-3">
-        <?php foreach ($locations_tier_a as $loc) : ?>
-          <a href="<?php echo esc_url($loc['href']); ?>"
-            class="ajs-reveal-stagger group relative overflow-hidden border border-[#1B2B6B]/12 bg-[#1B2B6B] p-7 text-white transition hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(27,43,107,0.22)]">
-            <div class="absolute inset-x-0 bottom-0 h-[3px] bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
-            <span class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#C9A84C]">📍</span>
-            <h3 class="mt-2 text-xl font-black tracking-[-0.03em]"><?php echo esc_html($loc['city']); ?></h3>
-            <p class="mt-2 text-[0.78rem] leading-5 text-white/65"><?php echo esc_html($loc['note']); ?></p>
-            <span class="mt-5 inline-flex items-center gap-1.5 text-[0.72rem] font-black uppercase tracking-[0.12em] text-[#C9A84C] transition-all group-hover:gap-2.5">
-              View Location <span>→</span>
-            </span>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
-
-     Tier B 
-    <div class="mt-8">
-      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Tier B Support Markets</p>
-      <div class="grid gap-4 md:grid-cols-2">
-        <?php foreach ($locations_tier_b as $loc) : ?>
-          <a href="<?php echo esc_url($loc['href']); ?>"
-            class="ajs-reveal-stagger group border border-[#1B2B6B]/12 bg-[#F5F4EF] p-6 transition hover:-translate-y-1 hover:border-[#C9A84C]/40 hover:shadow-[0_16px_36px_rgba(27,43,107,0.10)]">
-            <h3 class="flex items-center gap-2 text-lg font-black tracking-[-0.03em] text-[#1B2B6B]">
-              <span class="h-2.5 w-2.5 shrink-0 rotate-45 bg-[#C9A84C]"></span>
-              <?php echo esc_html($loc['city']); ?>
-            </h3>
-            <p class="mt-2 text-[0.8rem] leading-6 text-[#1B2B6B]/60"><?php echo esc_html($loc['note']); ?></p>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
-
-    Additional 
-    <div class="mt-8">
-      <p class="mb-4 text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#1B2B6B]/50">Additional Markets</p>
-      <div class="grid gap-4 md:grid-cols-2">
-        <?php foreach ($locations_additional as $loc) : ?>
-          <a href="<?php echo esc_url($loc['href']); ?>"
-            class="ajs-reveal-stagger group border border-[#1B2B6B]/12 bg-[#F5F4EF] p-6 transition hover:-translate-y-1 hover:border-[#C9A84C]/40 hover:shadow-[0_16px_36px_rgba(27,43,107,0.10)]">
-            <h3 class="flex items-center gap-2 text-lg font-black tracking-[-0.03em] text-[#1B2B6B]">
-              <span class="h-2.5 w-2.5 shrink-0 rotate-45 bg-[#C9A84C]/60"></span>
-              <?php echo esc_html($loc['city']); ?>
-            </h3>
-            <p class="mt-2 text-[0.8rem] leading-6 text-[#1B2B6B]/60"><?php echo esc_html($loc['note']); ?></p>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </div>
-</section> -->
+<!-- <section id="locations"> ... </section> -->
 
 <!-- ════════════════════════════════════════════════════════════════════
      7. HOW WE WORK
 ═════════════════════════════════════════════════════════════════════ -->
 <section class="bg-[#F5F4EF] py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-4">
-
     <div class="ajs-reveal-up mx-auto max-w-3xl text-center">
       <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Our Process</p>
       <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
         From First Call to Long-Term Contract
       </h2>
     </div>
-
     <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       <?php foreach ($steps as $step) : ?>
         <article class="ajs-reveal-stagger relative overflow-hidden border border-[#1B2B6B]/10 bg-white p-7">
@@ -618,7 +490,6 @@ get_header(); ?>
 ═════════════════════════════════════════════════════════════════════ -->
 <section class="border-y border-[#1B2B6B]/10 bg-white py-20 lg:py-28">
   <div class="mx-auto max-w-5xl px-4">
-
     <div class="ajs-reveal-up mx-auto max-w-3xl text-center">
       <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Frequently Asked Questions</p>
       <h2 class="mt-4 text-3xl font-black leading-tight tracking-[-0.05em] text-[#1B2B6B] md:text-5xl">
@@ -626,7 +497,6 @@ get_header(); ?>
       </h2>
       <div class="mx-auto mt-5 h-1 w-24 bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)]"></div>
     </div>
-
     <div class="mt-12 grid gap-3">
       <?php foreach ($faqs as $faq) : ?>
         <details class="ajs-reveal-stagger kcs-faq group border border-[#1B2B6B]/10 bg-[#F5F4EF]">
@@ -653,7 +523,6 @@ get_header(); ?>
 <section class="relative overflow-hidden bg-[#13204F] py-20 text-white lg:py-28">
   <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(135deg,rgba(255,255,255,0.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.4) 75%,transparent 75%,transparent);background-size:22px 22px;"></div>
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.10),transparent_35%)]"></div>
-
   <div class="relative mx-auto max-w-7xl px-4">
     <div class="grid gap-14 lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_520px]">
 
@@ -686,6 +555,15 @@ get_header(); ?>
 
             <form id="kcsCtaForm" class="mt-6 space-y-4" novalidate>
               <?php echo kcs_form_fields($form_services, 'cta'); ?>
+
+              <!-- reCAPTCHA CTA -->
+              <div>
+                <div id="kcs-captcha-cta"></div>
+                <p id="kcsCaptchaCtaError" class="hidden mt-2 text-[0.78rem] font-bold text-red-300">
+                  Please complete the captcha before submitting.
+                </p>
+              </div>
+
               <button id="kcsCtaSubmitBtn" type="submit"
                 class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
                 Send My Request →
@@ -705,7 +583,7 @@ get_header(); ?>
 </main>
 
 <?php
-/* ── Form fields helper (reused in hero + CTA) ───────────────────── */
+/* ── Form fields helper ── matches contact-template.php exactly ──── */
 function kcs_form_fields( array $services, string $prefix ) {
   $html  = '<div class="grid gap-4 md:grid-cols-2">';
   $html .= '<div>';
@@ -713,16 +591,23 @@ function kcs_form_fields( array $services, string $prefix ) {
   $html .= '<input id="' . $prefix . '_name" name="name" type="text" class="kcs-input" required>';
   $html .= '</div>';
   $html .= '<div>';
-  $html .= '<label for="' . $prefix . '_phone" class="kcs-label">Phone Number *</label>';
-  $html .= '<input id="' . $prefix . '_phone" name="phone" type="tel" class="kcs-input" required>';
+  $html .= '<label for="' . $prefix . '_company" class="kcs-label">Company / Organization</label>';
+  $html .= '<input id="' . $prefix . '_company" name="company" type="text" class="kcs-input">';
   $html .= '</div>';
   $html .= '</div>';
 
+  $html .= '<div class="grid gap-4 md:grid-cols-2">';
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_phone" class="kcs-label">Phone Number *</label>';
+  $html .= '<input id="' . $prefix . '_phone" name="phone" type="tel" class="kcs-input" required>';
+  $html .= '</div>';
   $html .= '<div>';
   $html .= '<label for="' . $prefix . '_email" class="kcs-label">Email Address *</label>';
   $html .= '<input id="' . $prefix . '_email" name="email" type="email" class="kcs-input" required>';
   $html .= '</div>';
+  $html .= '</div>';
 
+  $html .= '<div class="grid gap-4 md:grid-cols-2">';
   $html .= '<div>';
   $html .= '<label for="' . $prefix . '_service" class="kcs-label">Service Needed *</label>';
   $html .= '<select id="' . $prefix . '_service" name="service" class="kcs-input" required>';
@@ -732,9 +617,14 @@ function kcs_form_fields( array $services, string $prefix ) {
   }
   $html .= '</select>';
   $html .= '</div>';
+  $html .= '<div>';
+  $html .= '<label for="' . $prefix . '_city" class="kcs-label">City / Location *</label>';
+  $html .= '<input id="' . $prefix . '_city" name="city" type="text" class="kcs-input" required>';
+  $html .= '</div>';
+  $html .= '</div>';
 
   $html .= '<div>';
-  $html .= '<label for="' . $prefix . '_details" class="kcs-label">Additional Details</label>';
+  $html .= '<label for="' . $prefix . '_details" class="kcs-label">Tell Us About Your Facility</label>';
   $html .= '<textarea id="' . $prefix . '_details" name="message" rows="4" class="kcs-input kcs-textarea"></textarea>';
   $html .= '</div>';
 
@@ -745,45 +635,29 @@ function kcs_form_fields( array $services, string $prefix ) {
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-  /* ── Page base ──────────────────────────────────────────────────── */
-  .kcs-home {
-    font-family: "Montserrat", "Segoe UI", sans-serif;
-  }
+  .kcs-home { font-family: "Montserrat", "Segoe UI", sans-serif; }
+  .kcs-home h1, .kcs-home h2, .kcs-home h3 { font-family: "Montserrat", "Segoe UI", sans-serif; }
 
-  .kcs-home h1,
-  .kcs-home h2,
-  .kcs-home h3 {
-    font-family: "Montserrat", "Segoe UI", sans-serif;
-  }
-
-  /* ── Hero background image ──────────────────────────────────────── */
   .kcs-hero-bg-img {
     animation: kcsHeroBgZoom 16s ease-out forwards;
     transform: scale(1.06);
   }
-
   @keyframes kcsHeroBgZoom {
     0%   { transform: scale(1.08); }
     100% { transform: scale(1.00); }
   }
 
-  /* ── Buttons ────────────────────────────────────────────────────── */
   .kcs-btn {
-    position: relative;
-    border: 1px solid transparent;
-    overflow: hidden;
+    position: relative; border: 1px solid transparent; overflow: hidden;
     transition: transform .22s ease, box-shadow .22s ease,
                 background-color .22s ease, border-color .22s ease, color .22s ease;
   }
-
   .kcs-btn::after {
-    content: "";
-    position: absolute; inset: 0;
+    content: ""; position: absolute; inset: 0;
     transform: translateX(-115%);
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     transition: transform .65s ease;
   }
-
   .kcs-btn:hover::after  { transform: translateX(115%); }
   .kcs-btn:hover         { transform: translateY(-2px); }
 
@@ -797,115 +671,86 @@ function kcs_form_fields( array $services, string $prefix ) {
     background: linear-gradient(135deg, #E8D49A, #C9A84C);
     box-shadow: 0 20px 44px rgba(201,168,76,0.36);
   }
+  .kcs-btn-navy { background: #1B2B6B; border-color: #1B2B6B; box-shadow: 0 16px 34px rgba(27,43,107,0.22); }
+  .kcs-btn-navy:hover { background: #13204F; border-color: #13204F; }
+  .kcs-btn-ghost { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.18); backdrop-filter: blur(6px); }
+  .kcs-btn-ghost:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.28); }
+  .kcs-btn-outline { background: transparent; border-color: #1B2B6B; color: #1B2B6B; }
+  .kcs-btn-outline:hover { background: #1B2B6B; color: #fff; }
 
-  .kcs-btn-navy {
-    background: #1B2B6B;
-    border-color: #1B2B6B;
-    box-shadow: 0 16px 34px rgba(27,43,107,0.22);
-  }
-  .kcs-btn-navy:hover {
-    background: #13204F;
-    border-color: #13204F;
-  }
-
-  .kcs-btn-ghost {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(255,255,255,0.18);
-    backdrop-filter: blur(6px);
-  }
-  .kcs-btn-ghost:hover {
-    background: rgba(255,255,255,0.14);
-    border-color: rgba(255,255,255,0.28);
-  }
-
-  .kcs-btn-outline {
-    background: transparent;
-    border-color: #1B2B6B;
-    color: #1B2B6B;
-  }
-  .kcs-btn-outline:hover {
-    background: #1B2B6B;
-    color: #fff;
-  }
-
-  /* ── Form inputs ────────────────────────────────────────────────── */
   .kcs-label {
-    display: block;
-    margin-bottom: 0.45rem;
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    display: block; margin-bottom: 0.45rem;
+    font-size: 0.7rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.16em;
     color: rgba(255,255,255,0.65);
   }
-
   .kcs-input {
-    width: 100%;
-    padding: 0.9rem 1rem;
+    width: 100%; padding: 0.9rem 1rem;
     border: 1px solid rgba(255,255,255,0.14);
     background: rgba(255,255,255,0.07);
-    color: #ffffff;
-    font-size: 0.92rem;
-    line-height: 1.5;
-    font-family: inherit;
-    outline: none;
+    color: #ffffff; font-size: 0.92rem; line-height: 1.5;
+    font-family: inherit; outline: none;
     transition: border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
     appearance: none;
   }
-
   .kcs-input::placeholder { color: rgba(255,255,255,0.35); }
-
   .kcs-input:focus {
     border-color: #C9A84C;
     box-shadow: 0 0 0 3px rgba(201,168,76,0.18);
     background: rgba(255,255,255,0.10);
   }
-
   .kcs-textarea { resize: vertical; min-height: 100px; }
-
   .kcs-input option { background: #1B2B6B; color: #fff; }
 
-  /* ── FAQ accordion ──────────────────────────────────────────────── */
   .kcs-faq[open] .kcs-faq-icon { transform: rotate(45deg); }
   .kcs-faq-icon { transition: transform .2s ease; }
 
-  /* ── Scroll reveal ──────────────────────────────────────────────── */
-  .ajs-reveal-up,
-  .ajs-reveal-left,
-  .ajs-reveal-right,
-  .ajs-reveal-stagger {
-    opacity: 0;
-    will-change: opacity, transform;
+  .ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right, .ajs-reveal-stagger {
+    opacity: 0; will-change: opacity, transform;
     transition: opacity .85s ease, transform .85s ease;
   }
   .ajs-reveal-up      { transform: translateY(34px); }
   .ajs-reveal-left    { transform: translateX(-36px); }
   .ajs-reveal-right   { transform: translateX(36px); }
   .ajs-reveal-stagger { transform: translateY(28px); }
-
-  .ajs-reveal-up.is-visible,
-  .ajs-reveal-left.is-visible,
-  .ajs-reveal-right.is-visible,
-  .ajs-reveal-stagger.is-visible {
-    opacity: 1;
-    transform: translate(0,0);
+  .ajs-reveal-up.is-visible, .ajs-reveal-left.is-visible,
+  .ajs-reveal-right.is-visible, .ajs-reveal-stagger.is-visible {
+    opacity: 1; transform: translate(0,0);
   }
 
-  /* ── Utilities ──────────────────────────────────────────────────── */
   .hidden { display: none !important; }
 
   @media (prefers-reduced-motion: reduce) {
-    .ajs-reveal-up, .ajs-reveal-left,
-    .ajs-reveal-right, .ajs-reveal-stagger,
-    .kcs-btn { opacity: 1 !important; transform: none !important;
-               transition: none !important; animation: none !important; }
+    .ajs-reveal-up, .ajs-reveal-left, .ajs-reveal-right,
+    .ajs-reveal-stagger, .kcs-btn {
+      opacity: 1 !important; transform: none !important;
+      transition: none !important; animation: none !important;
+    }
   }
 </style>
+
+<!-- reCAPTCHA v2 — explicit render para múltiples widgets en la misma página -->
+<script src="https://www.google.com/recaptcha/api.js?onload=kcsRenderCaptchas&render=explicit" async defer></script>
 
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
+  /* ── reCAPTCHA: render explícito para dos widgets ───────────────── */
+  var kcsWidgetHero = null
+  var kcsWidgetCta  = null
+
+  function kcsRenderCaptchas() {
+    kcsWidgetHero = grecaptcha.render("kcs-captcha-hero", {
+      sitekey: "6Ldb4aksAAAAAF6H4Hs58PvpVgiL4Kxevwn_nvzw",
+      theme:   "dark",
+    })
+    kcsWidgetCta = grecaptcha.render("kcs-captcha-cta", {
+      sitekey: "6Ldb4aksAAAAAF6H4Hs58PvpVgiL4Kxevwn_nvzw",
+      theme:   "dark",
+    })
+  }
+
 document.addEventListener("DOMContentLoaded", function () {
 
   /* ── Scroll reveal ──────────────────────────────────────────────── */
@@ -925,15 +770,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ── EmailJS init ───────────────────────────────────────────────── */
   if (window.emailjs) {
-    emailjs.init({ publicKey: "CDikedp0ZSxxiBeLb" }) // replace with KCS key
+    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" }) // replace with KCS key
   }
 
   /* ── Form helper ────────────────────────────────────────────────── */
-  function bindForm(formId, submitBtnId, successId, errorId, prefix) {
-    const form      = document.getElementById(formId)
-    const submitBtn = document.getElementById(submitBtnId)
-    const successEl = document.getElementById(successId)
-    const errorEl   = document.getElementById(errorId)
+  function bindForm(formId, submitBtnId, successId, errorId, captchaErrorId, prefix, widgetGetter) {
+    const form         = document.getElementById(formId)
+    const submitBtn    = document.getElementById(submitBtnId)
+    const successEl    = document.getElementById(successId)
+    const errorEl      = document.getElementById(errorId)
+    const captchaError = document.getElementById(captchaErrorId)
 
     if (!form) return
 
@@ -941,30 +787,48 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault()
       successEl.classList.add("hidden")
       errorEl.classList.add("hidden")
+      captchaError.classList.add("hidden")
 
-      const originalText = submitBtn.textContent
-      submitBtn.disabled   = true
+      // ── Validate reCAPTCHA ─────────────────────────────────────────
+      const widgetId = widgetGetter()
+      const recaptchaResponse = (widgetId !== null)
+        ? grecaptcha.getResponse(widgetId)
+        : ""
+      if (!recaptchaResponse) {
+        captchaError.classList.remove("hidden")
+        captchaError.scrollIntoView({ behavior: "smooth", block: "center" })
+        return
+      }
+      // ────────────────────────────────────────────────────────────────
+
+      const originalText    = submitBtn.textContent
+      submitBtn.disabled    = true
       submitBtn.textContent = "Sending..."
 
       const data = {
         name:    document.getElementById(prefix + "_name").value,
+        company: document.getElementById(prefix + "_company").value,
         phone:   document.getElementById(prefix + "_phone").value,
         email:   document.getElementById(prefix + "_email").value,
         service: document.getElementById(prefix + "_service").value,
+        city:    document.getElementById(prefix + "_city").value,
         message: document.getElementById(prefix + "_details").value,
       }
 
       emailjs.send(
-        "service_a03f0zf",    // replace with KCS EmailJS service ID
-        "template_17g32zt",   // replace with KCS EmailJS template ID
+        "service_5e06r2o",   // replace with KCS EmailJS service ID
+        "template_r2st5jy",  // replace with KCS EmailJS template ID
         data
       ).then(function () {
         form.reset()
+        if (widgetId !== null) grecaptcha.reset(widgetId)
         successEl.classList.remove("hidden")
         submitBtn.disabled    = false
         submitBtn.textContent = originalText
+        successEl.scrollIntoView({ behavior: "smooth", block: "center" })
       }).catch(function (err) {
         console.error("EmailJS error:", err)
+        if (widgetId !== null) grecaptcha.reset(widgetId)
         errorEl.classList.remove("hidden")
         submitBtn.disabled    = false
         submitBtn.textContent = originalText
@@ -972,8 +836,19 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-  bindForm("kcsHeroForm", "kcsHeroSubmitBtn", "kcsHeroFormSuccess", "kcsHeroFormError", "hero")
-  bindForm("kcsCtaForm",  "kcsCtaSubmitBtn",  "kcsCtaFormSuccess",  "kcsCtaFormError",  "cta")
+  bindForm(
+    "kcsHeroForm", "kcsHeroSubmitBtn",
+    "kcsHeroFormSuccess", "kcsHeroFormError",
+    "kcsCaptchaHeroError", "hero",
+    function() { return kcsWidgetHero }
+  )
+
+  bindForm(
+    "kcsCtaForm", "kcsCtaSubmitBtn",
+    "kcsCtaFormSuccess", "kcsCtaFormError",
+    "kcsCaptchaCtaError", "cta",
+    function() { return kcsWidgetCta }
+  )
 })
 </script>
 

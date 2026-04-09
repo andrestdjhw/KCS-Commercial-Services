@@ -539,41 +539,13 @@ get_header(); ?>
       </div>
 
       <!-- Duplicate form -->
-      <div class="ajs-reveal-right">
-        <div class="relative overflow-hidden border border-white/10 bg-white/06 backdrop-blur-sm">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-          <div class="p-7 md:p-9">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Request a Contract Quote</p>
-            <h3 class="mt-3 text-xl font-black leading-tight tracking-[-0.04em]">Tell us about your facility.</h3>
-
-            <div id="kcsCtaFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you, we'll be in touch within 24 hours.
-            </div>
-            <div id="kcsCtaFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsCtaForm" class="mt-6 space-y-4" novalidate>
-              <?php echo kcs_form_fields($form_services, 'cta'); ?>
-
-              <!-- reCAPTCHA CTA -->
-              <div>
-                <div id="kcs-captcha-cta"></div>
-                <p id="kcsCaptchaCtaError" class="hidden mt-2 text-[0.78rem] font-bold text-red-300">
-                  Please complete the captcha before submitting.
-                </p>
-              </div>
-
-              <button id="kcsCtaSubmitBtn" type="submit"
-                class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                Send My Request →
-              </button>
-              <p class="text-center text-[0.7rem] text-white/52">
-                🔒 We respect your privacy. Your information will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="cta"
+        data-eyebrow="Request a Contract Quote"
+        data-form-title="Tell us about your facility."
+        data-form-subtitle="We respond within 24 hours."
+        data-btn-text="Send My Request →">
       </div>
 
     </div>
@@ -770,7 +742,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ── EmailJS init ───────────────────────────────────────────────── */
   if (window.emailjs) {
-    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" }) // replace with KCS key
+    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" })
   }
 
   /* ── Form helper ────────────────────────────────────────────────── */
@@ -799,7 +771,6 @@ document.addEventListener("DOMContentLoaded", function () {
         captchaError.scrollIntoView({ behavior: "smooth", block: "center" })
         return
       }
-      // ────────────────────────────────────────────────────────────────
 
       const originalText    = submitBtn.textContent
       submitBtn.disabled    = true
@@ -816,10 +787,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       emailjs.send(
-        "service_5e06r2o",   // replace with KCS EmailJS service ID
-        "template_r2st5jy",  // replace with KCS EmailJS template ID
+        "service_5e06r2o",
+        "template_r2st5jy",  // ← notificación interna a KCS
         data
       ).then(function () {
+        // ── Auto-reply al cliente ──────────────────────────────────────
+        return emailjs.send(
+          "service_5e06r2o",
+          "template_5h990ir",  // ← confirmación al cliente
+          {
+            name:  data.name,
+            email: data.email,
+          }
+        )
+      }).then(function () {
         form.reset()
         if (widgetId !== null) grecaptcha.reset(widgetId)
         successEl.classList.remove("hidden")

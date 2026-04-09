@@ -105,13 +105,11 @@ get_header(); ?>
 ═════════════════════════════════════════════════════════════════════ -->
 <section class="relative overflow-hidden border-b border-[#1B2B6B]/10 bg-white py-20 lg:py-28">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.07),transparent_30%)]"></div>
-  <!-- Left gold rule -->
   <div class="absolute left-0 top-0 h-full w-[5px] bg-[linear-gradient(180deg,#C9A84C,#1B2B6B,#C9A84C)]"></div>
 
   <div class="relative mx-auto max-w-7xl px-4">
     <div class="grid gap-12 xl:grid-cols-[0.82fr_1.18fr] xl:gap-16">
 
-      <!-- Left sticky label -->
       <div class="ajs-reveal-left">
         <div class="xl:sticky xl:top-28">
           <p class="text-xs font-black uppercase tracking-[0.26em] text-[#C9A84C]">Our Story</p>
@@ -120,7 +118,6 @@ get_header(); ?>
           </h2>
           <div class="mt-6 h-1 w-20 bg-[linear-gradient(90deg,#1B2B6B,#C9A84C)]"></div>
 
-          <!-- Pull quote -->
           <div class="mt-10 border-l-4 border-[#C9A84C] bg-[#F5F4EF] px-6 py-6">
             <p class="text-xl font-black leading-tight tracking-[-0.03em] text-[#1B2B6B] md:text-2xl">
               One partner. One standard. One call.
@@ -129,7 +126,6 @@ get_header(); ?>
         </div>
       </div>
 
-      <!-- Right: story copy -->
       <div class="ajs-reveal-right">
         <div class="relative overflow-hidden border border-[#1B2B6B]/10 bg-[#FDFCF8] p-7 shadow-[0_20px_44px_rgba(27,43,107,0.07)] md:p-10">
           <div class="absolute right-0 top-0 h-24 w-24 translate-x-1/4 -translate-y-1/4 rotate-12 bg-[#C9A84C]/08"></div>
@@ -173,11 +169,9 @@ get_header(); ?>
     <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       <?php foreach ($values as $value) : ?>
         <article class="ajs-reveal-stagger group relative overflow-hidden border border-[#1B2B6B]/10 bg-white p-7">
-          <!-- Tone top bar -->
           <div class="absolute inset-x-0 top-0 h-[4px] transition-all duration-500 group-hover:h-[6px]"
             style="background:<?php echo esc_attr($value['tone']); ?>;"></div>
 
-          <!-- Geometric accent pair -->
           <div class="mb-6 mt-2 flex gap-2">
             <span class="h-8 w-8 border border-[#1B2B6B]/10 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"
               style="background:<?php echo esc_attr($value['tone']); ?>;"></span>
@@ -220,7 +214,6 @@ get_header(); ?>
         <article class="ajs-reveal-stagger group relative overflow-hidden border border-white/10 bg-white/06 p-8 backdrop-blur-sm transition hover:bg-white/10">
           <div class="absolute inset-x-0 bottom-0 h-[3px] bg-[linear-gradient(90deg,#C9A84C,#E8D49A)] opacity-0 transition-opacity duration-400 group-hover:opacity-100"></div>
 
-          <!-- Icon -->
           <div class="mb-5 flex h-12 w-12 items-center justify-center border border-[#C9A84C]/30 bg-[#C9A84C]/12 text-[#C9A84C]">
             <?php echo $client['icon']; ?>
           </div>
@@ -258,11 +251,10 @@ get_header(); ?>
           Tell us about your facility, your standards, and what you need from a service partner. We will put together a contract that makes sense for your operation.
         </p>
 
-        <!-- Contact info -->
         <div class="mt-10 space-y-4">
           <div class="border border-[#1B2B6B]/10 bg-[#F5F4EF] px-6 py-5">
             <p class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#C9A84C]">Phone</p>
-            <a href="#" class="mt-1.5 block text-lg font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
+            <a href="tel:+19132577291" class="mt-1.5 block text-lg font-black text-[#1B2B6B] transition hover:text-[#C9A84C]">
               (913) 257-7291
             </a>
           </div>
@@ -282,72 +274,13 @@ get_header(); ?>
       </div>
 
       <!-- Form -->
-      <div class="ajs-reveal-right">
-        <div class="relative overflow-hidden border border-[#1B2B6B]/12 bg-[#13204F] shadow-[0_24px_60px_rgba(27,43,107,0.18)]">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-
-          <div class="p-7 md:p-9">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Get a Free Contract Quote</p>
-            <h3 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em] text-white">
-              Tell us about your facility.
-            </h3>
-            <p class="mt-2 text-sm leading-6 text-white/65">
-              We'll respond within 24 hours.
-            </p>
-
-            <div id="kcsAboutFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you we'll be in touch within 24 hours.
-            </div>
-            <div id="kcsAboutFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsAboutForm" class="mt-7 space-y-4" novalidate>
-
-              <div class="grid gap-4 md:grid-cols-2">
-                <div>
-                  <label for="about_name" class="kcs-label">Full Name *</label>
-                  <input id="about_name" name="name" type="text" class="kcs-input" required>
-                </div>
-                <div>
-                  <label for="about_phone" class="kcs-label">Phone Number *</label>
-                  <input id="about_phone" name="phone" type="tel" class="kcs-input" required>
-                </div>
-              </div>
-
-              <div>
-                <label for="about_email" class="kcs-label">Email Address *</label>
-                <input id="about_email" name="email" type="email" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="about_service" class="kcs-label">Service Needed *</label>
-                <select id="about_service" name="service" class="kcs-input" required>
-                  <option value="">Select a service</option>
-                  <?php foreach ($form_services as $option) : ?>
-                    <option value="<?php echo esc_attr($option); ?>"><?php echo esc_html($option); ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-
-              <div>
-                <label for="about_details" class="kcs-label">Additional Details</label>
-                <textarea id="about_details" name="message" rows="4" class="kcs-input kcs-textarea"></textarea>
-              </div>
-
-              <div class="pt-1">
-                <button id="kcsAboutSubmitBtn" type="submit"
-                  class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                  Submit Request →
-                </button>
-              </div>
-
-              <p class="text-center text-[0.7rem] text-white/45">
-                🔒 Your information is private and will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="about"
+        data-eyebrow="Get a Free Contract Quote"
+        data-form-title="Tell us about your facility."
+        data-form-subtitle="We'll respond within 24 hours."
+        data-btn-text="Submit Request →">
       </div>
 
     </div>
@@ -369,7 +302,6 @@ get_header(); ?>
     font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 
-  /* ── Buttons ─────────────────────────────────────────────────────── */
   .kcs-btn {
     position: relative;
     border: 1px solid transparent;
@@ -398,7 +330,6 @@ get_header(); ?>
     box-shadow: 0 20px 44px rgba(201,168,76,0.38);
   }
 
-  /* ── Form inputs ─────────────────────────────────────────────────── */
   .kcs-label {
     display: block;
     margin-bottom: 0.45rem;
@@ -431,7 +362,9 @@ get_header(); ?>
   .kcs-textarea  { resize: vertical; min-height: 100px; }
   .kcs-input option { background: #1B2B6B; color: #fff; }
 
-  /* ── Scroll reveal ───────────────────────────────────────────────── */
+  /* reCAPTCHA spacing */
+  .g-recaptcha { margin-top: 0.25rem; }
+
   .ajs-reveal-up,
   .ajs-reveal-left,
   .ajs-reveal-right,
@@ -465,6 +398,10 @@ get_header(); ?>
   }
 </style>
 
+<!-- reCAPTCHA v2 API -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
@@ -487,14 +424,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ── EmailJS ────────────────────────────────────────────────────── */
   if (window.emailjs) {
-    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" }) // replace with KCS key
+    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" })
   }
 
   /* ── Form ───────────────────────────────────────────────────────── */
-  const form      = document.getElementById("kcsAboutForm")
-  const submitBtn = document.getElementById("kcsAboutSubmitBtn")
-  const successEl = document.getElementById("kcsAboutFormSuccess")
-  const errorEl   = document.getElementById("kcsAboutFormError")
+  const form         = document.getElementById("kcsAboutForm")
+  const submitBtn    = document.getElementById("kcsAboutSubmitBtn")
+  const successEl    = document.getElementById("kcsAboutFormSuccess")
+  const errorEl      = document.getElementById("kcsAboutFormError")
+  const captchaError = document.getElementById("kcsAboutCaptchaError")
 
   if (!form) return
 
@@ -502,28 +440,52 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault()
     successEl.classList.add("hidden")
     errorEl.classList.add("hidden")
+    captchaError.classList.add("hidden")
+
+    // ── Validate reCAPTCHA ───────────────────────────────────────────
+    const recaptchaResponse = grecaptcha.getResponse()
+    if (!recaptchaResponse) {
+      captchaError.classList.remove("hidden")
+      captchaError.scrollIntoView({ behavior: "smooth", block: "center" })
+      return
+    }
 
     const originalText    = submitBtn.textContent
     submitBtn.disabled    = true
     submitBtn.textContent = "Sending..."
 
+    const formData = {
+      name:    document.getElementById("about_name").value,
+      phone:   document.getElementById("about_phone").value,
+      email:   document.getElementById("about_email").value,
+      service: document.getElementById("about_service").value,
+      message: document.getElementById("about_details").value,
+    }
+
     emailjs.send(
-      "service_5e06r2o",   // replace with KCS EmailJS service ID
-      "template_r2st5jy",  // replace with KCS EmailJS template ID
-      {
-        name:    document.getElementById("about_name").value,
-        phone:   document.getElementById("about_phone").value,
-        email:   document.getElementById("about_email").value,
-        service: document.getElementById("about_service").value,
-        message: document.getElementById("about_details").value,
-      }
+      "service_5e06r2o",
+      "template_r2st5jy",  // ← notificación interna a KCS
+      formData
     ).then(function () {
+      // ── Auto-reply al cliente ──────────────────────────────────────
+      return emailjs.send(
+        "service_5e06r2o",
+        "template_5h990ir",  // ← confirmación al cliente
+        {
+          name:  formData.name,
+          email: formData.email,
+        }
+      )
+    }).then(function () {
       form.reset()
+      grecaptcha.reset()
       successEl.classList.remove("hidden")
       submitBtn.disabled    = false
       submitBtn.textContent = originalText
+      successEl.scrollIntoView({ behavior: "smooth", block: "center" })
     }).catch(function (err) {
       console.error("EmailJS error:", err)
+      grecaptcha.reset()
       errorEl.classList.remove("hidden")
       submitBtn.disabled    = false
       submitBtn.textContent = originalText

@@ -324,78 +324,14 @@ get_header(); ?>
       </div>
 
       <!-- Form -->
-      <div class="ajs-reveal-right">
-        <div class="relative overflow-hidden border border-[#1B3A6B]/12 bg-[#122649] shadow-[0_24px_60px_rgba(27,58,107,0.18)]">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-
-          <div class="p-7 md:p-9">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Free Estimate</p>
-            <h3 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em] text-white">
-              Request a Drywall Estimate
-            </h3>
-            <p class="mt-2 text-sm leading-6 text-white/60">We respond within 48 hours.</p>
-
-            <div id="kcsRwlFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you we'll get back to you within 48 hours.
-            </div>
-            <div id="kcsRwlFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsRwlForm" class="mt-7 space-y-4" novalidate>
-
-              <div class="grid gap-4 md:grid-cols-2">
-                <div>
-                  <label for="rw_name" class="kcs-label">Full Name *</label>
-                  <input id="rw_name" name="name" type="text" class="kcs-input" required>
-                </div>
-                <div>
-                  <label for="rw_phone" class="kcs-label">Phone Number *</label>
-                  <input id="rw_phone" name="phone" type="tel" class="kcs-input" required>
-                </div>
-              </div>
-
-              <div>
-                <label for="rw_email" class="kcs-label">Email Address *</label>
-                <input id="rw_email" name="email" type="email" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="rw_service" class="kcs-label">Service Needed *</label>
-                <select id="rw_service" name="service" class="kcs-input" required>
-                  <?php foreach ($form_services as $i => $opt) : ?>
-                    <option value="<?php echo esc_attr($opt); ?>"
-                      <?php echo $i === 0 ? 'selected' : ''; ?>>
-                      <?php echo esc_html($opt); ?>
-                    </option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-
-              <div>
-                <label for="rw_city" class="kcs-label">City / Location *</label>
-                <input id="rw_city" name="city" type="text" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="rw_details" class="kcs-label">Project Details *</label>
-                <textarea id="rw_details" name="message" rows="4" class="kcs-input kcs-textarea" required
-                  placeholder="Scope, timeline, facility type, sq footage..."></textarea>
-              </div>
-
-              <div class="pt-1">
-                <button id="kcsRwlSubmitBtn" type="submit"
-                  class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                  Request a Drywall Estimate →
-                </button>
-              </div>
-
-              <p class="text-center text-[0.7rem] text-white/40">
-                🔒 Your information is private and will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="rw"
+        data-eyebrow="Free Estimate"
+        data-form-title="Request a Drywall Estimate"
+        data-form-subtitle="We respond within 48 hours."
+        data-btn-text="Request a Drywall Estimate →"
+        data-service-default="Drywall & Interior">
       </div>
 
     </div>

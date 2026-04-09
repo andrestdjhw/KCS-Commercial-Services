@@ -407,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ── EmailJS ────────────────────────────────────────────────────── */
   if (window.emailjs) {
-    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" }) // replace with KCS key
+    emailjs.init({ publicKey: "Y8K5QxlYLcq0GsUbt" })
   }
 
   const form         = document.getElementById("kcsContactForm")
@@ -421,7 +421,6 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault()
 
-    // Hide all messages
     successEl.classList.add("hidden")
     errorEl.classList.add("hidden")
     captchaError.classList.add("hidden")
@@ -433,25 +432,36 @@ document.addEventListener("DOMContentLoaded", function () {
       captchaError.scrollIntoView({ behavior: "smooth", block: "center" })
       return
     }
-    // ────────────────────────────────────────────────────────────────
 
     const originalText    = submitBtn.textContent
     submitBtn.disabled    = true
     submitBtn.textContent = "Sending..."
 
+    const formData = {
+      name:    document.getElementById("ct_name").value,
+      company: document.getElementById("ct_company").value,
+      phone:   document.getElementById("ct_phone").value,
+      email:   document.getElementById("ct_email").value,
+      service: document.getElementById("ct_service").value,
+      city:    document.getElementById("ct_city").value,
+      message: document.getElementById("ct_details").value,
+    }
+
     emailjs.send(
-      "service_5e06r2o",   // replace with KCS EmailJS service ID
-      "template_r2st5jy",  // replace with KCS EmailJS template ID
-      {
-        name:    document.getElementById("ct_name").value,
-        company: document.getElementById("ct_company").value,
-        phone:   document.getElementById("ct_phone").value,
-        email:   document.getElementById("ct_email").value,
-        service: document.getElementById("ct_service").value,
-        city:    document.getElementById("ct_city").value,
-        message: document.getElementById("ct_details").value,
-      }
+      "service_5e06r2o",
+      "template_r2st5jy",  // ← notificación interna a KCS
+      formData
     ).then(function () {
+      // ── Auto-reply al cliente ──────────────────────────────────────
+      return emailjs.send(
+        "service_5e06r2o",
+        "template_5h990ir",  // ← confirmación al cliente
+        {
+          name:  formData.name,
+          email: formData.email,
+        }
+      )
+    }).then(function () {
       form.reset()
       grecaptcha.reset()
       successEl.classList.remove("hidden")

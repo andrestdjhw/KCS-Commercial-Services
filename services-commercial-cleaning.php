@@ -362,75 +362,14 @@ get_header(); ?>
       </div>
 
       <!-- Form -->
-      <div class="ajs-reveal-right">
-        <div class="relative overflow-hidden border border-[#1B3A6B]/12 bg-[#122649] shadow-[0_24px_60px_rgba(27,58,107,0.18)]">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-
-          <div class="p-7 md:p-9">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Free Consultation</p>
-            <h3 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em] text-white">
-              Request a Cleaning Contract
-            </h3>
-            <p class="mt-2 text-sm leading-6 text-white/60">We respond within 24 hours.</p>
-
-            <div id="kcsCleanFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you we'll be in touch within 24 hours.
-            </div>
-            <div id="kcsCleanFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsCleanForm" class="mt-7 space-y-4" novalidate>
-
-              <div class="grid gap-4 md:grid-cols-2">
-                <div>
-                  <label for="cl_name" class="kcs-label">Full Name *</label>
-                  <input id="cl_name" name="name" type="text" class="kcs-input" required>
-                </div>
-                <div>
-                  <label for="cl_phone" class="kcs-label">Phone Number *</label>
-                  <input id="cl_phone" name="phone" type="tel" class="kcs-input" required>
-                </div>
-              </div>
-
-              <div>
-                <label for="cl_email" class="kcs-label">Email Address *</label>
-                <input id="cl_email" name="email" type="email" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="cl_service" class="kcs-label">Service Needed *</label>
-                <select id="cl_service" name="service" class="kcs-input" required>
-                  <option value="">Select a service</option>
-                  <?php foreach ($form_services as $opt) : ?>
-                    <option value="<?php echo esc_attr($opt); ?>"><?php echo esc_html($opt); ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-
-              <div>
-                <label for="cl_city" class="kcs-label">City / Location *</label>
-                <input id="cl_city" name="city" type="text" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="cl_details" class="kcs-label">Tell Us About Your Facility</label>
-                <textarea id="cl_details" name="message" rows="4" class="kcs-input kcs-textarea"></textarea>
-              </div>
-
-              <div class="pt-1">
-                <button id="kcsCleanSubmitBtn" type="submit"
-                  class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                  Submit Request →
-                </button>
-              </div>
-
-              <p class="text-center text-[0.7rem] text-white/40">
-                🔒 Your information is private and will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="cl"
+        data-eyebrow="Free Consultation"
+        data-form-title="Request a Cleaning Contract"
+        data-form-subtitle="We respond within 24 hours."
+        data-btn-text="Request a Cleaning Contract →"
+        data-service-default="Commercial Cleaning (Recurring)">
       </div>
 
     </div>

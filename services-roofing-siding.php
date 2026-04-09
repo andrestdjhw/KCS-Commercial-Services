@@ -351,88 +351,14 @@ get_header(); ?>
       </div>
 
       <!-- Form -->
-      <div class="ajs-reveal-right">
-        <div class="relative overflow-hidden border border-[#1B3A6B]/12 bg-[#122649] shadow-[0_24px_60px_rgba(27,58,107,0.18)]">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-
-          <div class="p-7 md:p-9">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Free Assessment</p>
-            <h3 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em] text-white">
-              Request a Roofing Estimate
-            </h3>
-            <p class="mt-2 text-sm leading-6 text-white/60">
-              We respond within 24 hours faster for storm damage.
-            </p>
-
-            <div id="kcsRfgFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you we'll be in touch within 24 hours. For urgent situations call us directly at (913) 257-7291.
-            </div>
-            <div id="kcsRfgFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsRfgForm" class="mt-7 space-y-4" novalidate>
-
-              <div class="grid gap-4 md:grid-cols-2">
-                <div>
-                  <label for="rf_name" class="kcs-label">Full Name *</label>
-                  <input id="rf_name" name="name" type="text" class="kcs-input" required>
-                </div>
-                <div>
-                  <label for="rf_phone" class="kcs-label">Phone Number *</label>
-                  <input id="rf_phone" name="phone" type="tel" class="kcs-input" required>
-                </div>
-              </div>
-
-              <div>
-                <label for="rf_email" class="kcs-label">Email Address *</label>
-                <input id="rf_email" name="email" type="email" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="rf_service" class="kcs-label">Service Needed *</label>
-                <select id="rf_service" name="service" class="kcs-input" required>
-                  <?php foreach ($form_services as $i => $opt) : ?>
-                    <option value="<?php echo esc_attr($opt); ?>"
-                      <?php echo $i === 0 ? 'selected' : ''; ?>>
-                      <?php echo esc_html($opt); ?>
-                    </option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-
-              <div>
-                <label for="rf_city" class="kcs-label">City / Location *</label>
-                <input id="rf_city" name="city" type="text" class="kcs-input" required>
-              </div>
-
-              <div>
-                <label for="rf_details" class="kcs-label">Tell Us About Your Property *</label>
-                <textarea id="rf_details" name="message" rows="4" class="kcs-input kcs-textarea" required
-                  placeholder="Roof type, approximate age, visible damage, urgency level..."></textarea>
-              </div>
-
-              <div class="pt-1">
-                <button id="kcsRfgSubmitBtn" type="submit"
-                  class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                  Request a Roofing Estimate →
-                </button>
-              </div>
-
-              <!-- Secondary emergency CTA -->
-              <div class="flex items-center justify-center gap-2 pt-1">
-                <span class="text-[0.68rem] text-white/45">Need emergency response?</span>
-                <a href="tel:#" class="text-[0.68rem] font-black text-[#C9A84C] transition hover:text-[#E8D49A]">
-                  Call us directly →
-                </a>
-              </div>
-
-              <p class="text-center text-[0.7rem] text-white/40">
-                🔒 Your information is private and will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="rf"
+        data-eyebrow="Free Assessment"
+        data-form-title="Request a Roofing Estimate"
+        data-form-subtitle="We respond within 24 hours — faster for storm damage."
+        data-btn-text="Request a Roofing Estimate →"
+        data-service-default="Roofing & Siding">
       </div>
 
     </div>

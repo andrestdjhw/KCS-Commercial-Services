@@ -52,9 +52,11 @@ export default function ContactForm({
   serviceDefault = "",
   successMsg     = "Thank you — we'll be in touch within 24 hours.",
 }) {
-  const [status,   setStatus]   = useState("idle") // idle | sending | success | error
-  const [captchaOk, setCaptchaOk] = useState(false)
+  const [status,         setStatus]         = useState("idle") // idle | sending | success | error
+  const [captchaOk,      setCaptchaOk]      = useState(false)
   const [showCaptchaErr, setShowCaptchaErr] = useState(false)
+  const [agreed,         setAgreed]         = useState(false)
+  const [showAgreeErr,   setShowAgreeErr]   = useState(false)
 
   const captchaRef  = useRef(null)
   const widgetIdRef = useRef(null)
@@ -95,6 +97,12 @@ export default function ContactForm({
   const handleSubmit = async (e) => {
     e.preventDefault()
     setShowCaptchaErr(false)
+    setShowAgreeErr(false)
+
+    if (!agreed) {
+      setShowAgreeErr(true)
+      return
+    }
 
     if (!captchaOk) {
       setShowCaptchaErr(true)
@@ -343,6 +351,54 @@ export default function ContactForm({
                   color: "#fca5a5",
                 }}>
                   Please complete the captcha before submitting.
+                </p>
+              )}
+            </div>
+
+            {/* Privacy & Terms checkbox */}
+            <div style={{ marginBottom: "1rem" }}>
+              <label style={{
+                display: "flex", alignItems: "flex-start", gap: "0.6rem",
+                cursor: "pointer",
+              }}>
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={(e) => {
+                    setAgreed(e.target.checked)
+                    if (e.target.checked) setShowAgreeErr(false)
+                  }}
+                  style={{
+                    marginTop: "0.15rem", flexShrink: 0,
+                    width: 15, height: 15,
+                    accentColor: KCS.gold,
+                    cursor: "pointer",
+                  }}
+                />
+                <span style={{
+                  fontSize: "0.75rem", lineHeight: 1.6,
+                  color: "rgba(255,255,255,0.60)",
+                }}>
+                  I have read and agree to the{" "}
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer"
+                    style={{ color: KCS.goldLight, textDecoration: "underline", fontWeight: 700 }}>
+                    Privacy Policy
+                  </a>
+                  {" "}and{" "}
+                  <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer"
+                    style={{ color: KCS.goldLight, textDecoration: "underline", fontWeight: 700 }}>
+                    Terms &amp; Conditions
+                  </a>
+                  {" "}of KCS Commercial Services.
+                </span>
+              </label>
+              {showAgreeErr && (
+                <p style={{
+                  marginTop: "0.4rem",
+                  fontSize: "0.78rem", fontWeight: 700,
+                  color: "#fca5a5",
+                }}>
+                  Please accept the Privacy Policy and Terms & Conditions to continue.
                 </p>
               )}
             </div>

@@ -67,6 +67,8 @@ function ContactForm({
   const [status, setStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("idle"); // idle | sending | success | error
   const [captchaOk, setCaptchaOk] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [showCaptchaErr, setShowCaptchaErr] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [agreed, setAgreed] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [showAgreeErr, setShowAgreeErr] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const captchaRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const widgetIdRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const formRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -107,6 +109,11 @@ function ContactForm({
   const handleSubmit = async e => {
     e.preventDefault();
     setShowCaptchaErr(false);
+    setShowAgreeErr(false);
+    if (!agreed) {
+      setShowAgreeErr(true);
+      return;
+    }
     if (!captchaOk) {
       setShowCaptchaErr(true);
       captchaRef.current?.scrollIntoView({
@@ -404,6 +411,69 @@ function ContactForm({
                 color: "#fca5a5"
               },
               children: "Please complete the captcha before submitting."
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              marginBottom: "1rem"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+              style: {
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "0.6rem",
+                cursor: "pointer"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "checkbox",
+                checked: agreed,
+                onChange: e => {
+                  setAgreed(e.target.checked);
+                  if (e.target.checked) setShowAgreeErr(false);
+                },
+                style: {
+                  marginTop: "0.15rem",
+                  flexShrink: 0,
+                  width: 15,
+                  height: 15,
+                  accentColor: KCS.gold,
+                  cursor: "pointer"
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+                style: {
+                  fontSize: "0.75rem",
+                  lineHeight: 1.6,
+                  color: "rgba(255,255,255,0.60)"
+                },
+                children: ["I have read and agree to the", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: "/privacy-policy",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  style: {
+                    color: KCS.goldLight,
+                    textDecoration: "underline",
+                    fontWeight: 700
+                  },
+                  children: "Privacy Policy"
+                }), " ", "and", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                  href: "/terms-and-conditions",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  style: {
+                    color: KCS.goldLight,
+                    textDecoration: "underline",
+                    fontWeight: 700
+                  },
+                  children: "Terms & Conditions"
+                }), " ", "of KCS Commercial Services."]
+              })]
+            }), showAgreeErr && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              style: {
+                marginTop: "0.4rem",
+                fontSize: "0.78rem",
+                fontWeight: 700,
+                color: "#fca5a5"
+              },
+              children: "Please accept the Privacy Policy and Terms & Conditions to continue."
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
             type: "submit",

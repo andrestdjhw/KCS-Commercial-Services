@@ -231,42 +231,13 @@ get_header(); ?>
       </div>
 
       <!-- RIGHT: Lead Form -->
-      <div id="contact-form" class="ajs-reveal-right">
-        <div class="relative overflow-hidden border border-white/10 bg-white/06 shadow-[0_24px_60px_rgba(0,0,0,0.30)] backdrop-blur-sm">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-          <div class="p-7 md:p-9">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">Free Consultation</p>
-            <h2 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em]">Get a Free Contract Quote</h2>
-            <p class="mt-2 text-sm leading-6 text-white/72">Tell us about your facility. We'll respond within 24 hours.</p>
-
-            <div id="kcsHeroFormSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-4 py-3 text-sm text-green-200">
-              Thank you — we'll be in touch within 24 hours.
-            </div>
-            <div id="kcsHeroFormError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-4 py-3 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsHeroForm" class="mt-6 space-y-4" novalidate>
-              <?php echo kcs_form_fields($form_services, 'hero'); ?>
-
-              <!-- reCAPTCHA hero -->
-              <div>
-                <div id="kcs-captcha-hero"></div>
-                <p id="kcsCaptchaHeroError" class="hidden mt-2 text-[0.78rem] font-bold text-red-300">
-                  Please complete the captcha before submitting.
-                </p>
-              </div>
-
-              <button id="kcsHeroSubmitBtn" type="submit"
-                class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                Submit Request
-              </button>
-              <p class="text-center text-[0.7rem] text-white/52">
-                🔒 Your information is private and will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="hero"
+        data-eyebrow="Free Consultation"
+        data-form-title="Get a Free Contract Quote"
+        data-form-subtitle="Tell us about your facility. We'll respond within 24 hours."
+        data-btn-text="Submit Request →">
       </div>
 
     </div>

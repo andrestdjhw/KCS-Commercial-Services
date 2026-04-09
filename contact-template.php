@@ -94,101 +94,13 @@ get_header(); ?>
     <div class="grid gap-10 xl:grid-cols-[1.1fr_0.9fr] xl:gap-12">
 
       <!-- ── LEFT: Primary Form ── -->
-      <div class="ajs-reveal-left">
-        <div class="relative overflow-hidden border border-[#1B2B6B]/12 bg-[#13204F] shadow-[0_24px_60px_rgba(27,43,107,0.20)]">
-          <div class="h-1 w-full bg-[linear-gradient(90deg,#C9A84C,#E8D49A,#C9A84C)]"></div>
-
-          <div class="p-7 md:p-10">
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#C9A84C]">
-              Get in Touch
-            </p>
-            <h2 class="mt-3 text-2xl font-black leading-tight tracking-[-0.04em] text-white md:text-3xl">
-              Request a Quote or Ask a Question
-            </h2>
-
-            <!-- Success / Error -->
-            <div id="kcsContactSuccess" class="hidden mt-5 border border-green-300/40 bg-green-500/15 px-5 py-4 text-sm leading-6 text-green-200">
-              Thank you. We have received your request and will respond within 24 hours. If your need is urgent, call us directly at <strong>(913) 257-7291</strong>.
-            </div>
-            <div id="kcsContactError" class="hidden mt-5 border border-red-300/40 bg-red-500/15 px-5 py-4 text-sm text-red-200">
-              Something went wrong. Please try again.
-            </div>
-
-            <form id="kcsContactForm" class="mt-8 space-y-5" novalidate>
-
-              <!-- Row 1: Name + Company -->
-              <div class="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label for="ct_name" class="kcs-label">Full Name *</label>
-                  <input id="ct_name" name="name" type="text" class="kcs-input" required>
-                </div>
-                <div>
-                  <label for="ct_company" class="kcs-label">Company / Organization</label>
-                  <input id="ct_company" name="company" type="text" class="kcs-input">
-                </div>
-              </div>
-
-              <!-- Row 2: Phone + Email -->
-              <div class="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label for="ct_phone" class="kcs-label">Phone Number *</label>
-                  <input id="ct_phone" name="phone" type="tel" class="kcs-input" required>
-                </div>
-                <div>
-                  <label for="ct_email" class="kcs-label">Email Address *</label>
-                  <input id="ct_email" name="email" type="email" class="kcs-input" required>
-                </div>
-              </div>
-
-              <!-- Row 3: Service + City -->
-              <div class="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label for="ct_service" class="kcs-label">Service Needed *</label>
-                  <select id="ct_service" name="service" class="kcs-input" required>
-                    <option value="">Select a service</option>
-                    <?php foreach ($form_services as $opt) : ?>
-                      <option value="<?php echo esc_attr($opt); ?>"><?php echo esc_html($opt); ?></option>
-                    <?php endforeach; ?>
-                  </select>
-                </div>
-                <div>
-                  <label for="ct_city" class="kcs-label">City / Location *</label>
-                  <input id="ct_city" name="city" type="text" class="kcs-input" required>
-                </div>
-              </div>
-
-              <!-- Textarea -->
-              <div>
-                <label for="ct_details" class="kcs-label">Tell Us About Your Facility *</label>
-                <textarea id="ct_details" name="message" rows="5" class="kcs-input kcs-textarea" required></textarea>
-              </div>
-
-              <!-- ── reCAPTCHA v2 ── -->
-              <div>
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6Ldb4aksAAAAAF6H4Hs58PvpVgiL4Kxevwn_nvzw"
-                  data-theme="dark"
-                  data-size="normal">
-                </div>
-                <p id="kcsCaptchaError" class="hidden mt-2 text-[0.78rem] font-bold text-red-300">
-                  Please complete the captcha before submitting.
-                </p>
-              </div>
-
-              <div class="pt-1">
-                <button id="kcsContactSubmitBtn" type="submit"
-                  class="kcs-btn kcs-btn-gold w-full inline-flex items-center justify-center py-4 text-sm font-black uppercase tracking-[0.14em]">
-                  Send My Request →
-                </button>
-              </div>
-
-              <p class="text-center text-[0.7rem] text-white/45">
-                🔒 Your information is private and will never be shared.
-              </p>
-            </form>
-          </div>
-        </div>
+      <div
+        data-contact-form
+        data-prefix="ct"
+        data-eyebrow="Get in Touch"
+        data-form-title="Request a Quote or Ask a Question"
+        data-form-subtitle="We'll respond within 24 hours."
+        data-btn-text="Send My Request →">
       </div>
 
       <!-- ── RIGHT: Contact Info + Map ── -->

@@ -29,7 +29,7 @@ const LOCATIONS = [
   { label: "Shawnee, KS",        href: "#"        },
   { label: "Kansas City, KS",    href: "#"    },
   { label: "Paola, KS",          href: "#"          },
-  { label: "Springfield, MO",    href: "#"    },
+  { label: "Spring Hills, KS",    href: "#"    },
 ]
 
 const QUICK_LINKS = [
@@ -212,7 +212,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <span style={{ color: KCS.textMuted, fontSize:"0.92rem", lineHeight:1.7 }}>
-                      Kansas City Metro, KS · Springfield, MO
+                      Kansas City Metro, KS · Spring Hills, KS
                     </span>
                   </li>
                   <li style={{ paddingTop: "0.5rem" }}>

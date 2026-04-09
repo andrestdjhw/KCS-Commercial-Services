@@ -267,7 +267,7 @@ get_header(); ?>
           <div class="border border-[#1B2B6B]/10 bg-[#C9A84C]/10 px-6 py-5">
             <p class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#1B2B6B]/60">Service Area</p>
             <p class="mt-1.5 text-base font-bold leading-6 text-[#1B2B6B]">
-              Kansas City Metro, KS &nbsp;·&nbsp; Springfield, MO
+              Kansas City Metro, KS &nbsp;·&nbsp; Spring Hills, KS
             </p>
           </div>
         </div>

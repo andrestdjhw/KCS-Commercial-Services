@@ -8,4 +8,4 @@
   <body <?php body_class('rpc-body'); ?>>
     <?php wp_body_open(); ?>
 
-    <div id="kcs-navbar"></div>
+    <div id="kcs-navbar" class="sticky top-0 z-[9999]"></div>

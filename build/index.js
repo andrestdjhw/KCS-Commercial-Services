@@ -521,7 +521,7 @@ const LOCATIONS = [{
   label: "Paola, KS",
   href: "#"
 }, {
-  label: "Springfield, MO",
+  label: "Spring Hills, KS",
   href: "#"
 }];
 const QUICK_LINKS = [{
@@ -1295,7 +1295,7 @@ function Navbar() {
                 children: "(913) 257-7291"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "#",
+              href: "mailto:info@kcscommercial.com?subject=Service%20Inquiry%20-%20KCS%20Website",
               className: "kcs-topbar-link",
               style: {
                 display: "inline-flex",
@@ -1396,7 +1396,7 @@ function Navbar() {
             style: {
               display: "flex",
               alignItems: "center",
-              gap: "0.85rem",
+              gap: "0.6rem",
               flexWrap: "wrap"
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -1410,7 +1410,8 @@ function Navbar() {
                 fontSize: "0.68rem",
                 fontWeight: 800,
                 letterSpacing: "0.08em",
-                textTransform: "uppercase"
+                textTransform: "uppercase",
+                marginRight: "0.4rem"
               },
               children: "Licensed \xB7 Insured \xB7 Bonded"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -1421,8 +1422,10 @@ function Navbar() {
                 gap: "0.4rem"
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "https://www.google.com/search?q=kcscommercial.com&sca_esv=e8481ae40804fa8e&sxsrf=ANbL-n7luLgnwGhYA9mfDfnb1eFoPal5DA%3A1775751464067&ei=KNHXafbKA9SIwbkPtuiRkQM&biw=1280&bih=722&ved=0ahUKEwj2_uXZleGTAxVURDABHTZ0JDIQ4dUDCBE&uact=5&oq=kcscommercial.com&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWtjc2NvbW1lcmNpYWwuY29tSPAaUMcIWLoUcAR4AZABAJgBX6ABX6oBATG4AQPIAQD4AQH4AQKYAgSgAhOoAhPCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICFxAuGLADGLgGGNgCGMgDGNoGGNwG2AEBwgIHECMYJxjqAsICFhAAGIAEGEMYtAIY5wYYigUY6gLYAQGYAwjxBedhWNxSq4FJiAYBkAYUugYGCAEQARgZkgcBNKAHsAGyBwC4BwDCBwUwLjIuMsgHEYAIAA&sclient=gws-wiz-serp",
-                "aria-label": "Google",
+                href: "https://www.google.com/maps?q=KCS+Commercial+Services",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "aria-label": "Google My Business",
                 className: "kcs-social-link",
                 style: {
                   display: "inline-flex",
@@ -1509,6 +1512,59 @@ function Navbar() {
                     fill: "currentColor",
                     d: "M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.4 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"
                   })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                "aria-label": "LinkedIn",
+                className: "kcs-social-link",
+                style: {
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 32,
+                  height: 32,
+                  border: `1px solid ${KCS.borderLight}`,
+                  background: "rgba(255,255,255,0.07)",
+                  color: KCS.white,
+                  textDecoration: "none"
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                  viewBox: "0 0 24 24",
+                  "aria-hidden": "true",
+                  style: {
+                    width: 16,
+                    height: 16
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    fill: "currentColor",
+                    d: "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "aria-label": "Better Business Bureau",
+                className: "kcs-social-link",
+                style: {
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 38,
+                  height: 32,
+                  border: `1px solid ${KCS.borderLight}`,
+                  background: "rgba(255,255,255,0.1)",
+                  color: KCS.white,
+                  textDecoration: "none",
+                  fontSize: "0.6rem",
+                  fontWeight: 900,
+                  fontFamily: "Montserrat, sans-serif"
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    color: KCS.goldLight
+                  },
+                  children: "BBB"
                 })
               })]
             })]

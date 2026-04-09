@@ -28,7 +28,7 @@ get_header(); ?>
     'Shawnee, KS',
     'Kansas City, KS',
     'Paola, KS',
-    'Springfield, MO',
+    'Spring Hills, KS',
   ];
 
   $next_steps = [

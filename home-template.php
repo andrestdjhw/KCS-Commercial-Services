@@ -134,7 +134,7 @@ get_header(); ?>
   ];
   $locations_additional = [
     [ 'city' => 'Paola, KS',        'note' => 'Selective service · High-ticket contracts',    'href' => '/location/paola-ks'        ],
-    [ 'city' => 'Springfield, MO',  'note' => 'Independent hub · Second market',              'href' => '/location/springfield-mo'  ],
+    [ 'city' => 'Spring Hills, KS',  'note' => 'Independent hub · Second market',              'href' => '/location/springfield-mo'  ],
   ];
 
   /* ── Process steps ────────────────────────────────────────────────── */
@@ -169,7 +169,7 @@ get_header(); ?>
     ],
     [
       'q' => 'What areas does KCS Commercial Services serve?',
-      'a' => 'Our primary service area covers the Overland Park Lenexa Olathe corridor in Johnson County, Kansas. We also serve Shawnee, Kansas City KS, Paola KS, and operate an independent hub in Springfield, MO.',
+      'a' => 'Our primary service area covers the Overland Park Lenexa Olathe corridor in Johnson County, Kansas. We also serve Shawnee, Kansas City KS, Paola KS, and operate an independent hub in Spring Hills, KS.',
     ],
     [
       'q' => 'How quickly can KCS respond to a new service inquiry?',
@@ -221,7 +221,7 @@ get_header(); ?>
           </a>
         </div>
         <div class="mt-8 flex flex-wrap gap-2">
-          <?php foreach (['Overland Park','Olathe','Lenexa','Shawnee','Kansas City KS','Springfield MO'] as $loc) : ?>
+          <?php foreach (['Overland Park','Olathe','Lenexa','Shawnee','Kansas City KS','Spring Hills KS'] as $loc) : ?>
             <span class="inline-flex items-center gap-1.5 border border-white/14 bg-white/07 px-3 py-1.5 text-[0.68rem] font-black uppercase tracking-[0.12em] text-white/80">
               <span class="block h-1.5 w-1.5 rounded-full bg-[#C9A84C]"></span>
               <?php echo esc_html($loc); ?>
@@ -335,7 +335,7 @@ get_header(); ?>
     <div class="mt-12 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
       <div class="ajs-reveal-left space-y-6 text-base leading-8 text-[#1B2B6B]/78">
         <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company, we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, and roofing.</p>
-        <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Springfield MO, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should  without you having to think about it.</p>
+        <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Spring Hills KS, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should  without you having to think about it.</p>
         <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver contract after contract, year after year.</p>
         <div class="flex flex-wrap gap-3 pt-2">
           <a href="#services" class="kcs-btn kcs-btn-outline inline-flex items-center justify-center px-6 py-3.5 text-sm font-black uppercase tracking-[0.14em]">Our Services</a>

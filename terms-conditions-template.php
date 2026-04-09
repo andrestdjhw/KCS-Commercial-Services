@@ -155,8 +155,8 @@ get_header(); ?>
           <div class="kcs-legal-contact">
             <p><strong>KCS Commercial Services LLC</strong></p>
             <p>Kansas City Metro, KS</p>
-            <p>Email: <a href="#">[Email Address]</a></p>
-            <p>Phone: <a href="tel:#">[Phone Number]</a></p>
+            <p>Email: <a href="#">info@kcscommercial.com</a></p>
+            <p>Phone: <a href="tel:#">(913) 257-7291</a></p>
             <p>Website: <a href="https://kcscommercial.com">kcscommercial.com</a></p>
           </div>
         </div>

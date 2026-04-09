@@ -1421,7 +1421,7 @@ function Navbar() {
                 gap: "0.4rem"
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "#",
+                href: "https://www.google.com/search?q=kcscommercial.com&sca_esv=e8481ae40804fa8e&sxsrf=ANbL-n7luLgnwGhYA9mfDfnb1eFoPal5DA%3A1775751464067&ei=KNHXafbKA9SIwbkPtuiRkQM&biw=1280&bih=722&ved=0ahUKEwj2_uXZleGTAxVURDABHTZ0JDIQ4dUDCBE&uact=5&oq=kcscommercial.com&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWtjc2NvbW1lcmNpYWwuY29tSPAaUMcIWLoUcAR4AZABAJgBX6ABX6oBATG4AQPIAQD4AQH4AQKYAgSgAhOoAhPCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICFxAuGLADGLgGGNgCGMgDGNoGGNwG2AEBwgIHECMYJxjqAsICFhAAGIAEGEMYtAIY5wYYigUY6gLYAQGYAwjxBedhWNxSq4FJiAYBkAYUugYGCAEQARgZkgcBNKAHsAGyBwC4BwDCBwUwLjIuMsgHEYAIAA&sclient=gws-wiz-serp",
                 "aria-label": "Google",
                 className: "kcs-social-link",
                 style: {

@@ -50,7 +50,7 @@ get_header(); ?>
       'icon'     => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
     ],
     [
-      'title'    => 'Insurance Coordination',
+      'title'    => 'Comprehensive Insurance Coordination',
       'copy'     => 'We work alongside your insurance adjuster to ensure damage is properly documented and the scope reflects the actual condition of the roof.',
       'tone'     => '#244080',
       'featured' => false,

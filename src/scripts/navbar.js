@@ -304,7 +304,7 @@ export default function Navbar() {
 
               <div aria-label="Social media" style={{ display:"flex", alignItems:"center", gap:"0.4rem" }}>
 
-                <a href="#" aria-label="Google" className="kcs-social-link" style={{
+                <a href="https://www.google.com/search?q=kcscommercial.com&sca_esv=e8481ae40804fa8e&sxsrf=ANbL-n7luLgnwGhYA9mfDfnb1eFoPal5DA%3A1775751464067&ei=KNHXafbKA9SIwbkPtuiRkQM&biw=1280&bih=722&ved=0ahUKEwj2_uXZleGTAxVURDABHTZ0JDIQ4dUDCBE&uact=5&oq=kcscommercial.com&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWtjc2NvbW1lcmNpYWwuY29tSPAaUMcIWLoUcAR4AZABAJgBX6ABX6oBATG4AQPIAQD4AQH4AQKYAgSgAhOoAhPCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICFxAuGLADGLgGGNgCGMgDGNoGGNwG2AEBwgIHECMYJxjqAsICFhAAGIAEGEMYtAIY5wYYigUY6gLYAQGYAwjxBedhWNxSq4FJiAYBkAYUugYGCAEQARgZkgcBNKAHsAGyBwC4BwDCBwUwLjIuMsgHEYAIAA&sclient=gws-wiz-serp" aria-label="Google" className="kcs-social-link" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
                   width:32, height:32,
                   border:`1px solid ${KCS.borderLight}`,

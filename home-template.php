@@ -59,7 +59,7 @@ get_header(); ?>
   /* ── Services ─────────────────────────────────────────────────────── */
   $services = [
     [
-      'headline' => 'Commercial Cleaning &amp; Janitorial Services in Kansas City',
+      'headline' => 'Commercial Cleaning &amp; Janitorial Services',
       'body'     => 'We provide professional commercial cleaning services for offices, medical facilities, schools, and institutional buildings across the Kansas City metro. Our teams follow documented cleaning protocols, use commercial grade equipment, and maintain the same standards on week 52 as they do on week one. Whether you manage a single building or a portfolio of properties, we show up on schedule, complete the work without supervision, and make sure your space is always ready for whoever walks through the door.',
       'bullets'  => [
         'Daily, weekly, and custom-frequency janitorial service',
@@ -72,7 +72,7 @@ get_header(); ?>
       'tone'  => '#1B2B6B',
     ],
     [
-      'headline' => 'Commercial Landscaping &amp; Grounds Maintenance  KC Metro',
+      'headline' => 'Commercial Landscaping &amp; Grounds Maintenance',
       'body'     => 'First impressions happen at the curb. We maintain commercial grounds, institutional campuses, and multi-property portfolios so your asset always looks presentable to tenants, to visitors, and to the people making decisions about renewing their lease. From regular lawn maintenance to seasonal snow removal, we handle the exterior so you don\'t have to coordinate another vendor.',
       'bullets'  => [
         'Commercial lawn maintenance and landscaping contracts',
@@ -85,7 +85,7 @@ get_header(); ?>
       'tone'  => '#243580',
     ],
     [
-      'headline' => 'Drywall &amp; Interior Construction Services  Overland Park &amp; KC',
+      'headline' => 'Drywall &amp; Interior Construction Services',
       'body'     => 'When a general contractor trusts us to leave their job site clean, the next conversation is usually about what else we can take off their plate. Our drywall and interior construction services are built around that same reliability showing up on schedule, working cleanly alongside other trades, and hitting the deadline every time. We handle tenant improvements, commercial build outs, and interior renovation scopes across the KC metro.',
       'bullets'  => [
         'Commercial drywall installation and finishing',
@@ -98,7 +98,7 @@ get_header(); ?>
       'tone'  => '#C9A84C',
     ],
     [
-      'headline' => 'Commercial Roofing &amp; Siding  Kansas City Metro',
+      'headline' => 'Commercial Roofing &amp; Siding',
       'body'     => 'Kansas City weather doesn\'t wait, and neither should you. When a hail storm hits or a roof reaches the end of its life, the last thing you want is to start searching for a contractor you\'ve never worked with. If we already manage your building\'s cleaning or grounds, we know the property  and we\'re ready to move fast. We handle commercial roof replacement, repair, and siding work across the KC metro with the same accountability we bring to every other service.',
       'bullets'  => [
         'Commercial roof replacement and repair',

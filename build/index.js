@@ -783,7 +783,7 @@ function Footer() {
                       fontSize: "0.92rem",
                       lineHeight: 1.7
                     },
-                    children: "Kansas City Metro, KS \xB7 Springfield, MO"
+                    children: "Kansas City Metro, KS \xB7 Spring Hills, KS"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                   style: {

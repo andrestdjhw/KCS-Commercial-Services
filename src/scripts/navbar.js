@@ -16,7 +16,6 @@ const KCS = {
   shadowStrong:"0 18px 44px rgba(27, 58, 107, 0.16)",
 }
 
-// ─── Nav Data ─────────────────────────────────────────────────────────────────
 const SERVICES = [
   { label: "Commercial Cleaning",   href: "/services/commercial-cleaning"  },
   { label: "Landscaping & Grounds", href: "/services/landscaping-grounds"  },
@@ -24,7 +23,6 @@ const SERVICES = [
   { label: "Roofing & Siding",      href: "/services/roofing-siding"       },
 ]
 
-// ─── Shared desktop link style ────────────────────────────────────────────────
 const desktopLinkStyle = {
   display: "inline-flex", alignItems: "center", gap: "0.5rem",
   minHeight: 44, padding: 0,
@@ -33,7 +31,6 @@ const desktopLinkStyle = {
   fontSize: "0.87rem", fontWeight: 700, letterSpacing: "0.02em",
 }
 
-// ─── Main Component ───────────────────────────────────────────────────────────
 export default function Navbar() {
   const [scrolled,        setScrolled]       = useState(false)
   const [mobileOpen,      setMobileOpen]     = useState(false)
@@ -146,14 +143,6 @@ export default function Navbar() {
           border-color: rgba(27,43,107,0.24) !important;
         }
 
-        .kcs-brand-mark-outer {
-          animation: kcsBrandDrift 5s ease-in-out infinite;
-        }
-        @keyframes kcsBrandDrift {
-          0%, 100% { transform: rotate(8deg) scale(1); }
-          50%       { transform: rotate(6deg) scale(1.04); }
-        }
-
         .kcs-mobile-panel { animation: kcsFadeDown .24s ease; }
         @keyframes kcsFadeDown {
           from { opacity: 0; transform: translateY(-8px); }
@@ -178,19 +167,32 @@ export default function Navbar() {
           background: rgba(201,168,76,0.20) !important;
         }
 
+        /* ── Desktop nav hidden on mobile ── */
         @media (max-width: 980px) {
           .kcs-desktop-nav,
           .kcs-nav-cta    { display: none !important; }
           .kcs-nav-toggle { display: inline-flex !important; }
         }
 
+        /* ── Tablet: hide center badge ── */
         @media (max-width: 780px) {
           .kcs-topbar-center { display: none !important; }
         }
 
+        /* ── Mobile: hide email + Licensed badge ── */
+        @media (max-width: 640px) {
+          .kcs-topbar-email  { display: none !important; }
+          .kcs-topbar-badge  { display: none !important; }
+        }
+
+        /* ── Small mobile: hide phone number text, keep icon only ── */
+        @media (max-width: 420px) {
+          .kcs-phone-number { display: none !important; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .kcs-topbar-link, .kcs-social-link, .kcs-menu-link,
-          .kcs-btn-primary, .kcs-mobile-panel, .kcs-brand-mark-outer,
+          .kcs-btn-primary, .kcs-mobile-panel,
           .kcs-nav-toggle, .kcs-mobile-group__panel, .kcs-kcbadge {
             transition: none !important; animation: none !important;
           }
@@ -205,7 +207,7 @@ export default function Navbar() {
         }}
       >
 
-        {/* ── TOP UTILITY BAR ───────────────────────────────────────────── */}
+        {/* ── TOP UTILITY BAR ─────────────────────────────────────────── */}
         <div style={{
           background: `linear-gradient(90deg, ${KCS.navyDeep} 0%, ${KCS.navy} 60%, ${KCS.navyLight} 100%)`,
           color: KCS.white,
@@ -218,13 +220,13 @@ export default function Navbar() {
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "nowrap",
-            gap: "0.75rem",
+            gap: "0.5rem",
             minHeight: 48,
             paddingBlock: "0.5rem",
           }}>
 
             {/* ── LEFT: Phone + Email ── */}
-            <div style={{ display:"flex", alignItems:"center", gap:"1.25rem", flexWrap:"wrap" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:"1rem", flexShrink: 0 }}>
 
               <a href="tel:+19132577291" className="kcs-topbar-link"
                 style={{ display:"inline-flex", alignItems:"center", gap:"0.5rem",
@@ -240,10 +242,11 @@ export default function Navbar() {
                 </span>
                 <span style={{ fontSize:"0.64rem", fontWeight:800, textTransform:"uppercase",
                                letterSpacing:"0.14em", color: KCS.goldLight }}>Phone</span>
-                <span>(913) 257-7291</span>
+                <span className="kcs-phone-number">(913) 257-7291</span>
               </a>
 
-              <a href="mailto:info@kcscommercial.com?subject=Service%20Inquiry%20-%20KCS%20Website" className="kcs-topbar-link"
+              <a href="mailto:info@kcscommercial.com?subject=Service%20Inquiry%20-%20KCS%20Website"
+                className="kcs-topbar-link kcs-topbar-email"
                 style={{ display:"inline-flex", alignItems:"center", gap:"0.5rem",
                          fontSize:"0.78rem", fontWeight:700,
                          color:"rgba(255,255,255,0.75)", textDecoration:"none" }}>
@@ -289,24 +292,25 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* ── RIGHT: Badges + Socials ── */}
-            <div style={{ display:"flex", alignItems:"center", gap:"0.6rem", flexWrap:"wrap" }}>
+            {/* ── RIGHT: Badge + Socials ── */}
+            <div style={{ display:"flex", alignItems:"center", gap:"0.5rem", flexShrink: 0 }}>
 
-              <span style={{
+              <span className="kcs-topbar-badge" style={{
                 display:"inline-flex", alignItems:"center", minHeight:30,
                 paddingInline:"0.8rem",
                 border:`1px solid ${KCS.borderLight}`,
                 background:"rgba(255,255,255,0.07)",
                 fontSize:"0.68rem", fontWeight:800, letterSpacing:"0.08em", textTransform:"uppercase",
-                marginRight: "0.4rem"
               }}>
                 Licensed · Insured · Bonded
               </span>
 
-              <div aria-label="Social media" style={{ display:"flex", alignItems:"center", gap:"0.4rem" }}>
+              <div aria-label="Social media" style={{ display:"flex", alignItems:"center", gap:"0.35rem" }}>
 
-                {/* Google My Business */}
-                <a href="https://www.google.com/maps?q=KCS+Commercial+Services" target="_blank" rel="noopener noreferrer" aria-label="Google My Business" className="kcs-social-link" style={{
+                {/* Google */}
+                <a href="https://www.google.com/maps?q=KCS+Commercial+Services"
+                  target="_blank" rel="noopener noreferrer" aria-label="Google My Business"
+                  className="kcs-social-link" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
                   width:32, height:32, border:`1px solid ${KCS.borderLight}`,
                   background:"rgba(255,255,255,0.07)", color: KCS.white, textDecoration:"none",
@@ -352,12 +356,13 @@ export default function Navbar() {
                   </svg>
                 </a>
 
-                {/* BBB Badge Style Link */}
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Better Business Bureau" className="kcs-social-link" style={{
+                {/* BBB */}
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  aria-label="Better Business Bureau" className="kcs-social-link" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
                   width:38, height:32, border:`1px solid ${KCS.borderLight}`,
-                  background:"rgba(255,255,255,0.1)", color: KCS.white, textDecoration:"none",
-                  fontSize: "0.6rem", fontWeight: 900, fontFamily: "Montserrat, sans-serif"
+                  background:"rgba(255,255,255,0.10)", color: KCS.white, textDecoration:"none",
+                  fontSize: "0.6rem", fontWeight: 900, fontFamily: "Montserrat, sans-serif",
                 }}>
                   <span style={{ color: KCS.goldLight }}>BBB</span>
                 </a>
@@ -368,7 +373,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ── MAIN NAVIGATION ───────────────────────────────────────────── */}
+        {/* ── MAIN NAVIGATION ─────────────────────────────────────────── */}
         <div style={{
           position: "relative",
           background: scrolled ? "rgba(245,244,239,0.97)" : "rgba(245,244,239,0.94)",
@@ -414,15 +419,8 @@ export default function Navbar() {
                 display:"flex", alignItems:"center", gap:"1.5rem",
                 listStyle:"none", margin:0, padding:0,
               }}>
-                <li>
-                  <a href="/" className="kcs-menu-link" style={desktopLinkStyle}>Home</a>
-                </li>
-
-                <li>
-                  <a href="/about-us" className="kcs-menu-link" style={desktopLinkStyle}>About Us</a>
-                </li>
-
-                {/* Services — dropdown */}
+                <li><a href="/" className="kcs-menu-link" style={desktopLinkStyle}>Home</a></li>
+                <li><a href="/about-us" className="kcs-menu-link" style={desktopLinkStyle}>About Us</a></li>
                 <li style={{ position:"relative" }}>
                   <button
                     type="button"
@@ -436,21 +434,13 @@ export default function Navbar() {
                   </button>
                   <Dropdown items={SERVICES} visible={openDropdown === "services"} />
                 </li>
-
-                {/* Locations — plain link, no dropdown */}
-                <li>
-                  <a href="/locations" className="kcs-menu-link" style={desktopLinkStyle}>Locations</a>
-                </li>
-
-                <li>
-                  <a href="/contact-us" className="kcs-menu-link" style={desktopLinkStyle}>Contact Us</a>
-                </li>
+                <li><a href="/locations" className="kcs-menu-link" style={desktopLinkStyle}>Locations</a></li>
+                <li><a href="/contact-us" className="kcs-menu-link" style={desktopLinkStyle}>Contact Us</a></li>
               </ul>
             </nav>
 
             {/* ── CTA + HAMBURGER ── */}
             <div style={{ display:"flex", alignItems:"center", gap:"0.75rem" }}>
-
               <div className="kcs-nav-cta" style={{ display:"flex" }}>
                 <a href="/contact-us" className="kcs-btn-primary" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
@@ -500,7 +490,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ── MOBILE PANEL ─────────────────────────────────────────────── */}
+          {/* ── MOBILE PANEL ─────────────────────────────────────────── */}
           {mobileOpen && (
             <div id="kcs-mobile-nav" className="kcs-mobile-panel" style={{
               borderTop:`1px solid ${KCS.border}`,
@@ -510,20 +500,16 @@ export default function Navbar() {
               <div style={{ width:"min(100% - 2rem, 1280px)", margin:"0 auto" }}>
                 <nav aria-label="Mobile navigation"
                   style={{ display:"grid", gap:0, paddingBlock:"1rem 1.25rem" }}>
-
                   <MobileLink href="/">Home</MobileLink>
                   <MobileLink href="/about-us">About Us</MobileLink>
-
                   <MobileGroup
                     label="Services"
                     items={SERVICES}
                     open={openMobileGroup === "services"}
                     onToggle={() => setOpenMobileGroup(p => p === "services" ? null : "services")}
                   />
-
                   <MobileLink href="/locations">Locations</MobileLink>
                   <MobileLink href="/contact-us">Contact Us</MobileLink>
-
                   <a href="/contact-us" className="kcs-btn-primary" style={{
                     display:"inline-flex", alignItems:"center", justifyContent:"center",
                     marginTop:"1rem", minHeight:50, paddingInline:"1.25rem",
@@ -547,7 +533,6 @@ export default function Navbar() {
   )
 }
 
-// ─── Dropdown ─────────────────────────────────────────────────────────────────
 function Dropdown({ items, visible }) {
   return (
     <div style={{
@@ -587,7 +572,6 @@ function Dropdown({ items, visible }) {
   )
 }
 
-// ─── Caret ────────────────────────────────────────────────────────────────────
 function Caret({ open }) {
   return (
     <span style={{
@@ -603,7 +587,6 @@ function Caret({ open }) {
   )
 }
 
-// ─── Mobile Link ──────────────────────────────────────────────────────────────
 function MobileLink({ href, children }) {
   return (
     <a href={href} style={{
@@ -618,7 +601,6 @@ function MobileLink({ href, children }) {
   )
 }
 
-// ─── Mobile Group ─────────────────────────────────────────────────────────────
 function MobileGroup({ label, items, open, onToggle }) {
   return (
     <div>
@@ -633,7 +615,6 @@ function MobileGroup({ label, items, open, onToggle }) {
         <span>{label}</span>
         <Caret open={open} />
       </button>
-
       <div className="kcs-mobile-group__panel" style={{ maxHeight: open ? 600 : 0 }}>
         {items.map((item) => (
           <a key={item.href} href={item.href}

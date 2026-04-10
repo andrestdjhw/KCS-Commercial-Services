@@ -1091,8 +1091,6 @@ const KCS = {
   shadow: "0 18px 40px rgba(27, 58, 107, 0.10)",
   shadowStrong: "0 18px 44px rgba(27, 58, 107, 0.16)"
 };
-
-// ─── Nav Data ─────────────────────────────────────────────────────────────────
 const SERVICES = [{
   label: "Commercial Cleaning",
   href: "/services/commercial-cleaning"
@@ -1106,8 +1104,6 @@ const SERVICES = [{
   label: "Roofing & Siding",
   href: "/services/roofing-siding"
 }];
-
-// ─── Shared desktop link style ────────────────────────────────────────────────
 const desktopLinkStyle = {
   display: "inline-flex",
   alignItems: "center",
@@ -1120,8 +1116,6 @@ const desktopLinkStyle = {
   fontWeight: 700,
   letterSpacing: "0.02em"
 };
-
-// ─── Main Component ───────────────────────────────────────────────────────────
 function Navbar() {
   const [scrolled, setScrolled] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const [mobileOpen, setMobileOpen] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
@@ -1234,14 +1228,6 @@ function Navbar() {
           border-color: rgba(27,43,107,0.24) !important;
         }
 
-        .kcs-brand-mark-outer {
-          animation: kcsBrandDrift 5s ease-in-out infinite;
-        }
-        @keyframes kcsBrandDrift {
-          0%, 100% { transform: rotate(8deg) scale(1); }
-          50%       { transform: rotate(6deg) scale(1.04); }
-        }
-
         .kcs-mobile-panel { animation: kcsFadeDown .24s ease; }
         @keyframes kcsFadeDown {
           from { opacity: 0; transform: translateY(-8px); }
@@ -1266,19 +1252,32 @@ function Navbar() {
           background: rgba(201,168,76,0.20) !important;
         }
 
+        /* ── Desktop nav hidden on mobile ── */
         @media (max-width: 980px) {
           .kcs-desktop-nav,
           .kcs-nav-cta    { display: none !important; }
           .kcs-nav-toggle { display: inline-flex !important; }
         }
 
+        /* ── Tablet: hide center badge ── */
         @media (max-width: 780px) {
           .kcs-topbar-center { display: none !important; }
         }
 
+        /* ── Mobile: hide email + Licensed badge ── */
+        @media (max-width: 640px) {
+          .kcs-topbar-email  { display: none !important; }
+          .kcs-topbar-badge  { display: none !important; }
+        }
+
+        /* ── Small mobile: hide phone number text, keep icon only ── */
+        @media (max-width: 420px) {
+          .kcs-phone-number { display: none !important; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .kcs-topbar-link, .kcs-social-link, .kcs-menu-link,
-          .kcs-btn-primary, .kcs-mobile-panel, .kcs-brand-mark-outer,
+          .kcs-btn-primary, .kcs-mobile-panel,
           .kcs-nav-toggle, .kcs-mobile-group__panel, .kcs-kcbadge {
             transition: none !important; animation: none !important;
           }
@@ -1306,7 +1305,7 @@ function Navbar() {
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "nowrap",
-            gap: "0.75rem",
+            gap: "0.5rem",
             minHeight: 48,
             paddingBlock: "0.5rem"
           },
@@ -1314,8 +1313,8 @@ function Navbar() {
             style: {
               display: "flex",
               alignItems: "center",
-              gap: "1.25rem",
-              flexWrap: "wrap"
+              gap: "1rem",
+              flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "tel:+19132577291",
@@ -1362,11 +1361,12 @@ function Navbar() {
                 },
                 children: "Phone"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                className: "kcs-phone-number",
                 children: "(913) 257-7291"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "mailto:info@kcscommercial.com?subject=Service%20Inquiry%20-%20KCS%20Website",
-              className: "kcs-topbar-link",
+              className: "kcs-topbar-link kcs-topbar-email",
               style: {
                 display: "inline-flex",
                 alignItems: "center",
@@ -1466,10 +1466,11 @@ function Navbar() {
             style: {
               display: "flex",
               alignItems: "center",
-              gap: "0.6rem",
-              flexWrap: "wrap"
+              gap: "0.5rem",
+              flexShrink: 0
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "kcs-topbar-badge",
               style: {
                 display: "inline-flex",
                 alignItems: "center",
@@ -1480,8 +1481,7 @@ function Navbar() {
                 fontSize: "0.68rem",
                 fontWeight: 800,
                 letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                marginRight: "0.4rem"
+                textTransform: "uppercase"
               },
               children: "Licensed \xB7 Insured \xB7 Bonded"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -1489,7 +1489,7 @@ function Navbar() {
               style: {
                 display: "flex",
                 alignItems: "center",
-                gap: "0.4rem"
+                gap: "0.35rem"
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                 href: "https://www.google.com/maps?q=KCS+Commercial+Services",
@@ -1623,7 +1623,7 @@ function Navbar() {
                   width: 38,
                   height: 32,
                   border: `1px solid ${KCS.borderLight}`,
-                  background: "rgba(255,255,255,0.1)",
+                  background: "rgba(255,255,255,0.10)",
                   color: KCS.white,
                   textDecoration: "none",
                   fontSize: "0.6rem",
@@ -1885,8 +1885,6 @@ function Navbar() {
     })]
   });
 }
-
-// ─── Dropdown ─────────────────────────────────────────────────────────────────
 function Dropdown({
   items,
   visible
@@ -1932,8 +1930,6 @@ function Dropdown({
     }, item.href))]
   });
 }
-
-// ─── Caret ────────────────────────────────────────────────────────────────────
 function Caret({
   open
 }) {
@@ -1950,8 +1946,6 @@ function Caret({
     }
   });
 }
-
-// ─── Mobile Link ──────────────────────────────────────────────────────────────
 function MobileLink({
   href,
   children
@@ -1973,8 +1967,6 @@ function MobileLink({
     children: children
   });
 }
-
-// ─── Mobile Group ─────────────────────────────────────────────────────────────
 function MobileGroup({
   label,
   items,

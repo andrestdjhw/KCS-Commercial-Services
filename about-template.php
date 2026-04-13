@@ -95,7 +95,7 @@ get_header(); ?>
     <div class="mx-auto mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
 
     <p class="ajs-reveal-up mx-auto mt-7 max-w-3xl text-base leading-8 text-white/80 md:text-lg">
-      KCS Commercial Services was built to give property managers, facility directors, and institutional buyers a partner they never have to chase. From commercial cleaning to landscaping, drywall, and roofing we manage the asset so you can manage the business.
+      KCS Commercial Services was built to give property managers, facility directors, and institutional buyers a partner they never have to chase. From commercial cleaning to landscaping, drywall, painting, and roofing we manage the asset so you can manage the business.
     </p>
   </div>
 </section>
@@ -141,7 +141,7 @@ get_header(); ?>
               </p>
             </div>
 
-            <p>From that anchor we built a full platform: landscaping and grounds, interior drywall, and exterior roofing and siding. One partner. One standard. One call.</p>
+            <p>From that anchor we built a full platform: landscaping and grounds, interior drywall and painting, and exterior roofing and siding. One partner. One standard. One call.</p>
           </div>
         </div>
       </div>
@@ -267,7 +267,7 @@ get_header(); ?>
           <div class="border border-[#1B2B6B]/10 bg-[#C9A84C]/10 px-6 py-5">
             <p class="text-[0.65rem] font-black uppercase tracking-[0.18em] text-[#1B2B6B]/60">Service Area</p>
             <p class="mt-1.5 text-base font-bold leading-6 text-[#1B2B6B]">
-              Kansas City Metro, KS &nbsp;·&nbsp; Spring Hills, KS
+              Kansas City Metro, KS &nbsp;·&nbsp; Springfield, MO
             </p>
           </div>
         </div>

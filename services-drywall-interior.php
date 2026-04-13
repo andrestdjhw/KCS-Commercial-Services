@@ -56,6 +56,13 @@ get_header(); ?>
       'full'  => false,
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
     ],
+    [
+      'title' => 'Commercial Painting',
+      'copy'  => 'Interior and exterior commercial painting for new construction, tenant improvements, and renovation projects across the KC metro. We handle the full scope — priming, finish coats, and detail work immediately after drywall or as a standalone service. Post-construction finishes, repaint and refresh scopes, and full renovation painting for offices, healthcare facilities, retail spaces, and commercial build outs.',
+      'tone'  => '#244080',
+      'full'  => false,
+      'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3z"/><path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/><path d="M14.5 17.5 4.5 15"/></svg>',
+    ],
   ];
 
   /* ── GC bullets ─────────────────────────────────────────────────── */
@@ -65,6 +72,7 @@ get_header(); ?>
     'Clear communication on scope, timeline, and any changes',
     'No hand-holding required to deliver quality work',
     'Available for recurring GC relationships, not just one-off projects',
+    'Drywall and painting handled by the same crew no handoff gap before final inspection',
   ];
 
   /* ── Form services ──────────────────────────────────────────────── */
@@ -111,7 +119,7 @@ get_header(); ?>
         </p>
 
         <h1 class="ajs-reveal-up mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
-          Drywall &amp; Interior Construction Services Overland Park &amp; Kansas City
+          Drywall, Painting & Interior Construction Services Overland Park & Kansas City
         </h1>
 
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
@@ -120,7 +128,7 @@ get_header(); ?>
           Interior construction lives or dies on coordination and timing. The wrong subcontractor stalls the project, creates rework, and puts the delivery date at risk. KCS takes that variable off the board.
         </p>
         <p class="ajs-reveal-up mt-4 text-base leading-8 text-white/80 md:text-lg">
-          We deliver commercial drywall and interior construction across the KC metro with the same discipline GCs already trust us for on the post construction side on time, clean, and ready for the next trade.
+          We deliver commercial drywall, painting, and interior construction across the KC metro on time, clean, and ready for the next trade. When the drywall is done, we don't hand it off to someone else. We finish it.
         </p>
 
         <div class="ajs-reveal-up mt-9 flex flex-wrap gap-3">

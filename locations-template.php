@@ -18,7 +18,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'Highest institutional density · Healthcare & corporate hubs',
-      'href'  => '/location/overland-park-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Overland+Park+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.7!3d38.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0916aba29c561%3A0x60e1aba2ef9cca67!2sOverland%20Park%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000001',
       'tone'  => '#1B3A6B',
     ],
@@ -27,7 +27,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'Healthcare corridor · School district hub',
-      'href'  => '/location/olathe-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Olathe+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.82!3d38.88!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c09571b7c2e5c9%3A0x7b5b3b6b7b6b7b6b!2sOlathe%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000002',
       'tone'  => '#1B3A6B',
     ],
@@ -36,7 +36,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'Corporate parks · Commercial flex space',
-      'href'  => '/location/lenexa-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Lenexa+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.73!3d38.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0908c2ad5b6d3%3A0x9d3a3a3a3a3a3a3a!2sLenexa%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000003',
       'tone'  => '#1B3A6B',
     ],
@@ -45,7 +45,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'Residential-commercial mix · Growing commercial corridor',
-      'href'  => '/location/shawnee-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Shawnee+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.71!3d39.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c08f9c9b9b9b9b%3A0x8b8b8b8b8b8b8b8b!2sShawnee%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000004',
       'tone'  => '#1B3A6B',
     ],
@@ -54,7 +54,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'High-end commercial & medical office parks',
-      'href'  => '/location/leawood-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Leawood+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.6284!3d38.9667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c09d5f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sLeawood%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000008',
       'tone'  => '#1B3A6B',
     ],
@@ -63,7 +63,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'Established commercial · Professional offices',
-      'href'  => '/location/prairie-village-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Prairie+Village+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.6338!3d38.9917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c09e3e3e3e3e3e%3A0x3e3e3e3e3e3e3e3e!2sPrairie%20Village%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000009',
       'tone'  => '#1B3A6B',
     ],
@@ -72,7 +72,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Primary Market',
       'note'  => 'Commercial & industrial corridor',
-      'href'  => '/location/kansas-city-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Kansas+City+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.63!3d39.11!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0f34a6b6b6b6b%3A0x6b6b6b6b6b6b6b6b!2sKansas%20City%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000005',
       'tone'  => '#1B3A6B',
     ],
@@ -82,7 +82,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Support Market',
       'note'  => 'Dense commercial · Route-efficient coverage',
-      'href'  => '/location/mission-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Mission+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.6557!3d39.0278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c08e5e5e5e5e5e%3A0x5e5e5e5e5e5e5e5e!2sMission%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000010',
       'tone'  => '#243580',
     ],
@@ -91,7 +91,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Support Market',
       'note'  => 'Retail & light commercial corridor',
-      'href'  => '/location/merriam-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Merriam+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.6919!3d39.0167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c08d4d4d4d4d4d%3A0x4d4d4d4d4d4d4d4d!2sMerriam%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000011',
       'tone'  => '#243580',
     ],
@@ -100,7 +100,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Support Market',
       'note'  => 'Expanding commercial · Industrial parks',
-      'href'  => '/location/gardner-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Gardner+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.9277!3d38.8111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0a5a5a5a5a5a5%3A0xa5a5a5a5a5a5a5a5!2sGardner%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000012',
       'tone'  => '#243580',
     ],
@@ -109,7 +109,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Support Market',
       'note'  => 'Growing business corridor · Route support',
-      'href'  => '/location/de-soto-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=De+Soto+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.9688!3d38.9806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0b6b6b6b6b6b6%3A0xb6b6b6b6b6b6b6b6!2sDe%20Soto%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000013',
       'tone'  => '#243580',
     ],
@@ -118,7 +118,7 @@ get_header(); ?>
       'state' => 'KS',
       'tier'  => 'Support Market',
       'note'  => 'Residential-commercial growth area',
-      'href'  => '/location/spring-hill-ks',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Spring+Hill+KS',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.8266!3d38.7467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0c7c7c7c7c7c7%3A0xc7c7c7c7c7c7c7c7!2sSpring%20Hill%2C%20KS!5e0!3m2!1sen!2sus!4v1700000000014',
       'tone'  => '#243580',
     ],
@@ -127,7 +127,7 @@ get_header(); ?>
       'state' => 'MO',
       'tier'  => 'Support Market',
       'note'  => 'Urban commercial · Cross-state coverage',
-      'href'  => '/location/kansas-city-mo',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Kansas+City+MO',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.5786!3d39.0997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0f2b1b1b1b1b1%3A0xb1b1b1b1b1b1b1b1!2sKansas%20City%2C%20MO!5e0!3m2!1sen!2sus!4v1700000000015',
       'tone'  => '#243580',
     ],
@@ -137,7 +137,7 @@ get_header(); ?>
       'state' => 'MO',
       'tier'  => 'Additional Market',
       'note'  => 'Selective service · High-ticket commercial contracts',
-      'href'  => '/location/lees-summit-mo',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Lee%27s+Summit+MO',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99259.4!2d-94.3822!3d38.9108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0e8e8e8e8e8e8%3A0xe8e8e8e8e8e8e8e8!2sLee%27s%20Summit%2C%20MO!5e0!3m2!1sen!2sus!4v1700000000016',
       'tone'  => '#C9A84C',
     ],
@@ -146,7 +146,7 @@ get_header(); ?>
       'state' => 'MO',
       'tier'  => 'Additional Market',
       'note'  => 'Northern KC metro · Commercial growth corridor',
-      'href'  => '/location/liberty-mo',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Liberty+MO',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.4191!3d39.2467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0d9d9d9d9d9d9%3A0xd9d9d9d9d9d9d9d9!2sLiberty%2C%20MO!5e0!3m2!1sen!2sus!4v1700000000017',
       'tone'  => '#C9A84C',
     ],
@@ -155,7 +155,7 @@ get_header(); ?>
       'state' => 'MO',
       'tier'  => 'Additional Market',
       'note'  => 'Eastern KC metro · Institutional & commercial',
-      'href'  => '/location/independence-mo',
+      'maps'  => 'https://www.google.com/maps/search/?api=1&query=Independence+MO',
       'map'   => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49600!2d-94.4135!3d39.0917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0eaeaeaeaeaea%3A0xeaeaeaeaeaeaeaea!2sIndependence%2C%20MO!5e0!3m2!1sen!2sus!4v1700000000018',
       'tone'  => '#C9A84C',
     ],
@@ -195,7 +195,8 @@ get_header(); ?>
     <!-- Location badges -->
     <div class="ajs-reveal-up mt-8 flex flex-wrap items-center justify-center gap-2">
       <?php foreach ($locations as $loc) : ?>
-        <a href="<?php echo esc_url($loc['href']); ?>"
+        <a href="<?php echo esc_url($loc['maps']); ?>"
+          target="_blank" rel="noopener noreferrer"
           class="kcs-badge-link inline-flex items-center gap-1.5 border border-white/14 bg-white/07 px-3 py-1.5 text-[0.68rem] font-black uppercase tracking-[0.12em] text-white/85 transition">
           <span class="block h-1.5 w-1.5 rounded-full bg-[#C9A84C]"></span>
           <?php echo esc_html($loc['city'] . ', ' . $loc['state']); ?>
@@ -214,7 +215,7 @@ get_header(); ?>
   <div class="relative mx-auto max-w-7xl px-4">
 
     <!-- Tier legend -->
-    <div class="ajs-reveal-up mb-12 flex flex-wrap items-center gap-3">
+    <!-- <div class="ajs-reveal-up mb-12 flex flex-wrap items-center gap-3">
       <span class="text-[0.68rem] font-black uppercase tracking-[0.18em] text-[#1B3A6B]/50 mr-1">Tier:</span>
       <?php foreach ($tier_styles as $label => $style) : ?>
         <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[0.65rem] font-black uppercase tracking-[0.12em]"
@@ -222,9 +223,9 @@ get_header(); ?>
           <?php echo esc_html($label); ?>
         </span>
       <?php endforeach; ?>
-    </div>
+    </div> -->
 
-    <!-- Grid: 3 cols on xl, 2 on md, 1 on mobile -->
+    <!-- Grid -->
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       <?php foreach ($locations as $loc) :
         $ts = $tier_styles[$loc['tier']];
@@ -247,34 +248,28 @@ get_header(); ?>
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-            <!-- Map overlay gradient -->
             <div class="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-[linear-gradient(transparent,rgba(255,255,255,0.5))]"></div>
           </div>
 
           <!-- Card body -->
           <div class="p-6">
 
-            <!-- Tier badge -->
             <span class="inline-flex items-center px-3 py-1 text-[0.62rem] font-black uppercase tracking-[0.14em]"
               style="background:<?php echo esc_attr($ts['bg']); ?>;color:<?php echo esc_attr($ts['color']); ?>;">
               <?php echo esc_html($loc['tier']); ?>
             </span>
 
-            <!-- City name -->
             <h2 class="mt-4 text-2xl font-black leading-tight tracking-[-0.03em] text-[#1B3A6B]">
               <?php echo esc_html($loc['city']); ?>
               <span class="text-[#1B3A6B]/45">, <?php echo esc_html($loc['state']); ?></span>
             </h2>
 
-            <!-- Note -->
             <p class="mt-2 text-[0.82rem] leading-6 text-[#1B3A6B]/60">
               <?php echo esc_html($loc['note']); ?>
             </p>
 
-            <!-- Divider -->
             <div class="my-5 h-px bg-[#1B3A6B]/08"></div>
 
-            <!-- Services quick list -->
             <ul class="space-y-1.5">
               <?php foreach (['Commercial Cleaning', 'Landscaping & Grounds', 'Drywall & Interior', 'Roofing & Siding'] as $svc) : ?>
                 <li class="flex items-center gap-2 text-[0.78rem] font-semibold text-[#1B3A6B]/70">
@@ -285,10 +280,11 @@ get_header(); ?>
               <?php endforeach; ?>
             </ul>
 
-            <!-- CTA -->
-            <a href="<?php echo esc_url($loc['href']); ?>"
+            <!-- CTA → Google Maps (nueva pestaña) -->
+            <a href="<?php echo esc_url($loc['maps']); ?>"
+              target="_blank" rel="noopener noreferrer"
               class="kcs-card-cta mt-6 flex w-full items-center justify-between border border-[#1B3A6B]/12 bg-[#F5F4EF] px-4 py-3 text-sm font-black uppercase tracking-[0.10em] text-[#1B3A6B] transition">
-              <span>View Service Area</span>
+              <span>View on Google Maps</span>
               <span class="kcs-arrow transition-transform duration-300">→</span>
             </a>
           </div>
@@ -353,13 +349,12 @@ get_header(); ?>
         class="kcs-btn kcs-btn-gold inline-flex items-center justify-center px-8 py-4 text-sm font-black uppercase tracking-[0.14em]">
         Request a Contract Quote
       </a>
-      <a href="tel:#"
+      <a href="tel:+19132577291"
         class="kcs-btn kcs-btn-ghost inline-flex items-center justify-center px-8 py-4 text-sm font-black uppercase tracking-[0.14em] text-white">
         Call Us Directly
       </a>
     </div>
 
-    <!-- Swipe accent -->
     <div class="kcs-swipe mx-auto mt-10 max-w-2xl"></div>
   </div>
 </section>
@@ -378,8 +373,7 @@ get_header(); ?>
     font-family: "Montserrat", "Segoe UI", sans-serif;
   }
 
-  /* ── Card hover ─────────────────────────────────────────────────── */
-  .kcs-card-cta { transition: background .2s ease, border-color .2s ease; }
+  .kcs-card-cta { transition: background .2s ease, border-color .2s ease, color .2s ease; }
   .kcs-card-cta:hover {
     background: #1B3A6B;
     color: #E8D49A;
@@ -387,14 +381,12 @@ get_header(); ?>
   }
   .kcs-card-cta:hover .kcs-arrow { transform: translateX(4px); }
 
-  /* ── Badge link ─────────────────────────────────────────────────── */
   .kcs-badge-link:hover {
     background: rgba(201,168,76,0.18);
     border-color: rgba(201,168,76,0.40);
     color: #fff;
   }
 
-  /* ── Buttons ────────────────────────────────────────────────────── */
   .kcs-btn {
     position: relative; border: 1px solid transparent; overflow: hidden;
     transition: transform .22s ease, box-shadow .22s ease,
@@ -428,7 +420,6 @@ get_header(); ?>
     border-color: rgba(255,255,255,0.28);
   }
 
-  /* ── Bottom swipe ───────────────────────────────────────────────── */
   .kcs-swipe {
     height: 12px;
     background: linear-gradient(90deg, #1B3A6B 0%, #C9A84C 35%, #E8D49A 55%, #C9A84C 78%, #A8882E 100%);
@@ -436,7 +427,6 @@ get_header(); ?>
     opacity: 0.85;
   }
 
-  /* ── Scroll reveal ──────────────────────────────────────────────── */
   .ajs-reveal-up,
   .ajs-reveal-left,
   .ajs-reveal-right,

@@ -46,7 +46,7 @@ get_header(); ?>
     ],
     [
       'title' => 'Multi Service Platform',
-      'copy'  => 'One trusted partner for cleaning, grounds, drywall, and roofing.',
+      'copy'  => 'One trusted partner for cleaning, grounds, drywall, painting, and roofing.',
       'icon'  => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
     ],
     [
@@ -85,7 +85,7 @@ get_header(); ?>
       'tone'  => '#243580',
     ],
     [
-      'headline' => 'Drywall &amp; Interior Construction Services',
+      'headline' => 'Drywall, Painting & Interior Construction Services',
       'body'     => 'When a general contractor trusts us to leave their job site clean, the next conversation is usually about what else we can take off their plate. Our drywall and interior construction services are built around that same reliability showing up on schedule, working cleanly alongside other trades, and hitting the deadline every time. We handle tenant improvements, commercial build outs, and interior renovation scopes across the KC metro.',
       'bullets'  => [
         'Commercial drywall installation and finishing',
@@ -93,6 +93,7 @@ get_header(); ?>
         'Interior construction for general contractor pipelines',
         'Office and healthcare facility build-outs',
         'Retail and commercial space renovations',
+        'Interior painting post-construction, tenant improvements, and commercial renovations',
       ],
       'cta'   => 'Request a Drywall Estimate',
       'tone'  => '#C9A84C',
@@ -116,7 +117,7 @@ get_header(); ?>
   $differentiators = [
     [ 'num' => '01', 'title' => 'Zero Operational Surprises',       'copy' => 'We show up when we say we will, execute without supervision, and communicate proactively. Your silence is our best performance metric.' ],
     [ 'num' => '02', 'title' => 'Compliance-Ready Documentation',   'copy' => 'Healthcare and education buyers require traceable processes. We deliver the documentation, certifications, and protocols that protect your facility from audits and liability.' ],
-    [ 'num' => '03', 'title' => 'Multi Service, One Contract',      'copy' => 'Cleaning, grounds, drywall, roofing under one trusted partner. Reduce your vendor count, eliminate coordination friction, and simplify your budget.' ],
+    [ 'num' => '03', 'title' => 'Multi Service, One Contract',      'copy' => 'Cleaning, grounds, drywall, painting, and roofing under one trusted partner. Reduce your vendor count, eliminate coordination friction, and simplify your budget.' ],
     [ 'num' => '04', 'title' => 'Institutional Buyer Experience',   'copy' => 'We understand RFP processes, committee approvals, and long contract cycles. We show up to the conversation prepared not hoping to improvise.' ],
     [ 'num' => '05', 'title' => 'KC Dense Route Efficiency',        'copy' => 'We concentrate in the Overland Park Lenexa Olathe corridor. That means faster response times, lower operational cost, and consistent crew availability for your facility.' ],
     [ 'num' => '06', 'title' => 'Asset Presentation Mindset',       'copy' => 'We don\'t think \'clean building.\' We think: how does this asset need to look to retain tenants, pass audits, and protect its long term value? That difference shows up in the result.' ],
@@ -157,7 +158,7 @@ get_header(); ?>
     ],
     [
       'q' => 'Can KCS handle multiple services for the same property?',
-      'a' => 'Absolutely. Property managers and institutional buyers can consolidate commercial cleaning, landscaping, drywall, and roofing under one trusted partner — eliminating vendor coordination and simplifying your internal approval process.',
+      'a' => 'Absolutely. Property managers and institutional buyers consolidate commercial cleaning, landscaping, drywall, painting, and roofing under one trusted partner — eliminating vendor coordination and simplifying your internal approval process.',
     ],
     [
       'q' => 'Does KCS work with general contractors on construction projects?',
@@ -209,8 +210,7 @@ get_header(); ?>
         </h1>
         <div class="mt-6 h-1 w-28 bg-[linear-gradient(90deg,#C9A84C,#E8D49A)]"></div>
         <p class="mt-7 max-w-xl text-base leading-8 text-white/82 md:text-lg">
-          KCS Commercial Services delivers institutional grade commercial cleaning, landscaping, drywall, and roofing for property managers, healthcare facilities, school districts, and general contractors across the KC metro.
-          <strong class="mt-3 block font-black text-white/95">Consistent. Compliant. Built for long term retention.</strong>
+          KCS Commercial Services delivers institutional grade commercial cleaning, landscaping, drywall, painting, and roofing for property managers, healthcare facilities, school districts, and general contractors across the KC metro.
         </p>
         <div class="mt-9 flex flex-wrap gap-3">
           <a href="tel:+19132577291" class="kcs-btn kcs-btn-gold inline-flex items-center justify-center px-7 py-4 text-sm font-black uppercase tracking-[0.14em]">
@@ -305,7 +305,7 @@ get_header(); ?>
     </div>
     <div class="mt-12 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
       <div class="ajs-reveal-left space-y-6 text-base leading-8 text-[#1B2B6B]/78">
-        <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company, we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, and roofing.</p>
+        <p>KCS Commercial Services LLC was built on one principle: property managers, facility directors, and institutional buyers deserve a service partner they never have to chase. We are not a cleaning company, we are a building and asset services platform anchored by commercial cleaning and expanded through landscaping, drywall, painting, and roofing.</p>
         <p>Based in the Kansas City metro and operating across Overland Park, Olathe, Lenexa, Shawnee, and Spring Hills KS, we serve healthcare institutions, school districts, corporate campuses, and commercial property portfolios with one clear commitment: your facility will always look the way it should  without you having to think about it.</p>
         <p>Our clients don't buy cleaning. They buy operational certainty, compliance protection, and asset presentation. That's what we deliver contract after contract, year after year.</p>
         <div class="flex flex-wrap gap-3 pt-2">
@@ -344,7 +344,7 @@ get_header(); ?>
         A Platform Built Around Your Building  Not Just One Service
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-8 text-[#1B2B6B]/72">
-        Every service we offer is connected. Commercial cleaning opens the relationship. Grounds, drywall, and roofing expand it. Each contract builds toward a long-term partnership not a one time job.
+        Every service we offer is connected. Commercial cleaning opens the relationship. Grounds, drywall, painting, and roofing expand it.. Each contract builds toward a long-term partnership not a one time job.
       </p>
     </div>
     <div class="mt-14 grid gap-6 md:grid-cols-2">
@@ -379,7 +379,7 @@ get_header(); ?>
     <div class="ajs-reveal-up mt-10 border border-[#1B2B6B]/12 bg-white px-8 py-5 text-center">
       <p class="text-sm font-bold text-[#1B2B6B]/72">
         Not sure which service fits your facility? —&nbsp;
-        <a href="#contact-form" class="font-black text-[#1B2B6B] underline decoration-[#C9A84C] underline-offset-3 transition hover:text-[#C9A84C]">
+        <a href="/contact-us" class="font-black text-[#1B2B6B] underline decoration-[#C9A84C] underline-offset-3 transition hover:text-[#C9A84C]">
           Talk to our team and we'll build the right contract →
         </a>
       </p>
@@ -400,7 +400,7 @@ get_header(); ?>
         The Field Isn't Saturated. It's Just Poorly Occupied.
       </h2>
       <p class="mt-5 max-w-2xl text-base leading-8 text-white/76">
-        Most facility managers and property owners have dealt with vendors who overpromise and underdeliver. KCS was built to be the obvious alternative a structured, accountable, institutional-grade operation that makes the decision to hire us easy to justify to anyone asking questions.
+        KCS was built to be the obvious choice for property managers and institutional buyers who need a service partner they can count on — structured, accountable, and easy to justify internally.
       </p>
     </div>
     <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">

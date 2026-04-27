@@ -324,7 +324,7 @@ export default function Navbar() {
                 </a>
 
                 {/* Facebook */}
-                <a href="#" aria-label="Facebook" className="kcs-social-link" style={{
+                <a href="https://www.facebook.com/people/KCS-Commercial-Services-LLC/61570748172859/?mibextid=wwXIfr&rdid=EerGHP4SNkzCAd0g&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Bkpi74wtM%2F%3Fmibextid%3DwwXIfr" aria-label="Facebook" className="kcs-social-link" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
                   width:32, height:32, border:`1px solid ${KCS.borderLight}`,
                   background:"rgba(255,255,255,0.07)", color: KCS.white, textDecoration:"none",
@@ -335,7 +335,7 @@ export default function Navbar() {
                 </a>
 
                 {/* Instagram */}
-                <a href="#" aria-label="Instagram" className="kcs-social-link" style={{
+                <a href="https://www.instagram.com/kcscommercial_official?igsh=NXlieHc0NWo0Y2Ry" aria-label="Instagram" className="kcs-social-link" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
                   width:32, height:32, border:`1px solid ${KCS.borderLight}`,
                   background:"rgba(255,255,255,0.07)", color: KCS.white, textDecoration:"none",
@@ -346,7 +346,7 @@ export default function Navbar() {
                 </a>
 
                 {/* LinkedIn */}
-                <a href="#" aria-label="LinkedIn" className="kcs-social-link" style={{
+                <a href="https://www.linkedin.com/in/kcs-commercial-services-llc-6b9983405/" aria-label="LinkedIn" className="kcs-social-link" style={{
                   display:"inline-flex", alignItems:"center", justifyContent:"center",
                   width:32, height:32, border:`1px solid ${KCS.borderLight}`,
                   background:"rgba(255,255,255,0.07)", color: KCS.white, textDecoration:"none",

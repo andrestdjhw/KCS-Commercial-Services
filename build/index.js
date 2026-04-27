@@ -764,7 +764,7 @@ function Footer() {
                   marginTop: "1.4rem"
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSocial, {
-                  href: "#",
+                  href: "https://www.facebook.com/people/KCS-Commercial-Services-LLC/61570748172859/?mibextid=wwXIfr&rdid=EerGHP4SNkzCAd0g&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Bkpi74wtM%2F%3Fmibextid%3DwwXIfr",
                   label: "Facebook",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
                     viewBox: "0 0 24 24",
@@ -1530,7 +1530,7 @@ function Navbar() {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "#",
+                href: "https://www.facebook.com/people/KCS-Commercial-Services-LLC/61570748172859/?mibextid=wwXIfr&rdid=EerGHP4SNkzCAd0g&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Bkpi74wtM%2F%3Fmibextid%3DwwXIfr",
                 "aria-label": "Facebook",
                 className: "kcs-social-link",
                 style: {
@@ -1557,7 +1557,7 @@ function Navbar() {
                   })
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "#",
+                href: "https://www.instagram.com/kcscommercial_official?igsh=NXlieHc0NWo0Y2Ry",
                 "aria-label": "Instagram",
                 className: "kcs-social-link",
                 style: {
@@ -1584,7 +1584,7 @@ function Navbar() {
                   })
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                href: "#",
+                href: "https://www.linkedin.com/in/kcs-commercial-services-llc-6b9983405/",
                 "aria-label": "LinkedIn",
                 className: "kcs-social-link",
                 style: {

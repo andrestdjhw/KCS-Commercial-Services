@@ -174,19 +174,19 @@ export default function Footer() {
 
                 {/* Social icons */}
                 <div style={{ display:"flex", gap:"0.5rem", marginTop:"1.4rem" }}>
-                  <FooterSocial href="#" label="Facebook">
+                  <FooterSocial href="https://www.facebook.com/people/KCS-Commercial-Services-LLC/61570748172859/?mibextid=wwXIfr&rdid=EerGHP4SNkzCAd0g&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Bkpi74wtM%2F%3Fmibextid%3DwwXIfr" label="Facebook">
                     <svg viewBox="0 0 24 24" aria-hidden="true" style={{width:16,height:16}}>
                       <path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.6c0-.9.3-1.6 1.7-1.6h1.8V4.1c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6v2h-3v3.2h3V22h3.7Z"/>
                     </svg>
                   </FooterSocial>
 
-                  <FooterSocial href="#" label="Instagram">
+                  <FooterSocial href="https://www.instagram.com/kcscommercial_official?igsh=NXlieHc0NWo0Y2Ry" label="Instagram">
                     <svg viewBox="0 0 24 24" aria-hidden="true" style={{width:16,height:16}}>
                       <path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.4 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"/>
                     </svg>
                   </FooterSocial>
 
-                  <FooterSocial href="#" label="LinkedIn">
+                  <FooterSocial href="https://www.linkedin.com/in/kcs-commercial-services-llc-6b9983405/" label="LinkedIn">
                     <svg viewBox="0 0 24 24" aria-hidden="true" style={{width:16,height:16}}>
                       <path fill="currentColor" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                       <rect fill="currentColor" x="2" y="9" width="4" height="12"/>
